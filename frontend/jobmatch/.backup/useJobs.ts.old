@@ -1,0 +1,159 @@
+import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
+import { jobsService, Job, JobWithMatch, CreateJobData, UpdateJobData } from '@/services/jobs.service';
+
+// ============================================================================
+// JOB SEEKER HOOKS
+// ============================================================================
+
+/**
+ * Get list of jobs with optional filtering
+ */
+export const useJobs = (params?: {
+  skip?: number;
+  limit?: number;
+  category?: string;
+  title?: string;
+}) => {
+  return useQuery({
+    queryKey: ['jobs', params],
+    queryFn: () => jobsService.getJobs(params),
+  });
+};
+
+/**
+ * Get a single job by ID
+ */
+export const useJob = (jobId: number) => {
+  return useQuery({
+    queryKey: ['job', jobId],
+    queryFn: () => jobsService.getJob(jobId),
+    enabled: !!jobId,
+  });
+};
+
+/**
+ * Get job with personalized match score
+ */
+export const useJobWithMatch = (jobId: number) => {
+  return useQuery({
+    queryKey: ['job-match', jobId],
+    queryFn: () => jobsService.getJobWithMatch(jobId),
+    enabled: !!jobId,
+  });
+};
+
+/**
+ * Get AI-matched jobs using CAMSS
+ */
+export const useAIMatchedJobs = (topK: number = 10) => {
+  return useQuery({
+    queryKey: ['ai-matched-jobs', topK],
+    queryFn: () => jobsService.getAIMatchedJobs(topK),
+    staleTime: 5 * 60 * 1000, // 5 minutes
+  });
+};
+
+/**
+ * Get match score for specific job
+ */
+export const useJobMatchScore = (jobId: number) => {
+  return useQuery({
+    queryKey: ['job-match-score', jobId],
+    queryFn: () => jobsService.getJobMatchScore(jobId),
+    enabled: !!jobId,
+  });
+};
+
+// ============================================================================
+// PERSONAL EMPLOYER HOOKS
+// ============================================================================
+
+/**
+ * Get all jobs for current employer
+ */
+export const useMyJobs = (params?: {
+  skip?: number;
+  limit?: number;
+  active_only?: boolean;
+}) => {
+  return useQuery({
+    queryKey: ['my-jobs', params],
+    queryFn: () => jobsService.getMyJobs(params),
+  });
+};
+
+/**
+ * Get specific job owned by employer
+ */
+export const useMyJob = (jobId: number) => {
+  return useQuery({
+    queryKey: ['my-job', jobId],
+    queryFn: () => jobsService.getMyJob(jobId),
+    enabled: !!jobId,
+  });
+};
+
+/**
+ * Get candidate matches for a job
+ */
+export const useJobMatches = (
+  jobId: number,
+  params?: { min_score?: number; limit?: number }
+) => {
+  return useQuery({
+    queryKey: ['job-matches', jobId, params],
+    queryFn: () => jobsService.getJobMatches(jobId, params),
+    enabled: !!jobId,
+  });
+};
+
+// ============================================================================
+// MUTATIONS
+// ============================================================================
+
+/**
+ * Create a new job
+ */
+export const useCreateJob = () => {
+  const queryClient = useQueryClient();
+
+  return useMutation({
+    mutationFn: (jobData: CreateJobData) => jobsService.createJob(jobData),
+    onSuccess: () => {
+      // Invalidate jobs list to refetch
+      queryClient.invalidateQueries({ queryKey: ['my-jobs'] });
+    },
+  });
+};
+
+/**
+ * Update a job
+ */
+export const useUpdateJob = () => {
+  const queryClient = useQueryClient();
+
+  return useMutation({
+    mutationFn: ({ jobId, jobData }: { jobId: number; jobData: UpdateJobData }) =>
+      jobsService.updateJob(jobId, jobData),
+    onSuccess: (_, variables) => {
+      // Invalidate both the specific job and jobs list
+      queryClient.invalidateQueries({ queryKey: ['my-job', variables.jobId] });
+      queryClient.invalidateQueries({ queryKey: ['my-jobs'] });
+    },
+  });
+};
+
+/**
+ * Delete a job
+ */
+export const useDeleteJob = () => {
+  const queryClient = useQueryClient();
+
+  return useMutation({
+    mutationFn: (jobId: number) => jobsService.deleteJob(jobId),
+    onSuccess: () => {
+      // Invalidate jobs list
+      queryClient.invalidateQueries({ queryKey: ['my-jobs'] });
+    },
+  });
+};

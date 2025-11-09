@@ -1,0 +1,631 @@
+import React, { useState } from 'react';
+import { View, Text, ScrollView, TouchableOpacity, Switch } from 'react-native';
+import { useRouter } from 'expo-router';
+import { useThemeStore } from '@/store/themeStore';
+import { getTheme } from '@/utils/theme';
+import { 
+  Bell,
+  Sparkles,
+  Briefcase,
+  TrendingUp,
+  Clock,
+  Bookmark,
+  AlertCircle,
+  Info,
+  Target,
+  Award,
+  Calendar,
+  Eye,
+  X,
+  Settings,
+} from 'lucide-react-native';
+
+type AlertType = 'job_match' | 'ai_insight' | 'system' | 'activity';
+
+interface Alert {
+  id: string;
+  type: AlertType;
+  title: string;
+  message: string;
+  timestamp: string;
+  isRead: boolean;
+  actionLabel?: string;
+  actionRoute?: string;
+  jobId?: string;
+  icon?: any;
+  badge?: string;
+  dismissible?: boolean;
+}
+
+export default function AlertsScreen() {
+  const router = useRouter();
+  const { isDarkMode } = useThemeStore();
+  const colors = getTheme(isDarkMode);
+  const [digestMode, setDigestMode] = useState(false);
+  const [selectedFilter, setSelectedFilter] = useState<AlertType | 'all'>('all');
+
+  // Mock alerts data
+  const [alerts, setAlerts] = useState<Alert[]>([
+    // Job Alerts
+    {
+      id: '1',
+      type: 'job_match',
+      title: 'New High Match Job! 🎯',
+      message: 'Senior Software Engineer at TechZambia (95% match) - Posted 2 hours ago',
+      timestamp: '2 hours ago',
+      isRead: false,
+      actionLabel: 'View Job',
+      actionRoute: '/job-details',
+      jobId: '1',
+      badge: 'NEW',
+    },
+    {
+      id: '2',
+      type: 'job_match',
+      title: 'Saved Job Closing Soon ⏰',
+      message: 'Data Scientist at Analytics Hub closes in 2 days. Apply before it\'s too late!',
+      timestamp: '5 hours ago',
+      isRead: false,
+      actionLabel: 'Apply Now',
+      jobId: '2',
+      badge: 'URGENT',
+    },
+    {
+      id: '3',
+      type: 'job_match',
+      title: '3 New Jobs Match Your Profile',
+      message: 'Product Manager, UI Designer, DevOps Engineer - Check them out!',
+      timestamp: '1 day ago',
+      isRead: true,
+      actionLabel: 'Browse Jobs',
+    },
+
+    // AI Insights
+    {
+      id: '4',
+      type: 'ai_insight',
+      title: 'Your Skills Are Trending! 📈',
+      message: 'Data Analyst roles are up 22% this week. Your profile matches 15 new openings.',
+      timestamp: '3 hours ago',
+      isRead: false,
+      actionLabel: 'See Matches',
+      icon: TrendingUp,
+    },
+    {
+      id: '5',
+      type: 'ai_insight',
+      title: 'Profile Strength Increased 🌟',
+      message: 'Great job! Adding Python certification boosted your match score to 85%.',
+      timestamp: '2 days ago',
+      isRead: true,
+      actionLabel: 'View Profile',
+      icon: Award,
+    },
+
+    // System Alerts
+    {
+      id: '6',
+      type: 'system',
+      title: 'Complete Your Profile',
+      message: 'You\'re 75% complete. Add work experience to unlock premium matches.',
+      timestamp: '1 day ago',
+      isRead: false,
+      actionLabel: 'Complete',
+      dismissible: true,
+      icon: AlertCircle,
+    },
+  ]);
+
+  const filters: { id: AlertType | 'all'; label: string; icon: any }[] = [
+    { id: 'all', label: 'All', icon: Bell },
+    { id: 'job_match', label: 'Jobs', icon: Briefcase },
+    { id: 'ai_insight', label: 'AI Insights', icon: Sparkles },
+    { id: 'system', label: 'Updates', icon: Info },
+  ];
+
+  const filteredAlerts = selectedFilter === 'all' 
+    ? alerts 
+    : alerts.filter(alert => alert.type === selectedFilter);
+
+  const unreadCount = alerts.filter(a => !a.isRead).length;
+
+  const handleDismiss = (alertId: string) => {
+    setAlerts(alerts.filter(a => a.id !== alertId));
+  };
+
+  const handleMarkAsRead = (alertId: string) => {
+    setAlerts(alerts.map(a => a.id === alertId ? { ...a, isRead: true } : a));
+  };
+
+  const handleAlertAction = (alert: Alert) => {
+    handleMarkAsRead(alert.id);
+    if (alert.actionRoute) {
+      router.push({
+        pathname: alert.actionRoute as any,
+        params: { id: alert.jobId, curated: 'false' },
+      });
+    }
+  };
+
+  const getAlertTypeColor = (type: AlertType) => {
+    switch (type) {
+      case 'job_match': return colors.accent;
+      case 'ai_insight': return '#8B5CF6'; // Purple
+      case 'system': return '#3B82F6'; // Blue
+      case 'activity': return '#10B981'; // Green
+      default: return colors.textMuted;
+    }
+  };
+
+  const getAlertIcon = (alert: Alert) => {
+    if (alert.icon) return alert.icon;
+    switch (alert.type) {
+      case 'job_match': return Briefcase;
+      case 'ai_insight': return Sparkles;
+      case 'system': return Info;
+      case 'activity': return Calendar;
+      default: return Bell;
+    }
+  };
+
+  const getBadgeColor = (badge?: string) => {
+    switch (badge) {
+      case 'NEW': return '#10B981'; // Green
+      case 'URGENT': return '#EF4444'; // Red
+      default: return colors.accent;
+    }
+  };
+
+  // Weekly Activity Digest
+  const weeklyDigest = {
+    applied: 3,
+    saved: 5,
+    views: 24,
+    matchRateChange: +5,
+  };
+
+  return (
+    <View style={{ flex: 1, backgroundColor: colors.background }}>
+      {/* Header */}
+      <View style={{
+        paddingHorizontal: 24,
+        paddingTop: 56,
+        paddingBottom: 20,
+        backgroundColor: colors.card,
+        borderBottomWidth: 1,
+        borderBottomColor: colors.cardBorder,
+      }}>
+        <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 12 }}>
+          <View style={{ flexDirection: 'row', alignItems: 'center', gap: 12 }}>
+            <View style={{
+              width: 40,
+              height: 40,
+              borderRadius: 20,
+              backgroundColor: colors.accent + '20',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}>
+              <Bell size={20} color={colors.accent} strokeWidth={2.5} />
+            </View>
+            <View>
+              <Text style={{ color: colors.text, fontSize: 24, fontWeight: 'bold' }}>
+                Alerts
+              </Text>
+              <Text style={{ color: colors.textMuted, fontSize: 13 }}>
+                {unreadCount} unread notification{unreadCount !== 1 ? 's' : ''}
+              </Text>
+            </View>
+          </View>
+
+          <TouchableOpacity style={{
+            width: 40,
+            height: 40,
+            borderRadius: 20,
+            backgroundColor: colors.background,
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}>
+            <Settings size={20} color={colors.text} strokeWidth={2} />
+          </TouchableOpacity>
+        </View>
+
+        {/* Smart Digest Toggle */}
+        <View style={{
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          backgroundColor: colors.background,
+          paddingHorizontal: 16,
+          paddingVertical: 12,
+          borderRadius: 12,
+        }}>
+          <View style={{ flexDirection: 'row', alignItems: 'center', gap: 10 }}>
+            <Sparkles size={18} color={colors.accent} strokeWidth={2.5} />
+            <View>
+              <Text style={{ color: colors.text, fontSize: 14, fontWeight: '600' }}>
+                Smart Digest Mode
+              </Text>
+              <Text style={{ color: colors.textMuted, fontSize: 11 }}>
+                Group alerts by day/week
+              </Text>
+            </View>
+          </View>
+          <Switch
+            value={digestMode}
+            onValueChange={setDigestMode}
+            trackColor={{ false: colors.cardBorder, true: colors.accent + '60' }}
+            thumbColor={digestMode ? colors.accent : colors.card}
+          />
+        </View>
+      </View>
+
+      <ScrollView showsVerticalScrollIndicator={false}>
+        {/* Filter Tabs */}
+        <ScrollView
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          contentContainerStyle={{
+            paddingHorizontal: 24,
+            paddingVertical: 16,
+            gap: 10,
+          }}
+        >
+          {filters.map((filter) => {
+            const IconComponent = filter.icon;
+            const isSelected = selectedFilter === filter.id;
+            const count = filter.id === 'all' 
+              ? alerts.length 
+              : alerts.filter(a => a.type === filter.id).length;
+
+            return (
+              <TouchableOpacity
+                key={filter.id}
+                onPress={() => setSelectedFilter(filter.id)}
+                style={{
+                  flexDirection: 'row',
+                  alignItems: 'center',
+                  gap: 8,
+                  paddingHorizontal: 16,
+                  paddingVertical: 10,
+                  borderRadius: 20,
+                  backgroundColor: isSelected ? colors.actionBox : colors.card,
+                  borderWidth: 1.5,
+                  borderColor: isSelected ? colors.actionText : colors.cardBorder,
+                }}
+              >
+                <IconComponent
+                  size={16}
+                  color={isSelected ? colors.actionText : colors.textMuted}
+                  strokeWidth={2.5}
+                />
+                <Text style={{
+                  color: isSelected ? colors.actionText : colors.textMuted,
+                  fontSize: 13,
+                  fontWeight: isSelected ? 'bold' : '600',
+                }}>
+                  {filter.label}
+                </Text>
+                <View style={{
+                  backgroundColor: isSelected ? colors.actionText + '30' : colors.background,
+                  paddingHorizontal: 6,
+                  paddingVertical: 2,
+                  borderRadius: 10,
+                  minWidth: 20,
+                  alignItems: 'center',
+                }}>
+                  <Text style={{
+                    color: isSelected ? colors.actionText : colors.textMuted,
+                    fontSize: 11,
+                    fontWeight: 'bold',
+                  }}>
+                    {count}
+                  </Text>
+                </View>
+              </TouchableOpacity>
+            );
+          })}
+        </ScrollView>
+
+        {/* Alerts List */}
+        <View style={{ paddingHorizontal: 24, paddingBottom: 24 }}>
+          {filteredAlerts.length === 0 ? (
+            <View style={{
+              backgroundColor: colors.card,
+              borderRadius: 16,
+              padding: 40,
+              alignItems: 'center',
+              borderWidth: 1.5,
+              borderColor: colors.cardBorder,
+            }}>
+              <View style={{
+                width: 80,
+                height: 80,
+                borderRadius: 40,
+                backgroundColor: colors.background,
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginBottom: 16,
+              }}>
+                <Bell size={36} color={colors.textMuted} strokeWidth={2} />
+              </View>
+              <Text style={{ color: colors.text, fontSize: 18, fontWeight: 'bold', marginBottom: 8 }}>
+                All caught up!
+              </Text>
+              <Text style={{ color: colors.textMuted, fontSize: 14, textAlign: 'center' }}>
+                No {selectedFilter !== 'all' ? filters.find(f => f.id === selectedFilter)?.label.toLowerCase() : ''} alerts right now.
+              </Text>
+            </View>
+          ) : (
+            filteredAlerts.map((alert) => {
+              const IconComponent = getAlertIcon(alert);
+              const typeColor = getAlertTypeColor(alert.type);
+
+              return (
+                <TouchableOpacity
+                  key={alert.id}
+                  onPress={() => !alert.isRead && handleMarkAsRead(alert.id)}
+                  style={{
+                    backgroundColor: colors.card,
+                    borderRadius: 16,
+                    padding: 16,
+                    marginBottom: 12,
+                    borderWidth: 1.5,
+                    borderColor: alert.isRead ? colors.cardBorder : typeColor + '40',
+                    borderLeftWidth: 4,
+                    borderLeftColor: typeColor,
+                  }}
+                >
+                  <View style={{ flexDirection: 'row', gap: 12 }}>
+                    {/* Icon */}
+                    <View style={{
+                      width: 44,
+                      height: 44,
+                      borderRadius: 22,
+                      backgroundColor: typeColor + '20',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      flexShrink: 0,
+                    }}>
+                      <IconComponent size={20} color={typeColor} strokeWidth={2.5} />
+                    </View>
+
+                    {/* Content */}
+                    <View style={{ flex: 1 }}>
+                      <View style={{ flexDirection: 'row', alignItems: 'center', gap: 8, marginBottom: 4 }}>
+                        <Text style={{
+                          color: colors.text,
+                          fontSize: 15,
+                          fontWeight: 'bold',
+                          flex: 1,
+                        }}>
+                          {alert.title}
+                        </Text>
+                        {alert.badge && (
+                          <View style={{
+                            backgroundColor: getBadgeColor(alert.badge) + '20',
+                            paddingHorizontal: 8,
+                            paddingVertical: 3,
+                            borderRadius: 6,
+                          }}>
+                            <Text style={{
+                              color: getBadgeColor(alert.badge),
+                              fontSize: 10,
+                              fontWeight: 'bold',
+                            }}>
+                              {alert.badge}
+                            </Text>
+                          </View>
+                        )}
+                      </View>
+
+                      <Text style={{
+                        color: colors.textMuted,
+                        fontSize: 13,
+                        lineHeight: 18,
+                        marginBottom: 8,
+                      }}>
+                        {alert.message}
+                      </Text>
+
+                      <View style={{ flexDirection: 'row', alignItems: 'center', gap: 12 }}>
+                        <View style={{ flexDirection: 'row', alignItems: 'center', gap: 4 }}>
+                          <Clock size={12} color={colors.textMuted} strokeWidth={2} />
+                          <Text style={{ color: colors.textMuted, fontSize: 11 }}>
+                            {alert.timestamp}
+                          </Text>
+                        </View>
+
+                        {!alert.isRead && (
+                          <View style={{
+                            width: 8,
+                            height: 8,
+                            borderRadius: 4,
+                            backgroundColor: typeColor,
+                          }} />
+                        )}
+                      </View>
+
+                      {/* Action Button */}
+                      {alert.actionLabel && (
+                        <TouchableOpacity
+                          onPress={() => handleAlertAction(alert)}
+                          style={{
+                            backgroundColor: typeColor + '15',
+                            paddingHorizontal: 14,
+                            paddingVertical: 8,
+                            borderRadius: 10,
+                            marginTop: 12,
+                            alignSelf: 'flex-start',
+                          }}
+                        >
+                          <Text style={{
+                            color: typeColor,
+                            fontSize: 13,
+                            fontWeight: '600',
+                          }}>
+                            {alert.actionLabel} →
+                          </Text>
+                        </TouchableOpacity>
+                      )}
+                    </View>
+
+                    {/* Dismiss Button */}
+                    {alert.dismissible && (
+                      <TouchableOpacity
+                        onPress={() => handleDismiss(alert.id)}
+                        style={{
+                          width: 28,
+                          height: 28,
+                          borderRadius: 14,
+                          backgroundColor: colors.background,
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                        }}
+                      >
+                        <X size={14} color={colors.textMuted} strokeWidth={2.5} />
+                      </TouchableOpacity>
+                    )}
+                  </View>
+                </TouchableOpacity>
+              );
+            })
+          )}
+        </View>
+
+        {/* Weekly Activity Digest */}
+        {filteredAlerts.length > 0 && (
+          <View style={{ paddingHorizontal: 24, paddingBottom: 32 }}>
+            <Text style={{
+              color: colors.text,
+              fontSize: 18,
+              fontWeight: 'bold',
+              marginBottom: 16,
+            }}>
+              Your Week in Review
+            </Text>
+
+            <View style={{
+              backgroundColor: colors.card,
+              borderRadius: 16,
+              padding: 20,
+              borderWidth: 1.5,
+              borderColor: colors.cardBorder,
+            }}>
+              <View style={{ flexDirection: 'row', alignItems: 'center', gap: 8, marginBottom: 16 }}>
+                <Calendar size={18} color={colors.accent} strokeWidth={2.5} />
+                <Text style={{ color: colors.text, fontSize: 15, fontWeight: 'bold' }}>
+                  Weekly Summary
+                </Text>
+              </View>
+
+              <View style={{ flexDirection: 'row', gap: 10 }}>
+                {/* Applied */}
+                <View style={{
+                  flex: 1,
+                  backgroundColor: colors.background,
+                  borderRadius: 12,
+                  padding: 14,
+                  alignItems: 'center',
+                }}>
+                  <View style={{
+                    width: 36,
+                    height: 36,
+                    borderRadius: 18,
+                    backgroundColor: colors.accent + '20',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    marginBottom: 8,
+                  }}>
+                    <Briefcase size={18} color={colors.accent} strokeWidth={2.5} />
+                  </View>
+                  <Text style={{ color: colors.text, fontSize: 22, fontWeight: 'bold', marginBottom: 2 }}>
+                    {weeklyDigest.applied}
+                  </Text>
+                  <Text style={{ color: colors.textMuted, fontSize: 11, fontWeight: '600' }}>
+                    Applied
+                  </Text>
+                </View>
+
+                {/* Saved */}
+                <View style={{
+                  flex: 1,
+                  backgroundColor: colors.background,
+                  borderRadius: 12,
+                  padding: 14,
+                  alignItems: 'center',
+                }}>
+                  <View style={{
+                    width: 36,
+                    height: 36,
+                    borderRadius: 18,
+                    backgroundColor: '#8B5CF6' + '20',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    marginBottom: 8,
+                  }}>
+                    <Bookmark size={18} color="#8B5CF6" strokeWidth={2.5} />
+                  </View>
+                  <Text style={{ color: colors.text, fontSize: 22, fontWeight: 'bold', marginBottom: 2 }}>
+                    {weeklyDigest.saved}
+                  </Text>
+                  <Text style={{ color: colors.textMuted, fontSize: 11, fontWeight: '600' }}>
+                    Saved
+                  </Text>
+                </View>
+
+                {/* Views */}
+                <View style={{
+                  flex: 1,
+                  backgroundColor: colors.background,
+                  borderRadius: 12,
+                  padding: 14,
+                  alignItems: 'center',
+                }}>
+                  <View style={{
+                    width: 36,
+                    height: 36,
+                    borderRadius: 18,
+                    backgroundColor: '#10B981' + '20',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    marginBottom: 8,
+                  }}>
+                    <Eye size={18} color="#10B981" strokeWidth={2.5} />
+                  </View>
+                  <Text style={{ color: colors.text, fontSize: 22, fontWeight: 'bold', marginBottom: 2 }}>
+                    {weeklyDigest.views}
+                  </Text>
+                  <Text style={{ color: colors.textMuted, fontSize: 11, fontWeight: '600' }}>
+                    Views
+                  </Text>
+                </View>
+              </View>
+
+              {/* Match Rate Change */}
+              <View style={{
+                marginTop: 12,
+                backgroundColor: weeklyDigest.matchRateChange >= 0 ? '#10B981' + '15' : '#EF4444' + '15',
+                paddingHorizontal: 14,
+                paddingVertical: 10,
+                borderRadius: 10,
+                flexDirection: 'row',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: 6,
+              }}>
+                <TrendingUp size={16} color={weeklyDigest.matchRateChange >= 0 ? '#10B981' : '#EF4444'} strokeWidth={2.5} />
+                <Text style={{
+                  color: weeklyDigest.matchRateChange >= 0 ? '#10B981' : '#EF4444',
+                  fontSize: 13,
+                  fontWeight: '600',
+                }}>
+                  Match rate {weeklyDigest.matchRateChange >= 0 ? '+' : ''}{weeklyDigest.matchRateChange}% this week
+                </Text>
+              </View>
+            </View>
+          </View>
+        )}
+      </ScrollView>
+    </View>
+  );
+}

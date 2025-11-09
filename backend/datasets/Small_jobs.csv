@@ -1,0 +1,401 @@
+﻿id,title,category,description,location,budget,paymentType,duration,postedBy,datePosted,status,Column1
+JOB-P001,School Run Driver,Driver,"Need a reliable driver to take my two kids to school in Roma and pick them up in the afternoon. Must have own car in good condition and valid driver's license. Morning trip around 7 AM, afternoon around 14 PM.",Lusaka, Roma,1200,Monthly,Ongoing,Chanda M.,15/01/2025,Open
+JOB-P002,Weekend Cook for Family Events,Cook,"Looking for someone to help with cooking for family gatherings on weekends. Mostly traditional Zambian food - nshima, relish, chicken. About 2-3 times per month. Experience with large groups preferred.",Kitwe, Parklands,500,Weekly,Ongoing,Brenda K.,14/01/2025,Open
+JOB-P003,Fix Leaking Kitchen Tap,Plumber,Kitchen tap is leaking badly and need someone to fix as soon as possible. Simple replacement job I think. Please come with your own tools and replacement parts.,Ndola, Ndeke,350,Fixed,One-time,Joseph T.,16/01/2025,Open
+JOB-P004,Babysitter for Evenings,Childcare,Need babysitter for my 3-year-old daughter on Friday and Saturday evenings from 6 PM to 10 PM. Must be patient and have experience with young children. We live near Manda Hill.,Lusaka, Kabulonga,400,Weekly,Ongoing,Maria L.,13/01/2025,Open
+JOB-P005,Help Move Furniture,Mover,Need strong person to help move furniture from my flat to new house. Just one truck load. Should be able to lift heavy items. This Saturday morning only.,Livingstone, Dambwa,450,Fixed,One-time,Peter S.,15/01/2025,Open
+JOB-P006,Hair Braider for Wedding,Hairstylist,Looking for skilled braider for wedding hairstyles this Saturday. Need cornrows and extensions for myself and two bridesmaids. Must bring portfolio of previous work.,Lusaka, Woodlands,800,Fixed,One-time,Naomi C.,12/01/2025,Closed
+JOB-P007,Math Tutor for Grade 9 Student,Tutor,"My son needs help with mathematics, especially algebra. Looking for someone to come twice a week after school. Must have good math background and be patient with teenagers.",Kabwe, Makululu,600,Monthly,Short-term,David M.,14/01/2025,Open
+JOB-P008,Garden Cleanup,Gardener,"Overgrown garden needs clearing and weeding. Small compound, about 20x30 feet. Need someone to come for one full day this weekend. Bring your own cutting tools.",Ndola, Masala,300,Fixed,One-time,Ruth B.,16/01/2025,Open
+JOB-P009,Market Assistant for Small Business,Sales Assistant,Help needed at my secondhand clothes stall at Soweto Market. Need someone honest to help with sales and watching the stall when I need breaks. 3 days a week.,Lusaka, Soweto Market,900,Monthly,Ongoing,Alice M.,13/01/2025,Open
+JOB-P010,Paint Living Room,Painter,"Small living room needs fresh paint. About 12x15 feet. I'll provide paint and brushes, just need someone with experience to do neat work. Can be done over weekend.",Kitwe, Buchi,700,Fixed,One-time,John K.,11/01/2025,Closed
+JOB-P011,Car Wash and Interior Cleaning,Car Cleaner,Need thorough cleaning for my Toyota Noah - exterior wash and interior vacuuming and wiping. Must be detailed and careful with the vehicle.,Lusaka, Northmead,150,Fixed,One-time,Thomas L.,16/01/2025,Open
+JOB-P012,Catering Helper for Church Event,Event Helper,Church needs extra hands for food serving at wedding this Saturday. About 5 hours work. Must be neat and presentable. Experience with serving large groups preferred.,Chipata, Mchini,250,Daily,One-time,Pastor Mwale,14/01/2025,Open
+JOB-P013,Seamstress for Dress Alterations,Tailor,Need someone to adjust three dresses - taking in waist and shortening hem. Must have sewing machine and good finishing skills. Work can be collected and returned.,Lusaka, Kamwala,400,Fixed,One-time,Sarah J.,15/01/2025,Open
+JOB-P014,Daycare Helper,Childcare,Small home daycare needs extra helper during busy hours (8 AM - 1 PM). Must love children and have patience. Experience with babies and toddlers required.,Ndola, Itawa,800,Monthly,Ongoing,Mrs. Banda,12/01/2025,Open
+JOB-P015,Phone Repair Technician,Technician,"Samsung phone screen broken, need replacement. Looking for someone who can do quality screen replacement at reasonable price. Must have genuine parts.",Lusaka, Town Centre,300,Fixed,One-time,Emma P.,16/01/2025,Open
+JOB-P016,English Tutor for Adult,Language Tutor,Looking for English lessons for my mother who wants to improve her business English. Twice a week in evenings. Must be patient with older learner.,Kitwe, Riverside,500,Monthly,Ongoing,James M.,13/01/2025,Open
+JOB-P017,Clean House After Renovation,Cleaner,"Just finished small renovation, house full of dust and debris. Need thorough cleaning of 3-bedroom house. Must bring own cleaning supplies.",Livingstone, Maramba,450,Fixed,One-time,Mr. Zulu,15/01/2025,Open
+JOB-P018,Graphic Designer for Small Business Flyer,Designer,Need simple but professional flyer designed for my catering business. Just one page with contact details and menu samples. Must have design examples to show.,Lusaka, Longacres,600,Fixed,One-time,Linda K.,14/01/2025,Open
+JOB-P019,Help with Grocery Shopping,Elderly Care,Elderly mother needs someone to help with weekly grocery shopping and carrying bags. Must be reliable and patient. Every Tuesday morning.,Kabwe, New Town,200,Weekly,Ongoing,Dr. Chibwe,12/01/2025,Open
+JOB-P020,Photographer for Baby's 1st Birthday,Photographer,"Looking for photographer for small birthday party in our backyard. About 2 hours coverage. Need natural, happy photos of baby and family. Must have portfolio.",Lusaka, Kalundu,800,Fixed,One-time,The Ngoma Family,16/01/2025,Open
+JOB-P021,Fix Broken Fence,Carpenter,Wooden fence section broken by storm last night. Need urgent repair - about 4 meters of fencing. Must have woodworking tools and experience.,Ndola, Kansenshi,550,Fixed,One-time,Mr. Phiri,16/01/2025,Open
+JOB-P022,Make 50 Chapattis for Event,Cook,Need 50 soft chapattis made for family gathering this Saturday. Must be fresh and well-cooked. Can be made at your place and delivered.,Kitwe, Chimwemwe,400,Fixed,One-time,Annie M.,13/01/2025,Closed
+JOB-P023,After-school Care for Primary Kids,Childcare,Need someone to watch my two primary school children from 2 PM to 5 PM weekdays. Help with homework and give them snack. Must be responsible and love children.,Lusaka, Olympia Park,1200,Monthly,Ongoing,Mrs. Tembo,14/01/2025,Open
+JOB-P024,Assemble IKEA Furniture,Handyman,Bought 3 pieces of IKEA furniture need assembling - 2 bookshelves and 1 desk. Must have experience with flat-pack furniture and proper tools.,Lusaka, Makeni,350,Fixed,One-time,Daniel C.,15/01/2025,Open
+JOB-P025,Traditional Healer for Consultation,Traditional Healer,Looking for experienced traditional healer for family consultation. Need advice and possible remedies for persistent issues. Must be genuine and recommended.,Chipata, Kapata,500,Fixed,One-time,Anonymous,11/01/2025,Open
+JOB-P026,Car Mechanic for Basic Service,Mechanic,"Toyota Corolla needs basic service - oil change, filter replacement, brake check. Must have tools and do proper job. Can use our driveway.",Lusaka, Chilenje,400,Fixed,One-time,Mr. Bwalya,16/01/2025,Open
+JOB-P027,Help Organize Small Office,Organizer,"Small home office needs organizing - files, supplies, books. Just one day work. Must be neat and systematic in approach.",Ndola, Northrise,300,Fixed,One-time,Patricia L.,13/01/2025,Open
+JOB-P028,Make Wedding Cake,Baker,Need 2-tier wedding cake for 50 people. Simple design with fresh flowers. Must have photos of previous cakes and good references.,Livingstone, Libuyu,1200,Fixed,One-time,The Mwila Family,12/01/2025,Closed
+JOB-P029,Dog Walker,Pet Care,Our Labrador needs walking every afternoon around 4 PM. About 30-45 minutes. Must be good with large dogs and reliable.,Lusaka, Rhodes Park,800,Monthly,Ongoing,The Patel Family,14/01/2025,Open
+JOB-P030,TV Wall Mounting,Handyman,New 55-inch TV needs mounting on wall. Must be secure and cables hidden. Need someone with proper tools and experience.,Kitwe, Nkana East,250,Fixed,One-time,Brian M.,16/01/2025,Open
+JOB-P031,Urgent Toilet Repair,Plumber,"Toilet blocked and overflowing, need someone to come fix immediately today. Simple unblocking job I hope.",Lusaka, Chawama,200,Fixed,One-time,Mrs. Zulu,16/01/2025,Open
+JOB-P032,Weekend Market Helper,Sales Assistant,Help me sell vegetables at Kamwala Market on Saturdays. Early morning start at 6 AM until 2 PM. Must be good with customers.,Lusaka, Kamwala Market,150,Daily,Weekly,Mr. Banda,15/01/2025,Open
+JOB-P033,Braid Hair for School,Hairstylist,"Need someone to braid my daughter's hair for school reopening next week. Simple cornrows, must be neat and tight.",Ndola, Twapia,180,Fixed,One-time,Beatrice K.,14/01/2025,Open
+JOB-P034,Maths and Science Tutor,Tutor,Grade 12 student struggling with maths and science. Need patient tutor for 2 hours every Saturday morning.,Kitwe, Wusakile,400,Monthly,Ongoing,Mr. Soko,13/01/2025,Open
+JOB-P035,Clean Compound After Party,Cleaner,"Had big party yesterday, compound needs thorough cleaning. Empty bottles, food remains, general tidying up.",Livingstone, Linda,250,Fixed,One-time,John P.,16/01/2025,Open
+JOB-P036,Drive Elderly to Hospital,Driver,My grandmother needs regular trips to UTH for check-ups every Tuesday morning. Must be patient and careful driver.,Lusaka, Emmasdale,300,Weekly,Ongoing,Grace M.,15/01/2025,Open
+JOB-P037,Make 100 Samosas for Meeting,Cook,Need 100 samosas for office meeting tomorrow. Chicken and vegetable filling. Must be crispy and well-seasoned.,Lusaka, Northmead,600,Fixed,One-time,Office Manager,16/01/2025,Open
+JOB-P038,Babysitter for Newborn,Childcare,"New mother needs help with newborn during day while I recover. 4 hours daily, must have experience with babies.",Kabwe, Makululu,800,Monthly,Short-term,Mary T.,14/01/2025,Open
+JOB-P039,Fix Leaking Roof,Handyman,Small section of roof leaking when it rains. Need temporary fix until proper repairs can be done.,Ndola, Kansenshi,450,Fixed,One-time,Mr. Lungu,13/01/2025,Open
+JOB-P040,Phone Screen Replacement,Technician,"Huawei phone screen cracked, need replacement. Must use good quality screen and do careful work.",Lusaka, Town Centre,350,Fixed,One-time,David C.,16/01/2025,Open
+JOB-P041,Help Pack for Moving,Organizer,"Moving house next week, need help packing boxes and organizing items. 2 days work, must be systematic.",Kitwe, Parklands,400,Fixed,Short-term,Sarah L.,15/01/2025,Open
+JOB-P042,Traditional Dance Teacher,Arts Teacher,"Need someone to teach traditional dances for wedding ceremony next month. 5 sessions, must know Zambian cultural dances.",Chipata, Kapata,750,Fixed,Short-term,Wedding Planner,14/01/2025,Open
+JOB-P043,Garden Watering,Gardener,"Going away for 2 weeks, need someone to water plants and small vegetable garden daily. Simple job but must be reliable.",Lusaka, Kabulonga,300,Fixed,Short-term,The Mwape Family,13/01/2025,Open
+JOB-P044,Car Polish and Wax,Car Cleaner,"Want my car to look nice for special event. Need proper polish and wax job, interior cleaning included.",Ndola, Masala,200,Fixed,One-time,Mr. Bwalya,16/01/2025,Open
+JOB-P045,Help with Computer Setup,IT Helper,"Bought new computer, need help setting up internet, printer, and basic software. 2-3 hours work.",Lusaka, Woodlands,250,Fixed,One-time,Mrs. Phiri,15/01/2025,Open
+JOB-P046,Make Birthday Cake for 50,Baker,"Son's 5th birthday, need cake for about 50 people. Superhero theme, must be moist and tasty.",Livingstone, Dambwa,650,Fixed,One-time,The Zulu Family,14/01/2025,Open
+JOB-P047,English Lessons for Business,Language Tutor,Small business owner needs to improve English for dealing with customers. Basic conversation skills focus.,Lusaka, Kamwala,500,Monthly,Ongoing,Shop Owner,13/01/2025,Open
+JOB-P048,Pet Sitting for Weekend,Pet Care,"Going away for weekend, need someone to feed and watch our cat and two rabbits. Must love animals.",Kitwe, Nkana East,200,Fixed,One-time,The Singh Family,16/01/2025,Open
+JOB-P049,Sew School Uniforms,Tailor,"Need 3 school uniforms made for my children. Simple design, must be durable and ready before school opens.",Kabwe, New Town,450,Fixed,One-time,Mother of 3,15/01/2025,Open
+JOB-P050,Help with Grocery Store,Shop Assistant,"Small grocery shop needs extra hands during busy hours (4-7 PM). Stocking, customer service, basic accounting.",Lusaka, Matero,900,Monthly,Ongoing,Shopkeeper,14/01/2025,Open
+JOB-P051,Fix Electric Gate,Technician,"Electric gate not working properly, sometimes gets stuck. Need someone who understands gate motors.",Lusaka, Rhodes Park,600,Fixed,One-time,Mr. Patel,13/01/2025,Open
+JOB-P052,Make Traditional Beer,Brewer,Need traditional beer made for family ceremony next week. Must know proper brewing techniques.,Chipata, Mchini,400,Fixed,One-time,Family Elder,16/01/2025,Open
+JOB-P053,After-school Sports Coach,Sports Coach,Looking for someone to teach football basics to group of 10-12 year olds twice a week after school.,Ndola, Itawa,600,Monthly,Ongoing,School Parent,15/01/2025,Open
+JOB-P054,Clean Windows and Blinds,Cleaner,"All windows and blinds in 4-bedroom house need cleaning. Two-story building, must have ladder.",Lusaka, Makeni,350,Fixed,One-time,Home Owner,14/01/2025,Open
+JOB-P055,Drive Kids to Weekend Activities,Driver,Three children need transport to swimming and music lessons on Saturdays. Morning and afternoon trips.,Kitwe, Riverside,800,Monthly,Ongoing,Busy Parents,13/01/2025,Open
+JOB-P056,Help with Farm Animals,Farmer Helper,"Small farm needs help with feeding chickens and cleaning pens. 2 hours daily, early mornings preferred.",Chongwe, Farm Area,400,Monthly,Ongoing,Small Farmer,16/01/2025,Open
+JOB-P057,Make Party Decorations,Arts and Crafts,"Daughter's birthday party, need handmade decorations - balloons, banners, table centerpieces.",Lusaka, Kalundu,300,Fixed,One-time,Party Mom,15/01/2025,Open
+JOB-P058,Basic Phone Lessons,Elderly Care,"Elderly father needs help learning how to use smartphone - calls, messages, photos. Patient teacher needed.",Ndola, Northrise,200,Fixed,One-time,Concerned Son,14/01/2025,Open
+JOB-P059,Fix Bicycle Repair,Mechanic,"Two children's bicycles need repairs - brakes, gears, punctures. Must have proper tools and experience.",Lusaka, Chilenje,280,Fixed,One-time,Family Man,13/01/2025,Open
+JOB-P060,Help with Church Choir,Music Teacher,Church choir needs help with harmonies and vocal training. Thursday evenings for one month.,Livingstone, Maramba,500,Fixed,Short-term,Church Leader,16/01/2025,Open
+JOB-P061,Urgent Document Typing,Secretarial,Need someone to type 20 pages of handwritten notes into computer. Good typing speed and accuracy needed.,Lusaka, Longacres,350,Fixed,One-time,Student,15/01/2025,Open
+JOB-P062,Make Traditional Medicine,Traditional Healer,Need specific traditional medicine prepared for family member. Must have knowledge of local herbs.,Chipata, Kapata,300,Fixed,One-time,Family Member,14/01/2025,Open
+JOB-P063,Car Interior Deep Clean,Car Cleaner,"Car interior very dirty from children and work. Need deep cleaning of seats, carpets, and dashboard.",Kitwe, Chimwemwe,250,Fixed,One-time,Construction Worker,13/01/2025,Open
+JOB-P064,Help with Homework Supervision,Childcare,"Two primary school children need homework supervision after school. Mainly checking and guiding, not teaching.",Lusaka, Olympia Park,700,Monthly,Ongoing,Working Parents,16/01/2025,Open
+JOB-P065,Fix Kitchen Cabinet Doors,Handyman,Three kitchen cabinet doors came off hinges. Simple repair job for someone with basic tools.,Ndola, Ndeke,150,Fixed,One-time,Home Cook,15/01/2025,Open
+JOB-P066,Make Wedding Invitations,Designer,Need 50 wedding invitations designed and printed. Simple elegant design with our details.,Lusaka, Woodlands,450,Fixed,One-time,Engaged Couple,14/01/2025,Open
+JOB-P067,Help with Small Construction,Construction Helper,"Building small room in backyard, need extra hands for mixing cement and carrying blocks. 3 days work.",Kabwe, Makululu,150,Daily,Short-term,DIY Builder,13/01/2025,Open
+JOB-P068,Babysitter for Date Nights,Childcare,"Couple needs reliable babysitter for Friday nights. 7 PM to midnight, must be comfortable putting kids to bed.",Lusaka, Kabulonga,200,Weekly,Ongoing,Young Parents,16/01/2025,Open
+JOB-P069,Car Service and Maintenance,Mechanic,"Regular service needed for family car - oil change, filters, basic checkup. Must be thorough.",Ndola, Kansenshi,400,Fixed,One-time,Car Owner,15/01/2025,Open
+JOB-P070,Help Organize Garage,Organizer,"Garage full of tools and storage, needs proper organization and cleaning. One full day work.",Lusaka, Makeni,300,Fixed,One-time,Mr. Tembo,14/01/2025,Open
+JOB-P071,Make Traditional Ceremony Outfit,Tailor,Need traditional outfit made for important family ceremony. Must have experience with cultural attire.,Chipata, Mchini,600,Fixed,One-time,Ceremony Participant,13/01/2025,Open
+JOB-P072,Help with Small Restaurant,Kitchen Helper,"Small restaurant needs extra help during lunch rush (11 AM - 2 PM). Washing dishes, basic food prep.",Livingstone, Town Centre,1200,Monthly,Ongoing,Restaurant Owner,16/01/2025,Open
+JOB-P073,Fix Water Pump,Plumber,Borehole water pump not working properly. Need someone who understands water systems and pumps.,Lusaka, Chawama,550,Fixed,One-time,Home Owner,15/01/2025,Open
+JOB-P074,Math Tutor for University Student,Tutor,First year university student struggling with calculus. Need patient tutor for 2 sessions per week.,Kitwe, Parklands,600,Monthly,Short-term,University Student,14/01/2025,Open
+JOB-P075,Clean Office Space,Cleaner,"Small office needs thorough cleaning after renovation. Dust, construction debris, window cleaning.",Ndola, Northrise,400,Fixed,One-time,Office Manager,13/01/2025,Open
+JOB-P076,Drive for Errands,Driver,"Need driver for various errands around town - bank, shopping, meetings. Flexible hours, 2-3 times per week.",Lusaka, Rhodes Park,1000,Monthly,Ongoing,Busy Professional,16/01/2025,Open
+JOB-P077,Make Snacks for Small Business,Cook,"Starting small snack business, need help making samosas, spring rolls, and meat pies for first week.",Lusaka, Kamwala,800,Fixed,Short-term,Aspiring Entrepreneur,15/01/2025,Open
+JOB-P078,Babysitter for Sick Child,Childcare,"Child home sick from school, need someone to watch while I go to work. Must be caring and responsible.",Kabwe, New Town,150,Daily,Short-term,Worried Parent,14/01/2025,Open
+JOB-P079,Fix Garden Fence,Handyman,"Garden fence broken in several places, needs repair and reinforcement. About 10 meters total.",Lusaka, Chilenje,280,Fixed,One-time,Garden Owner,13/01/2025,Open
+JOB-P080,Phone Software Update,Technician,"Old smartphone running slow, need software update and optimization. Must know Android systems well.",Ndola, Twapia,120,Fixed,One-time,Phone User,16/01/2025,Open
+JOB-P081,Help with Inventory Counting,Shop Assistant,"Small shop needs help counting stock for monthly inventory. One full day, must be good with numbers.",Lusaka, Soweto Market,200,Daily,One-time,Shop Owner,15/01/2025,Open
+JOB-P082,Make Cultural Dance Costumes,Tailor,Need 5 traditional dance costumes made for cultural festival. Must have experience with performance outfits.,Chipata, Kapata,900,Fixed,One-time,Cultural Group,14/01/2025,Open
+JOB-P083,Car Wash Weekly Service,Car Cleaner,"Want regular car wash every Saturday morning. Basic wash and interior clean, at my home.",Kitwe, Wusakile,400,Monthly,Ongoing,Car Owner,13/01/2025,Open
+JOB-P084,Help with Party Setup,Event Helper,"Big family party, need help setting up chairs, tables, and decorations. 4 hours work on Saturday morning.",Livingstone, Libuyu,180,Fixed,One-time,Party Host,16/01/2025,Open
+JOB-P085,Fix Leaking Pipe Under Sink,Plumber,"Pipe under kitchen sink leaking, causing water damage. Need urgent repair today.",Lusaka, Emmasdale,220,Fixed,One-time,Home Owner,15/01/2025,Open
+JOB-P086,Make Birthday Cards,Arts and Crafts,Need 30 handmade birthday cards for office colleagues. Simple but elegant designs.,Ndola, Masala,300,Fixed,One-time,Office Admin,14/01/2025,Open
+JOB-P087,Help with Online Shopping,IT Helper,"Not good with computers, need help setting up online shopping account and making first purchase.",Lusaka, Northmead,150,Fixed,One-time,Senior Citizen,13/01/2025,Open
+JOB-P088,Babysitter for Twins,Childcare,"Twin babies, need extra help during busy mornings (8 AM - 12 PM). Must have experience with multiples.",Kabwe, Makululu,1000,Monthly,Ongoing,Twin Parents,16/01/2025,Open
+JOB-P089,Fix Broken Chair,Handyman,"Two dining chairs broken, need repair or reinforcement. Simple woodworking job.",Lusaka, Matero,100,Fixed,One-time,Family Home,15/01/2025,Open
+JOB-P090,Make Traditional Snacks,Cook,Need large quantity of traditional snacks for funeral gathering. Vitumbua and mandazi for 100 people.,Chipata, Mchini,750,Fixed,One-time,Family Representative,14/01/2025,Open
+JOB-P091,Help with Garden Harvest,Gardener,"Vegetable garden ready for harvest, need help picking and sorting produce. One morning work.",Lusaka, Chongwe,180,Fixed,One-time,Gardener,13/01/2025,Open
+JOB-P092,Car Battery Replacement,Mechanic,"Car battery dead, need replacement and proper installation. Must bring good quality battery.",Ndola, Itawa,450,Fixed,One-time,Stranded Driver,16/01/2025,Open
+JOB-P093,Help with Tax Return,Accountant,Small business owner needs help with simple tax return filing. Basic records organization.,Lusaka, Town Centre,400,Fixed,One-time,Small Business,15/01/2025,Open
+JOB-P094,Make Flower Arrangements,Florist,Need beautiful flower arrangements for wedding ceremony. Must have experience with fresh flowers.,Kitwe, Nkana East,600,Fixed,One-time,Wedding Planner,14/01/2025,Open
+JOB-P095,Babysitter for Evening Classes,Childcare,"Taking evening classes, need someone to watch my 6-year-old from 6-9 PM twice a week.",Lusaka, Kalundu,500,Monthly,Ongoing,Student Parent,13/01/2025,Open
+JOB-P096,Fix TV Remote,Technician,"TV remote not working properly, probably needs new batteries or repair. Simple fix for someone who knows electronics.",Ndola, Kansenshi,80,Fixed,One-time,TV Watcher,16/01/2025,Open
+JOB-P097,Help with Laundry,Household Helper,"Large family, need help with washing and ironing clothes twice a week. Must be careful with fabrics.",Lusaka, Woodlands,600,Monthly,Ongoing,Large Family,15/01/2025,Open
+JOB-P098,Make Cultural Jewelry,Arts and Crafts,"Need traditional jewelry made for cultural event. Beads and local materials, traditional designs.",Chipata, Kapata,350,Fixed,One-time,Cultural Leader,14/01/2025,Open
+JOB-P099,Car Interior Repair,Car Cleaner,"Car seats torn, need repair or covering. Must have experience with car upholstery.",Livingstone, Dambwa,300,Fixed,One-time,Car Owner,13/01/2025,Open
+JOB-P100,Help with Computer Problems,IT Helper,Computer running very slow and crashing often. Need someone to diagnose and fix the issues.,Lusaka, Longacres,200,Fixed,One-time,Frustrated User,16/01/2025,Open
+JOB-P101,Help Harvest Maize,Farm Helper,"Maize field ready for harvest, need strong helpers for 3 days. Early morning starts, bring your own gloves.",Mumbwa, Central Province,400,Daily,Short-term,Farmer Banda,16/01/2025,Open
+JOB-P102,Traditional Birth Attendant,Midwife,Expecting mother seeking traditional birth attendant for home delivery next month. Must have experience and references.,Senanga, Western Province,800,Fixed,One-time,Expectant Mother,15/01/2025,Open
+JOB-P103,Fix Fishing Nets,Fisherman,"Several fishing nets torn, need skilled person to repair properly. Must know net weaving techniques.",Mpulungu, Northern Province,300,Fixed,One-time,Fisherman,14/01/2025,Open
+JOB-P104,Make Clay Pots,Potter,Need 20 traditional clay pots for cultural ceremony. Must use local clay and traditional methods.,Choma, Southern Province,600,Fixed,One-time,Cultural Leader,13/01/2025,Open
+JOB-P105,Help with Tobacco Harvest,Farm Worker,"Tobacco ready for picking, need careful hands to harvest without damaging leaves. 5 days work.",Mkushi, Central Province,1200,Weekly,Short-term,Tobacco Farmer,16/01/2025,Open
+JOB-P106,Boat Transport, Boat Operator,Need reliable boat operator to transport goods across Lake Bangweulu twice weekly.,Samfya, Luapula Province,1000,Monthly,Ongoing,Trader,15/01/2025,Open
+JOB-P107,Make Reed Mats,Weaver,"Need traditional reed mats for guest house. About 10 mats needed, must be well-made.",Mongu, Western Province,450,Fixed,One-time,Guest House Owner,14/01/2025,Open
+JOB-P108,Help with Cotton Picking,Farm Worker,"Cotton field needs picking, pay per kilogram picked. Good opportunity for hard workers.",Kaoma, Western Province,0.5,Per kg,Short-term,Cotton Farmer,13/01/2025,Open
+JOB-P109,Fix Bicycle Taxi,Mechanic,"Bicycle taxi needs urgent repairs - brakes, chain, and seat. My livelihood depends on it.",Kasama, Northern Province,180,Fixed,One-time,Boda Boda Rider,16/01/2025,Open
+JOB-P110,Traditional Dance Performance,Performer,"Cultural event needs traditional dance group performance. 2 hours show, must be authentic.",Solwezi, North-Western,800,Fixed,One-time,Event Organizer,15/01/2025,Open
+JOB-P111,Help with Groundnut Harvest,Farm Worker,"Groundnuts ready for harvest, need help digging and sorting. 4 days work.",Mansa, Luapula Province,350,Daily,Short-term,Farm Family,14/01/2025,Open
+JOB-P112,Make Local Brew,Brewer,"Need traditional beer for community meeting. Large quantity, must be ready in 3 days.",Kawambwa, Luapula Province,550,Fixed,One-time,Community Leader,13/01/2025,Open
+JOB-P113,Fix Thatched Roof,Thatcher,"Roof leaking, need traditional thatching repair. Must have experience with grass roofing.",Mbala, Northern Province,400,Fixed,One-time,Home Owner,16/01/2025,Open
+JOB-P114,Help Carry Water,Water Carrier,Elderly woman needs help carrying water from borehole daily. Short distance but regular help needed.,Kapiri Mposhi, Central Province,300,Weekly,Ongoing,Elderly Lady,15/01/2025,Open
+JOB-P115,Make Wooden Stools,Carpenter,"Need 15 wooden stools for community hall. Simple design, must be sturdy.",Nakonde, Muchinga Province,600,Fixed,One-time,Community Hall,14/01/2025,Open
+JOB-P116,Traditional Healer Consultation,Healer,Family needs consultation with traditional healer for persistent issues. Must be genuine.,Mufumbwe, North-Western,350,Fixed,One-time,Family Member,13/01/2025,Open
+JOB-P117,Help with Rice Harvest,Farm Worker,"Rice paddy ready for harvest, need experienced rice harvesters. 1 week work.",Chililabombwe, Copperbelt,450,Daily,Short-term,Rice Farmer,16/01/2025,Open
+JOB-P118,Make Fishing Traps,Fisherman,Need traditional fish traps made for river fishing. Must know local fish behavior.,Chinsali, Muchinga Province,280,Fixed,One-time,Fisherman,15/01/2025,Open
+JOB-P119,Help with Bean Harvest,Farm Worker,Bean field needs careful harvesting to avoid damage. Pay per basket filled.,Mpika, Muchinga Province,30,Per basket,Short-term,Bean Farmer,14/01/2025,Open
+JOB-P120,Traditional Storyteller,Entertainer,Children's party needs traditional storyteller. Must know local folk tales and engaging style.,Kalulushi, Copperbelt,200,Fixed,One-time,Parent,13/01/2025,Open
+JOB-P121,Help Clear Bush,Land Clearer,"New farm plot needs bush clearing. Hard work, need strong person with cutting tools.",Chilanga, Lusaka Province,400,Fixed,One-time,New Farmer,16/01/2025,Open
+JOB-P122,Make Bark Cloth,Artisan,Need traditional bark cloth made for cultural ceremony. Must know proper tree bark processing.,Mwinilunga, North-Western,500,Fixed,One-time,Cultural Group,15/01/2025,Open
+JOB-P123,Help with Sweet Potato Harvest,Farm Worker,"Sweet potatoes ready for digging, need careful hands to avoid damaging tubers.",Isoka, Muchinga Province,300,Daily,Short-term,Potato Farmer,14/01/2025,Open
+JOB-P124,Fix Hand Pump,Mechanic,"Community hand pump not working, need someone who understands borehole pumps.",Luwingu, Northern Province,450,Fixed,One-time,Village Headman,13/01/2025,Open
+JOB-P125,Make Traditional Baskets,Weaver,"Need woven baskets for market produce. Various sizes, must be strong and durable.",Nyimba, Eastern Province,350,Fixed,One-time,Market Trader,16/01/2025,Open
+JOB-P126,Help with Chicken Farming,Poultry Helper,"Small poultry farm needs help with feeding and cleaning. 2 hours daily, early mornings.",Petauke, Eastern Province,400,Monthly,Ongoing,Poultry Farmer,15/01/2025,Open
+JOB-P127,Traditional Music Performance,Musician,Traditional ceremony needs live traditional music performance. Must have own instruments.,Kafue, Lusaka Province,600,Fixed,One-time,Ceremony Organizer,14/01/2025,Open
+JOB-P128,Help with Goat Herding,Herder,Small goat herd needs daily herding to grazing areas. Must be good with animals.,Mazabuka, Southern Province,500,Monthly,Ongoing,Goat Owner,13/01/2025,Open
+JOB-P129,Make Honey Harvesting,Beekeeper,Need help harvesting honey from traditional beehives. Must have bee suit and experience.,Mongu, Western Province,400,Fixed,One-time,Beekeeper,16/01/2025,Open
+JOB-P130,Fix Bicycle for School,Mechanic,Children's bicycles need repairs for school transport. Urgent fix needed.,Choma, Southern Province,220,Fixed,One-time,Parent,15/01/2025,Open
+JOB-P131,Help with Tomato Harvest,Farm Worker,Tomato greenhouse needs harvesting. Careful picking required to avoid bruising.,Siavonga, Southern Province,350,Daily,Short-term,Tomato Farmer,14/01/2025,Open
+JOB-P132,Make Traditional Drums,Artisan,Cultural group needs traditional drums made. Must know proper drum making techniques.,Kasempa, North-Western,700,Fixed,One-time,Cultural Group,13/01/2025,Open
+JOB-P133,Help with Fish Drying,Fish Processor,"Large catch needs immediate drying and processing. 2 days work, must know fish preservation.",Nchelenge, Luapula Province,300,Daily,Short-term,Fisherman,16/01/2025,Open
+JOB-P134,Fix Mobile Money Phone,Technician,"Mobile money phone not working, urgent fix needed for business.",Chililabombwe, Copperbelt,150,Fixed,One-time,Market Trader,15/01/2025,Open
+JOB-P135,Help with Onion Harvest,Farm Worker,"Onion field ready for harvest, need careful workers to avoid damaging bulbs.",Kabwe, Central Province,320,Daily,Short-term,Onion Farmer,14/01/2025,Open
+JOB-P136,Make Traditional Salt,Salt Maker,Need traditional salt made from local salt springs for community use.,Kaputa, Northern Province,450,Fixed,One-time,Community,13/01/2025,Open
+JOB-P137,Help with Pig Farming,Animal Care,Small pig farm needs daily feeding and pen cleaning. Must not mind working with pigs.,Mufumbwe, North-Western,600,Monthly,Ongoing,Pig Farmer,16/01/2025,Open
+JOB-P138,Fix Solar Lights,Technician,"Several solar lights not working in village, need someone who understands solar systems.",Mporokoso, Northern Province,500,Fixed,One-time,Village Committee,15/01/2025,Open
+JOB-P139,Help with Cassava Harvest,Farm Worker,"Cassava field ready for harvest, hard work digging up roots.",Mansa, Luapula Province,280,Daily,Short-term,Cassava Farmer,14/01/2025,Open
+JOB-P140,Make Traditional Medicine,Herbalist,Need specific traditional medicine prepared from local herbs. Must have knowledge.,Chinsali, Muchinga Province,300,Fixed,One-time,Patient,13/01/2025,Open
+JOB-P141,Help with Irrigation, Farm Helper,Small farm needs help setting up simple irrigation system from nearby stream.,Serenje, Central Province,400,Fixed,One-time,Small Farmer,16/01/2025,Open
+JOB-P142,Make Fishing Canoe,Carpenter,Need traditional fishing canoe made. Must know proper canoe building techniques.,Samfya, Luapula Province,1200,Fixed,One-time,Fisherman,15/01/2025,Open
+JOB-P143,Help with Sunflower Harvest,Farm Worker,"Sunflower field ready for harvest, need workers to cut and collect heads.",Mkushi, Central Province,300,Daily,Short-term,Sunflower Farmer,14/01/2025,Open
+JOB-P144,Fix Community Grinding Mill,Mechanic,"Village grinding mill broken, urgent repair needed for maize grinding.",Mungwi, Northern Province,550,Fixed,One-time,Village,13/01/2025,Open
+JOB-P145,Help with Beehive Making,Carpenter,Need help making traditional beehives for honey production. 10 hives needed.,Kalabo, Western Province,400,Fixed,One-time,Beekeeper,16/01/2025,Open
+JOB-P146,Make Palm Wine,Tapper,Need palm wine made for traditional ceremony. Must know proper palm tapping methods.,Mwinilunga, North-Western,350,Fixed,One-time,Ceremony,15/01/2025,Open
+JOB-P147,Help with Potato Harvest,Farm Worker,"Irish potatoes ready for harvest, need careful digging to avoid damage.",Isoka, Muchinga Province,320,Daily,Short-term,Potato Farmer,14/01/2025,Open
+JOB-P148,Fix Bicycle Generator,Technician,"Bicycle generator for lights not working, need electrical repair.",Nakonde, Muchinga Province,180,Fixed,One-time,Home Owner,13/01/2025,Open
+JOB-P149,Help with Millet Harvest,Farm Worker,"Millet ready for harvest, traditional harvesting methods needed.",Senanga, Western Province,280,Daily,Short-term,Millet Farmer,16/01/2025,Open
+JOB-P150,Make Traditional Jewelry,Artisan,Need traditional jewelry made for wedding ceremony. Beads and local materials.,Mongu, Western Province,450,Fixed,One-time,Bride,15/01/2025,Open
+JOB-P151,Help with Fish Farming,Aquaculture,Fish ponds need cleaning and maintenance. Must understand fish farming basics.,Chongwe, Lusaka Province,500,Monthly,Ongoing,Fish Farmer,14/01/2025,Open
+JOB-P152,Fix Community Radio,Technician,"Community radio station not working, need urgent repair for news broadcasts.",Mpika, Muchinga Province,600,Fixed,One-time,Radio Station,13/01/2025,Open
+JOB-P153,Help with Sorghum Harvest,Farm Worker,"Sorghum ready for harvest, need workers to cut and thresh grains.",Kaoma, Western Province,300,Daily,Short-term,Sorghum Farmer,16/01/2025,Open
+JOB-P154,Make Traditional Mats,Weaver,Need traditional sleeping mats made from reeds. 5 mats needed.,Shangombo, Western Province,400,Fixed,One-time,Family,15/01/2025,Open
+JOB-P155,Help with Vegetable Garden,Gardener,Community vegetable garden needs daily watering and weeding.,Kasama, Northern Province,350,Monthly,Ongoing,Community Garden,14/01/2025,Open
+JOB-P156,Fix Bicycle for Market,Mechanic,Market bicycle needs urgent repair for goods transport tomorrow.,Chililabombwe, Copperbelt,200,Fixed,One-time,Market Trader,13/01/2025,Open
+JOB-P157,Help with Groundnut Processing,Food Processor,Harvested groundnuts need shelling and sorting for market.,Mumbwa, Central Province,25,Per bag,Short-term,Farmer,16/01/2025,Open
+JOB-P158,Make Traditional Bows,Artisan,Traditional hunters need bows made. Must know proper bow making techniques.,Mufumbwe, North-Western,500,Fixed,One-time,Hunters,15/01/2025,Open
+JOB-P159,Help with Chicken Processing,Poultry,Live chickens need processing for market. Must be hygienic and efficient.,Kafue, Lusaka Province,5,Per chicken,Short-term,Poultry Farmer,14/01/2025,Open
+JOB-P160,Fix Water Collection System,Plumber,"Rainwater collection system leaking, need repair before rainy season ends.",Luwingu, Northern Province,350,Fixed,One-time,School,13/01/2025,Open
+JOB-P161,Help with Banana Harvest,Farm Worker,"Banana plantation ready for harvest, need careful handling of bunches.",Mpulungu, Northern Province,400,Daily,Short-term,Banana Farmer,16/01/2025,Open
+JOB-P162,Make Traditional Arrows,Artisan,Need traditional hunting arrows made. Must have proper arrow making skills.,Chinsali, Muchinga Province,300,Fixed,One-time,Hunter,15/01/2025,Open
+JOB-P163,Help with Maize Shelling, Farm Helper,Harvested maize needs shelling for storage and sale.,Petauke, Eastern Province,20,Per bag,Short-term,Maize Farmer,14/01/2025,Open
+JOB-P164,Fix Community Clock,Technician,"Village clock tower not working, need repair for time keeping.",Mbala, Northern Province,450,Fixed,One-time,Village,13/01/2025,Open
+JOB-P165,Help with Mango Harvest,Farm Worker,"Mango trees heavy with fruit, need help harvesting before spoilage.",Siavonga, Southern Province,280,Daily,Short-term,Mango Farmer,16/01/2025,Open
+JOB-P166,Make Fishing Nets,Weaver,Need new fishing nets made for lake fishing. Various sizes needed.,Nchelenge, Luapula Province,600,Fixed,One-time,Fishing Group,15/01/2025,Open
+JOB-P167,Help with Cattle Herding,Herder,Small cattle herd needs daily herding to grazing areas.,Kalomo, Southern Province,700,Monthly,Ongoing,Cattle Owner,14/01/2025,Open
+JOB-P168,Fix Bicycle for School Run,Mechanic,School run bicycle needs urgent repair for children's transport.,Kapiri Mposhi, Central Province,180,Fixed,One-time,Parent,13/01/2025,Open
+JOB-P169,Help with Rice Processing,Food Processor,Harvested rice needs threshing and winnowing for market.,Samfya, Luapula Province,30,Per bag,Short-term,Rice Farmer,16/01/2025,Open
+JOB-P170,Make Traditional Masks,Artisan,Cultural ceremony needs traditional masks made. Must know cultural significance.,Solwezi, North-Western,550,Fixed,One-time,Cultural Group,15/01/2025,Open
+JOB-P171,Help with Goat Milking,Animal Care,Dairy goats need daily milking and care. Early morning work.,Mongu, Western Province,400,Monthly,Ongoing,Goat Farmer,14/01/2025,Open
+JOB-P172,Fix Community Water Tap,Plumber,"Community water tap leaking badly, wasting precious water.",Mansa, Luapula Province,250,Fixed,One-time,Community,13/01/2025,Open
+JOB-P173,Help with Pineapple Harvest,Farm Worker,"Pineapple field ready for harvest, need careful picking.",Chongwe, Lusaka Province,350,Daily,Short-term,Pineapple Farmer,16/01/2025,Open
+JOB-P174,Make Traditional Baskets,Weaver,Need market baskets made for vegetable selling. Must be strong.,Kawambwa, Luapula Province,280,Fixed,One-time,Market Trader,15/01/2025,Open
+JOB-P175,Help with Donkey Care,Animal Care,Donkeys need daily feeding and basic care for transport work.,Kalulushi, Copperbelt,450,Monthly,Ongoing,Donkey Owner,14/01/2025,Open
+JOB-P176,Fix Bicycle for Delivery,Mechanic,Delivery bicycle needs repair for small business operations.,Ndola, Copperbelt,220,Fixed,One-time,Small Business,13/01/2025,Open
+JOB-P177,Help with Bean Sorting,Food Processor,Harvested beans need sorting and cleaning for market sale.,Mkushi, Central Province,25,Per bag,Short-term,Bean Farmer,16/01/2025,Open
+JOB-P178,Make Traditional Flutes,Artisan,Traditional musicians need flutes made. Must know proper flute making.,Kasempa, North-Western,300,Fixed,One-time,Musicians,15/01/2025,Open
+JOB-P179,Help with Sheep Shearing,Animal Care,Sheep need shearing for wool. Must be gentle with animals.,Choma, Southern Province,15,Per sheep,Short-term,Sheep Farmer,14/01/2025,Open
+JOB-P180,Fix Community Notice Board,Carpenter,"Village notice board broken, need repair for community announcements.",Mungwi, Northern Province,200,Fixed,One-time,Village,13/01/2025,Open
+JOB-P181,Help with Papaya Harvest,Farm Worker,"Papaya trees heavy with fruit, need careful harvesting.",Mazabuka, Southern Province,300,Daily,Short-term,Papaya Farmer,16/01/2025,Open
+JOB-P182,Make Traditional Ropes,Weaver,Need strong traditional ropes made for various uses.,Nyimba, Eastern Province,180,Fixed,One-time,Community,15/01/2025,Open
+JOB-P183,Help with Rabbit Farming,Animal Care,Rabbit farm needs daily feeding and cage cleaning.,Kafue, Lusaka Province,400,Monthly,Ongoing,Rabbit Farmer,14/01/2025,Open
+JOB-P184,Fix Bicycle for Farming,Mechanic,Farm bicycle needs repair for transporting tools and produce.,Serenje, Central Province,250,Fixed,One-time,Farmer,13/01/2025,Open
+JOB-P185,Help with Seed Sorting, Farm Helper,Seeds need sorting and packaging for next planting season.,Isoka, Muchinga Province,280,Daily,Short-term,Seed Company,16/01/2025,Open
+JOB-P186,Make Traditional Drums,Artisan,Traditional drummers need new drums for performances.,Mwinilunga, North-Western,650,Fixed,One-time,Drummers,15/01/2025,Open
+JOB-P187,Help with Duck Farming,Animal Care,Ducks need daily care and egg collection.,Siavonga, Southern Province,350,Monthly,Ongoing,Duck Farmer,14/01/2025,Open
+JOB-P188,Fix Community Library,Handyman,Community library needs minor repairs to shelves and furniture.,Kasama, Northern Province,300,Fixed,One-time,Library,13/01/2025,Open
+JOB-P189,Help with Guava Harvest,Farm Worker,"Guava trees full of fruit, need harvesting before birds eat them.",Chilanga, Lusaka Province,250,Daily,Short-term,Guava Farmer,16/01/2025,Open
+JOB-P190,Make Traditional Hats,Weaver,Need traditional hats made for cultural event.,Senanga, Western Province,320,Fixed,One-time,Event Organizer,15/01/2025,Open
+JOB-P191,Help with Turkey Farming,Animal Care,Turkeys need daily feeding and care.,Mumbwa, Central Province,500,Monthly,Ongoing,Turkey Farmer,14/01/2025,Open
+JOB-P192,Fix Bicycle for Commute,Mechanic,Commute bicycle needs repair for work transport.,Kapiri Mposhi, Central Province,180,Fixed,One-time,Worker,13/01/2025,Open
+JOB-P193,Help with Nut Sorting,Food Processor,Harvested nuts need sorting and packaging.,Kalomo, Southern Province,30,Per bag,Short-term,Nut Farmer,16/01/2025,Open
+JOB-P194,Make Traditional Shields,Artisan,Traditional dancers need shields made for performance.,Mongu, Western Province,550,Fixed,One-time,Dance Group,15/01/2025,Open
+JOB-P195,Help with Quail Farming,Animal Care,Quails need daily care and egg collection.,Chongwe, Lusaka Province,400,Monthly,Ongoing,Quail Farmer,14/01/2025,Open
+JOB-P196,Fix Community Church,Handyman,Small community church needs minor repairs.,Mpika, Muchinga Province,450,Fixed,One-time,Church,13/01/2025,Open
+JOB-P197,Help with Lemon Harvest,Farm Worker,"Lemon trees ready for harvest, need careful picking.",Kabwe, Central Province,300,Daily,Short-term,Lemon Farmer,16/01/2025,Open
+JOB-P198,Make Traditional Bags,Weaver,Need traditional bags made for market use.,Petauke, Eastern Province,280,Fixed,One-time,Market Women,15/01/2025,Open
+JOB-P199,Help with Guinea Fowl,Animal Care,Guinea fowl need daily care and feeding.,Mkushi, Central Province,350,Monthly,Ongoing,Farmer,14/01/2025,Open
+JOB-P200,Fix Bicycle for Errands,Mechanic,Family bicycle needs repair for daily errands.,Ndola, Copperbelt,200,Fixed,One-time,Family,13/01/2025,Open
+JOB-P201,School Pickup Driver,Driver,Need reliable driver to pick up children from school at 1 PM daily. Must have good car and clean record.,Lusaka, Olympia,1000,Monthly,Ongoing,Working Mom,16/01/2025,Open
+JOB-P202,Weekend Cook for Family,Cook,Looking for someone to cook Sunday lunch for family of 6. Traditional Zambian meals preferred.,Kitwe, Parklands,400,Weekly,Ongoing,Family Mwila,15/01/2025,Open
+JOB-P203,Fix Blocked Drain,Plumber,"Kitchen drain completely blocked, water not flowing. Need urgent help today.",Ndola, Ndeke,250,Fixed,One-time,Home Owner,14/01/2025,Open
+JOB-P204,Babysitter for Toddler,Childcare,Need caring person to watch my 2-year-old son during work hours. Must be patient and experienced.,Livingstone, Dambwa,800,Monthly,Ongoing,Single Father,13/01/2025,Open
+JOB-P205,Help Move Small Apartment,Mover,Moving from 1-bedroom flat to new place. Need help with furniture and boxes this Saturday.,Lusaka, Northmead,500,Fixed,One-time,Tenant,16/01/2025,Open
+JOB-P206,Hair Braiding for Event,Hairstylist,Need intricate braiding done for wedding this weekend. Must be neat and timely.,Kabwe, Makululu,350,Fixed,One-time,Bride,15/01/2025,Open
+JOB-P207,Math Tutor for Grade 7,Tutor,Daughter struggling with mathematics. Need patient tutor twice weekly after school.,Chipata, Mchini,600,Monthly,Short-term,Concerned Parent,14/01/2025,Open
+JOB-P208,Garden Weeding,Gardener,Small garden completely overgrown with weeds. Need someone to clear it this weekend.,Lusaka, Kabulonga,300,Fixed,One-time,Garden Owner,13/01/2025,Open
+JOB-P209,Market Stall Helper,Sales Assistant,Help needed at my vegetable stall Saturday mornings. Must be honest and good with customers.,Kitwe, Wusakile,150,Weekly,Ongoing,Market Trader,16/01/2025,Open
+JOB-P210,Paint Bedroom,Painter,"Small bedroom needs fresh paint. I provide materials, need someone with experience.",Ndola, Masala,450,Fixed,One-time,Renter,15/01/2025,Open
+JOB-P211,Car Interior Cleaning,Car Cleaner,Car interior very dirty from kids and work. Need thorough cleaning and vacuuming.,Lusaka, Chilenje,200,Fixed,One-time,Family Man,14/01/2025,Open
+JOB-P212,Party Serving Helper,Event Staff,Need extra hands to serve food at birthday party this Saturday. 4 hours work.,Livingstone, Maramba,180,Fixed,One-time,Party Host,13/01/2025,Open
+JOB-P213,Dress Alterations,Tailor,Three dresses need taking in at waist. Must have sewing machine and good skills.,Lusaka, Kamwala,280,Fixed,One-time,Office Worker,16/01/2025,Open
+JOB-P214,Daycare Assistant,Childcare,Home daycare needs helper during busy morning hours. Must love children.,Kabwe, New Town,700,Monthly,Ongoing,Daycare Owner,15/01/2025,Open
+JOB-P215,Phone Screen Repair,Technician,"iPhone screen cracked, need quality replacement. Must use genuine parts.",Lusaka, Town Centre,400,Fixed,One-time,Student,14/01/2025,Open
+JOB-P216,English Tutor for Adult,Language Tutor,Improve my business English for work. Twice weekly evening lessons.,Ndola, Northrise,500,Monthly,Ongoing,Professional,13/01/2025,Open
+JOB-P217,Deep House Cleaning,Cleaner,"Complete house cleaning after renovation. Very dusty, need thorough job.",Kitwe, Buchi,400,Fixed,One-time,Home Owner,16/01/2025,Open
+JOB-P218,Design Business Cards,Designer,Need simple business cards designed and printed for small business.,Lusaka, Longacres,350,Fixed,One-time,Entrepreneur,15/01/2025,Open
+JOB-P219,Grocery Shopping Help,Elderly Care,Elderly mother needs help with weekly shopping and carrying bags.,Chipata, Kapata,200,Weekly,Ongoing,Daughter,14/01/2025,Open
+JOB-P220,Photographer for Event,Photographer,"Small family gathering needs photographer for 2 hours. Natural, candid shots preferred.",Lusaka, Kalundu,600,Fixed,One-time,Family,13/01/2025,Open
+JOB-P221,Fix Broken Window,Handyman,Window pane broken from storm last night. Need urgent replacement.,Ndola, Kansenshi,320,Fixed,One-time,Home Owner,16/01/2025,Open
+JOB-P222,Make Chapattis for Party,Cook,Need 60 soft chapattis made for family gathering this weekend.,Kitwe, Chimwemwe,450,Fixed,One-time,Party Planner,15/01/2025,Open
+JOB-P223,After-school Care,Childcare,Two primary children need supervision from 3-6 PM weekdays. Help with homework and snacks.,Lusaka, Rhodes Park,900,Monthly,Ongoing,Parents,14/01/2025,Open
+JOB-P224,Assemble Furniture,Handyman,New bookshelf and desk need assembly. Must have tools and experience.,Livingstone, Libuyu,250,Fixed,One-time,New Home Owner,13/01/2025,Open
+JOB-P225,Traditional Healer,Healer,Family consultation needed for traditional healing. Must be recommended.,Kabwe, Makululu,400,Fixed,One-time,Family,16/01/2025,Open
+JOB-P226,Car Service,Mechanic,"Regular service needed for family car. Oil change, filter replacement, basic checkup.",Lusaka, Woodlands,350,Fixed,One-time,Car Owner,15/01/2025,Open
+JOB-P227,Office Organization,Organizer,"Small home office needs complete organization. Files, supplies, books.",Ndola, Itawa,300,Fixed,One-time,Professional,14/01/2025,Open
+JOB-P228,Make Wedding Cake,Baker,Small wedding cake needed for 30 people. Simple design with fresh flowers.,Kitwe, Nkana East,550,Fixed,One-time,Couple,13/01/2025,Open
+JOB-P229,Dog Walking,Pet Care,Our Labrador needs daily walks in evening. About 45 minutes each time.,Lusaka, Makeni,600,Monthly,Ongoing,Pet Owners,16/01/2025,Open
+JOB-P230,TV Mounting,Handyman,New TV needs secure wall mounting. Must hide cables properly.,Chipata, Mchini,200,Fixed,One-time,Home Owner,15/01/2025,Open
+JOB-P231,Urgent Toilet Fix,Plumber,"Toilet not flushing properly, need immediate attention.",Lusaka, Chawama,180,Fixed,One-time,Tenant,14/01/2025,Open
+JOB-P232,Market Research Helper,Research Assistant,Help conduct small market survey in local area. 2 days work.,Ndola, Twapia,400,Fixed,Short-term,Business Owner,13/01/2025,Open
+JOB-P233,Braid Children's Hair,Hairstylist,Two daughters need hair braiding for school reopening. Simple styles.,Kitwe, Riverside,240,Fixed,One-time,Mother,16/01/2025,Open
+JOB-P234,Science Tutor,Tutor,Grade 10 student needs help with physics and chemistry. Saturday mornings.,Livingstone, Dambwa,450,Monthly,Short-term,Parent,15/01/2025,Open
+JOB-P235,Yard Cleanup,Gardener,Backyard full of leaves and debris from storm. Need clearing this weekend.,Lusaka, Emmasdale,220,Fixed,One-time,Home Owner,14/01/2025,Open
+JOB-P236,Drive to Hospital,Driver,Regular trips needed to hospital for medical treatments. Tuesday and Thursday mornings.,Kabwe, New Town,800,Monthly,Ongoing,Patient,13/01/2025,Open
+JOB-P237,Make Samosas for Business,Cook,"Starting small business, need help making 100 samosas for first day.",Lusaka, Northmead,500,Fixed,One-time,Entrepreneur,16/01/2025,Open
+JOB-P238,Babysitter for Infant,Childcare,Newborn needs care while mother runs errands. 3 hours twice weekly.,Ndola, Masala,400,Weekly,Ongoing,New Mother,15/01/2025,Open
+JOB-P239,Fix Leaking Roof,Handyman,Small roof leak in kitchen when it rains. Need temporary patch.,Kitwe, Parklands,280,Fixed,One-time,Home Owner,14/01/2025,Open
+JOB-P240,Phone Software Help,Technician,"Smartphone running slow, need optimization and software update.",Lusaka, Town Centre,150,Fixed,One-time,User,13/01/2025,Open
+JOB-P241,Help Pack for Travel,Organizer,"Going on long trip, need help packing and organizing luggage.",Livingstone, Maramba,200,Fixed,One-time,Traveler,16/01/2025,Open
+JOB-P242,Traditional Dance Lessons,Arts Teacher,Learn traditional dances for cultural event. 5 sessions needed.,Chipata, Kapata,350,Fixed,Short-term,Learner,15/01/2025,Open
+JOB-P243,Plant Watering,Gardener,"Away for 10 days, need someone to water plants daily.",Lusaka, Kabulonga,250,Fixed,Short-term,Plant Owner,14/01/2025,Open
+JOB-P244,Car Detailing,Car Cleaner,Car needs complete interior and exterior detailing for special event.,Ndola, Kansenshi,300,Fixed,One-time,Car Owner,13/01/2025,Open
+JOB-P245,Computer Setup Help,IT Helper,"New computer needs setup - software installation, internet connection.",Kitwe, Buchi,180,Fixed,One-time,New User,16/01/2025,Open
+JOB-P246,Bake Birthday Cake,Baker,"Daughter's 8th birthday, need cake for 20 children. Princess theme.",Lusaka, Kalundu,400,Fixed,One-time,Parent,15/01/2025,Open
+JOB-P247,English Conversation Practice,Language Tutor,Practice English conversation for job interviews. Twice weekly.,Kabwe, Makululu,300,Monthly,Ongoing,Job Seeker,14/01/2025,Open
+JOB-P248,Pet Sitting,Pet Care,"Going away for weekend, need someone to feed and watch our cat.",Livingstone, Libuyu,150,Fixed,One-time,Pet Owner,13/01/2025,Open
+JOB-P249,Sew Curtains,Tailor,"Need new curtains made for living room. Simple design, 3 windows.",Lusaka, Woodlands,450,Fixed,One-time,Home Owner,16/01/2025,Open
+JOB-P250,Shop Assistant,Sales Assistant,Small shop needs extra help during lunch hours. Stocking and customer service.,Ndola, Northrise,800,Monthly,Ongoing,Shop Owner,15/01/2025,Open
+JOB-P251,Fix Electric Problem,Technician,"Lights flickering in house, need electrical inspection and repair.",Kitwe, Nkana East,350,Fixed,One-time,Home Owner,14/01/2025,Open
+JOB-P252,Make Traditional Beer,Brewer,Traditional beer needed for family ceremony. Medium quantity.,Chipata, Mchini,300,Fixed,One-time,Family,13/01/2025,Open
+JOB-P253,Sports Coach for Kids,Sports Coach,Children's football coaching needed Saturday mornings. Basic skills training.,Lusaka, Rhodes Park,500,Monthly,Ongoing,Parents Group,16/01/2025,Open
+JOB-P254,Window Cleaning,Cleaner,All house windows need cleaning inside and out. Two-story building.,Livingstone, Dambwa,280,Fixed,One-time,Home Owner,15/01/2025,Open
+JOB-P255,Drive to Activities,Driver,Children need transport to various activities after school. Flexible schedule.,Kabwe, New Town,1000,Monthly,Ongoing,Busy Parents,14/01/2025,Open
+JOB-P256,Help with Farm Animals,Animal Care,Small farm needs help feeding chickens and cleaning pens daily.,Chongwe, Farm Area,400,Monthly,Ongoing,Farm Owner,13/01/2025,Open
+JOB-P257,Make Party Decorations,Arts and Crafts,"Birthday party needs handmade decorations - banners, centerpieces.",Lusaka, Makeni,220,Fixed,One-time,Party Planner,16/01/2025,Open
+JOB-P258,Smartphone Lessons,Elderly Care,Elderly father needs help learning smartphone basics.,Ndola, Twapia,120,Fixed,One-time,Son,15/01/2025,Open
+JOB-P259,Bicycle Repair,Mechanic,Two children's bicycles need repairs - brakes and tires.,Kitwe, Wusakile,200,Fixed,One-time,Parent,14/01/2025,Open
+JOB-P260,Music Lessons,Music Teacher,"Piano lessons needed for beginner. Once weekly, patient teacher preferred.",Lusaka, Olympia,600,Monthly,Ongoing,Student,13/01/2025,Open
+JOB-P261,Urgent Document Typing,Secretarial,Handwritten notes need typing into computer. Good speed and accuracy required.,Livingstone, Maramba,250,Fixed,One-time,Professional,16/01/2025,Open
+JOB-P262,Traditional Medicine Preparation,Healer,Specific traditional medicine needed for family member.,Chipata, Kapata,280,Fixed,One-time,Family,15/01/2025,Open
+JOB-P263,Car Upholstery Cleaning,Car Cleaner,"Car seats stained, need deep cleaning and odor removal.",Lusaka, Chilenje,180,Fixed,One-time,Car Owner,14/01/2025,Open
+JOB-P264,Homework Help,Childcare,Primary children need homework supervision after school. Guidance not teaching.,Ndola, Itawa,650,Monthly,Ongoing,Parents,13/01/2025,Open
+JOB-P265,Fix Cabinet Doors,Handyman,"Kitchen cabinet doors loose, need re-hanging and adjustment.",Kitwe, Chimwemwe,120,Fixed,One-time,Home Owner,16/01/2025,Open
+JOB-P266,Design Wedding Invitations,Designer,Wedding invitations needed - design and print 80 copies.,Lusaka, Longacres,400,Fixed,One-time,Couple,15/01/2025,Open
+JOB-P267,Construction Helper,Construction,"Small room construction, need help mixing cement and carrying materials.",Kabwe, Makululu,150,Daily,Short-term,Builder,14/01/2025,Open
+JOB-P268,Date Night Babysitter,Childcare,Regular babysitter needed for Friday date nights. 7 PM to midnight.,Livingstone, Libuyu,200,Weekly,Ongoing,Couple,13/01/2025,Open
+JOB-P269,Car Maintenance,Mechanic,"Regular car service needed - oil, filters, basic mechanical check.",Lusaka, Woodlands,320,Fixed,One-time,Vehicle Owner,16/01/2025,Open
+JOB-P270,Garage Organization,Organizer,"Garage full of tools and storage, needs proper organization.",Ndola, Masala,250,Fixed,One-time,Home Owner,15/01/2025,Open
+JOB-P271,Make Cultural Outfit,Tailor,Traditional outfit needed for important ceremony. Must be authentic.,Chipata, Mchini,500,Fixed,One-time,Participant,14/01/2025,Open
+JOB-P272,Restaurant Helper,Kitchen Helper,Small restaurant needs extra help during busy lunch service.,Kitwe, Parklands,1000,Monthly,Ongoing,Restaurant,13/01/2025,Open
+JOB-P273,Fix Water Pump,Plumber,"Borehole pump not working properly, need urgent repair.",Lusaka, Chawama,450,Fixed,One-time,Home Owner,16/01/2025,Open
+JOB-P274,University Math Tutor,Tutor,First year university student needs calculus help. Twice weekly.,Livingstone, Dambwa,550,Monthly,Short-term,Student,15/01/2025,Open
+JOB-P275,Post-Renovation Cleaning,Cleaner,Office space needs thorough cleaning after construction work.,Ndola, Northrise,350,Fixed,One-time,Office Manager,14/01/2025,Open
+JOB-P276,Personal Driver,Driver,Need driver for various errands around city. Flexible schedule.,Lusaka, Kabulonga,1200,Monthly,Ongoing,Busy Executive,13/01/2025,Open
+JOB-P277,Make Business Snacks,Cook,"Starting snack business, need help with initial production.",Kabwe, New Town,600,Fixed,Short-term,Entrepreneur,16/01/2025,Open
+JOB-P278,Sick Child Care,Childcare,"Child home sick from school, need caring supervision.",Kitwe, Riverside,180,Daily,Short-term,Parent,15/01/2025,Open
+JOB-P279,Fix Garden Fence,Handyman,"Garden fence broken in multiple places, needs repair.",Lusaka, Emmasdale,200,Fixed,One-time,Garden Owner,14/01/2025,Open
+JOB-P280,Phone Optimization,Technician,Old smartphone needs performance optimization and cleaning.,Ndola, Kansenshi,100,Fixed,One-time,User,13/01/2025,Open
+JOB-P281,Inventory Help,Shop Assistant,Small shop needs help with monthly stock counting.,Livingstone, Town Centre,180,Daily,One-time,Shop Owner,16/01/2025,Open
+JOB-P282,Make Dance Costumes,Tailor,Traditional dance costumes needed for cultural festival.,Chipata, Kapata,750,Fixed,One-time,Dance Group,15/01/2025,Open
+JOB-P283,Weekly Car Wash,Car Cleaner,Regular car wash service needed every Saturday morning.,Lusaka, Northmead,350,Monthly,Ongoing,Car Owner,14/01/2025,Open
+JOB-P284,Party Setup Helper,Event Staff,"Big family event, need help with setup and arrangements.",Kitwe, Buchi,150,Fixed,One-time,Event Host,13/01/2025,Open
+JOB-P285,Urgent Pipe Repair,Plumber,"Pipe under sink leaking badly, causing water damage.",Ndola, Ndeke,180,Fixed,One-time,Home Owner,16/01/2025,Open
+JOB-P286,Make Greeting Cards,Arts and Crafts,Handmade greeting cards needed for office colleagues.,Livingstone, Maramba,220,Fixed,One-time,Office,15/01/2025,Open
+JOB-P287,Online Shopping Help,IT Helper,Help needed with online shopping setup and first purchase.,Lusaka, Kalundu,120,Fixed,One-time,Senior,14/01/2025,Open
+JOB-P288,Twin Babies Care,Childcare,Twin infants need extra help during busy mornings.,Kabwe, Makululu,900,Monthly,Ongoing,Parents,13/01/2025,Open
+JOB-P289,Fix Dining Chairs,Handyman,"Two dining chairs broken, need repair or reinforcement.",Chipata, Mchini,80,Fixed,One-time,Home Owner,16/01/2025,Open
+JOB-P290,Make Funeral Snacks,Cook,Traditional snacks needed for funeral gathering. Large quantity.,Kitwe, Nkana East,600,Fixed,One-time,Family,15/01/2025,Open
+JOB-P291,Garden Harvest Help,Gardener,"Vegetable garden ready for harvest, need help picking.",Lusaka, Chongwe,150,Fixed,One-time,Gardener,14/01/2025,Open
+JOB-P292,Car Battery Service,Mechanic,Car battery needs replacement and proper installation.,Ndola, Twapia,400,Fixed,One-time,Driver,13/01/2025,Open
+JOB-P293,Basic Accounting Help,Accountant,Small business needs help with simple bookkeeping.,Livingstone, Dambwa,300,Fixed,One-time,Business Owner,16/01/2025,Open
+JOB-P294,Make Flower Arrangements,Florist,Beautiful flower arrangements needed for wedding ceremony.,Lusaka, Rhodes Park,500,Fixed,One-time,Wedding,15/01/2025,Open
+JOB-P295,Evening Babysitter,Childcare,"Evening classes, need babysitter for 6-year-old twice weekly.",Kabwe, New Town,450,Monthly,Ongoing,Student Parent,14/01/2025,Open
+JOB-P296,Fix TV Equipment,Technician,TV and related equipment not working properly.,Ndola, Itawa,100,Fixed,One-time,Home Owner,13/01/2025,Open
+JOB-P297,Laundry Help,Household Helper,Large family needs help with washing and ironing clothes.,Kitwe, Parklands,550,Monthly,Ongoing,Family,16/01/2025,Open
+JOB-P298,Make Cultural Jewelry,Arts and Crafts,Traditional jewelry needed for cultural event.,Chipata, Kapata,300,Fixed,One-time,Participant,15/01/2025,Open
+JOB-P299,Car Seat Repair,Car Cleaner,"Car seats torn, need repair or covering.",Livingstone, Libuyu,250,Fixed,One-time,Car Owner,14/01/2025,Open
+JOB-P300,Computer Repair,IT Helper,"Computer running slow and crashing, need diagnosis and fix.",Lusaka, Makeni,180,Fixed,One-time,User,13/01/2025,Open
+JOB-P301,Help with Maize Harvest,Farm Helper,"Maize field ready for harvesting, need strong workers for 4 days.",Mumbwa, Central Province,350,Daily,Short-term,Farmer,16/01/2025,Open
+JOB-P302,Traditional Birth Assistance,Midwife,Expecting mother needs traditional birth attendant for home delivery.,Senanga, Western Province,700,Fixed,One-time,Mother,15/01/2025,Open
+JOB-P303,Fix Fishing Equipment,Fisherman,Fishing nets and traps need repair before fishing season.,Mpulungu, Northern Province,280,Fixed,One-time,Fisherman,14/01/2025,Open
+JOB-P304,Make Cooking Pots,Potter,Traditional clay pots needed for household use.,Choma, Southern Province,450,Fixed,One-time,Household,13/01/2025,Open
+JOB-P305,Tobacco Harvest Help,Farm Worker,Tobacco leaves ready for careful harvesting.,Mkushi, Central Province,1000,Weekly,Short-term,Farmer,16/01/2025,Open
+JOB-P306,Boat Transport Service,Boat Operator,Regular boat transport needed across lake for goods and people.,Samfya, Luapula Province,900,Monthly,Ongoing,Trader,15/01/2025,Open
+JOB-P307,Weave Sleeping Mats,Weaver,Traditional reed mats needed for family use.,Mongu, Western Province,380,Fixed,One-time,Family,14/01/2025,Open
+JOB-P308,Cotton Picking,Farm Worker,"Cotton field ready for picking, pay per kilogram.",Kaoma, Western Province,0.45,Per kg,Short-term,Farmer,13/01/2025,Open
+JOB-P309,Bicycle Taxi Repair,Mechanic,Bicycle taxi needs urgent repairs for daily income.,Kasama, Northern Province,160,Fixed,One-time,Rider,16/01/2025,Open
+JOB-P310,Traditional Dance Group,Performer,Cultural event needs traditional dance performance.,Solwezi, North-Western,700,Fixed,One-time,Organizer,15/01/2025,Open
+JOB-P311,Groundnut Harvest Help,Farm Worker,Groundnuts ready for digging and sorting.,Mansa, Luapula Province,320,Daily,Short-term,Farmer,14/01/2025,Open
+JOB-P312,Make Local Brew,Brewer,Traditional beer needed for community gathering.,Kawambwa, Luapula Province,500,Fixed,One-time,Community,13/01/2025,Open
+JOB-P313,Thatch Roof Repair,Thatcher,"Traditional grass roof leaking, needs repair.",Mbala, Northern Province,350,Fixed,One-time,Home Owner,16/01/2025,Open
+JOB-P314,Water Carrying Help,Water Carrier,Elderly person needs help carrying water daily.,Kapiri Mposhi, Central Province,280,Weekly,Ongoing,Senior,15/01/2025,Open
+JOB-P315,Make Wooden Furniture,Carpenter,Simple wooden stools needed for community center.,Nakonde, Muchinga Province,550,Fixed,One-time,Community,14/01/2025,Open
+JOB-P316,Traditional Healing,Healer,Family needs traditional healing consultation.,Mufumbwe, North-Western,300,Fixed,One-time,Family,13/01/2025,Open
+JOB-P317,Rice Harvest Help,Farm Worker,Rice paddy ready for experienced harvesters.,Chililabombwe, Copperbelt,420,Daily,Short-term,Farmer,16/01/2025,Open
+JOB-P318,Make Fish Traps,Fisherman,Traditional fish traps needed for river fishing.,Chinsali, Muchinga Province,250,Fixed,One-time,Fisherman,15/01/2025,Open
+JOB-P319,Bean Harvest Help,Farm Worker,Bean field needs careful harvesting.,Mpika, Muchinga Province,25,Per basket,Short-term,Farmer,14/01/2025,Open
+JOB-P320,Traditional Storytelling,Entertainer,Children's event needs traditional storyteller.,Kalulushi, Copperbelt,180,Fixed,One-time,Organizer,13/01/2025,Open
+JOB-P321,Bush Clearing,Land Clearer,New farm plot needs bush clearing with tools.,Chilanga, Lusaka Province,380,Fixed,One-time,Farmer,16/01/2025,Open
+JOB-P322,Make Bark Cloth,Artisan,Traditional bark cloth needed for ceremony.,Mwinilunga, North-Western,450,Fixed,One-time,Cultural Group,15/01/2025,Open
+JOB-P323,Sweet Potato Harvest,Farm Worker,Sweet potatoes ready for careful digging.,Isoka, Muchinga Province,280,Daily,Short-term,Farmer,14/01/2025,Open
+JOB-P324,Repair Hand Pump,Mechanic,"Community water pump not working, needs fix.",Luwingu, Northern Province,400,Fixed,One-time,Community,13/01/2025,Open
+JOB-P325,Weave Market Baskets,Weaver,Strong baskets needed for market produce.,Nyimba, Eastern Province,320,Fixed,One-time,Trader,16/01/2025,Open
+JOB-P326,Chicken Farm Help,Poultry Helper,Small poultry farm needs daily feeding help.,Petauke, Eastern Province,380,Monthly,Ongoing,Farmer,15/01/2025,Open
+JOB-P327,Traditional Music,Musician,Ceremony needs live traditional music performance.,Kafue, Lusaka Province,550,Fixed,One-time,Organizer,14/01/2025,Open
+JOB-P328,Goat Herding,Herder,Small goat herd needs daily herding.,Mazabuka, Southern Province,450,Monthly,Ongoing,Owner,13/01/2025,Open
+JOB-P329,Honey Harvesting,Beekeeper,Help needed harvesting honey from traditional hives.,Mongu, Western Province,350,Fixed,One-time,Beekeeper,16/01/2025,Open
+JOB-P330,School Bicycle Repair,Mechanic,Children's bicycles need repair for school transport.,Choma, Southern Province,200,Fixed,One-time,Parent,15/01/2025,Open
+JOB-P331,Tomato Harvest Help,Farm Worker,Tomato greenhouse needs careful picking.,Siavonga, Southern Province,320,Daily,Short-term,Farmer,14/01/2025,Open
+JOB-P332,Make Traditional Drums,Artisan,Cultural group needs traditional drums.,Kasempa, North-Western,650,Fixed,One-time,Group,13/01/2025,Open
+JOB-P333,Fish Drying Help,Food Processor,Large fish catch needs drying and processing.,Nchelenge, Luapula Province,280,Daily,Short-term,Fisherman,16/01/2025,Open
+JOB-P334,Mobile Money Phone Fix,Technician,"Mobile money phone not working, urgent business need.",Chililabombwe, Copperbelt,130,Fixed,One-time,Trader,15/01/2025,Open
+JOB-P335,Onion Harvest Help,Farm Worker,Onion field ready for careful harvesting.,Kabwe, Central Province,300,Daily,Short-term,Farmer,14/01/2025,Open
+JOB-P336,Make Traditional Salt,Salt Maker,Traditional salt needed from local springs.,Kaputa, Northern Province,400,Fixed,One-time,Community,13/01/2025,Open
+JOB-P337,Pig Farming Help,Animal Care,Small pig farm needs daily care.,Mufumbwe, North-Western,550,Monthly,Ongoing,Farmer,16/01/2025,Open
+JOB-P338,Solar Light Repair,Technician,"Village solar lights not working, need repair.",Mporokoso, Northern Province,450,Fixed,One-time,Village,15/01/2025,Open
+JOB-P339,Cassava Harvest Help,Farm Worker,Cassava field ready for hard work harvesting.,Mansa, Luapula Province,260,Daily,Short-term,Farmer,14/01/2025,Open
+JOB-P340,Prepare Herbal Medicine,Herbalist,Traditional medicine needed from local herbs.,Chinsali, Muchinga Province,280,Fixed,One-time,Patient,13/01/2025,Open
+JOB-P341,Irrigation System Help,Farm Helper,Small farm needs irrigation setup from stream.,Serenje, Central Province,380,Fixed,One-time,Farmer,16/01/2025,Open
+JOB-P342,Make Fishing Canoe,Carpenter,Traditional fishing canoe needed.,Samfya, Luapula Province,1100,Fixed,One-time,Fisherman,15/01/2025,Open
+JOB-P343,Sunflower Harvest Help,Farm Worker,Sunflower field ready for harvest.,Mkushi, Central Province,280,Daily,Short-term,Farmer,14/01/2025,Open
+JOB-P344,Grinding Mill Repair,Mechanic,"Community grinding mill broken, urgent repair.",Mungwi, Northern Province,500,Fixed,One-time,Community,13/01/2025,Open
+JOB-P345,Make Beehives,Carpenter,Traditional beehives needed for honey production.,Kalabo, Western Province,380,Fixed,One-time,Beekeeper,16/01/2025,Open
+JOB-P346,Make Palm Wine,Tapper,Palm wine needed for traditional ceremony.,Mwinilunga, North-Western,320,Fixed,One-time,Ceremony,15/01/2025,Open
+JOB-P347,Potato Harvest Help,Farm Worker,Irish potatoes ready for harvesting.,Isoka, Muchinga Province,300,Daily,Short-term,Farmer,14/01/2025,Open
+JOB-P348,Bicycle Generator Fix,Technician,Bicycle generator for lights needs repair.,Nakonde, Muchinga Province,160,Fixed,One-time,Home Owner,13/01/2025,Open
+JOB-P349,Millet Harvest Help,Farm Worker,Millet ready for traditional harvesting.,Senanga, Western Province,260,Daily,Short-term,Farmer,16/01/2025,Open
+JOB-P350,Make Traditional Jewelry,Artisan,Traditional jewelry needed for wedding.,Mongu, Western Province,400,Fixed,One-time,Bride,15/01/2025,Open
+JOB-P351,Fish Farming Help,Aquaculture,Fish ponds need cleaning and maintenance.,Chongwe, Lusaka Province,450,Monthly,Ongoing,Farmer,14/01/2025,Open
+JOB-P352,Community Radio Repair,Technician,Community radio station needs urgent repair.,Mpika, Muchinga Province,550,Fixed,One-time,Station,13/01/2025,Open
+JOB-P353,Sorghum Harvest Help,Farm Worker,Sorghum ready for cutting and threshing.,Kaoma, Western Province,280,Daily,Short-term,Farmer,16/01/2025,Open
+JOB-P354,Weave Sleeping Mats,Weaver,Traditional sleeping mats needed from reeds.,Shangombo, Western Province,350,Fixed,One-time,Family,15/01/2025,Open
+JOB-P355,Community Garden Help,Gardener,Community vegetable garden needs care.,Kasama, Northern Province,320,Monthly,Ongoing,Community,14/01/2025,Open
+JOB-P356,Market Bicycle Repair,Mechanic,Market bicycle needs repair for goods transport.,Chililabombwe, Copperbelt,180,Fixed,One-time,Trader,13/01/2025,Open
+JOB-P357,Groundnut Processing,Food Processor,Harvested groundnuts need shelling.,Mumbwa, Central Province,20,Per bag,Short-term,Farmer,16/01/2025,Open
+JOB-P358,Make Traditional Bows,Artisan,Traditional hunters need bows.,Mufumbwe, North-Western,450,Fixed,One-time,Hunters,15/01/2025,Open
+JOB-P359,Chicken Processing,Poultry,Live chickens need processing for market.,Kafue, Lusaka Province,4,Per chicken,Short-term,Farmer,14/01/2025,Open
+JOB-P360,Water System Repair,Plumber,Rainwater collection system leaking.,Luwingu, Northern Province,320,Fixed,One-time,School,13/01/2025,Open
+JOB-P361,Banana Harvest Help,Farm Worker,Banana plantation ready for harvest.,Mpulungu, Northern Province,380,Daily,Short-term,Farmer,16/01/2025,Open
+JOB-P362,Make Hunting Arrows,Artisan,Traditional hunting arrows needed.,Chinsali, Muchinga Province,280,Fixed,One-time,Hunter,15/01/2025,Open
+JOB-P363,Maize Shelling Help, Farm Helper,Harvested maize needs shelling.,Petauke, Eastern Province,18,Per bag,Short-term,Farmer,14/01/2025,Open
+JOB-P364,Village Clock Repair,Technician,Village clock tower not working.,Mbala, Northern Province,400,Fixed,One-time,Village,13/01/2025,Open
+JOB-P365,Mango Harvest Help,Farm Worker,Mango trees heavy with fruit.,Siavonga, Southern Province,260,Daily,Short-term,Farmer,16/01/2025,Open
+JOB-P366,Make Fishing Nets,Weaver,New fishing nets needed for lake.,Nchelenge, Luapula Province,550,Fixed,One-time,Fishing Group,15/01/2025,Open
+JOB-P367,Cattle Herding,Herder,Small cattle herd needs daily herding.,Kalomo, Southern Province,650,Monthly,Ongoing,Owner,14/01/2025,Open
+JOB-P368,School Bicycle Fix,Mechanic,School run bicycle needs repair.,Kapiri Mposhi, Central Province,160,Fixed,One-time,Parent,13/01/2025,Open
+JOB-P369,Rice Processing Help,Food Processor,Harvested rice needs processing.,Samfya, Luapula Province,25,Per bag,Short-term,Farmer,16/01/2025,Open
+JOB-P370,Make Cultural Masks,Artisan,Cultural ceremony needs traditional masks.,Solwezi, North-Western,500,Fixed,One-time,Cultural Group,15/01/2025,Open
+JOB-P371,Goat Milking Help,Animal Care,Dairy goats need daily milking.,Mongu, Western Province,380,Monthly,Ongoing,Farmer,14/01/2025,Open
+JOB-P372,Community Tap Repair,Plumber,Community water tap leaking badly.,Mansa, Luapula Province,220,Fixed,One-time,Community,13/01/2025,Open
+JOB-P373,Pineapple Harvest Help,Farm Worker,Pineapple field ready for picking.,Chongwe, Lusaka Province,320,Daily,Short-term,Farmer,16/01/2025,Open
+JOB-P374,Make Market Baskets,Weaver,Market baskets needed for vegetables.,Kawambwa, Luapula Province,250,Fixed,One-time,Trader,15/01/2025,Open
+JOB-P375,Donkey Care Help,Animal Care,Donkeys need daily feeding and care.,Kalulushi, Copperbelt,420,Monthly,Ongoing,Owner,14/01/2025,Open
+JOB-P376,Delivery Bicycle Fix,Mechanic,Delivery bicycle needs repair.,Ndola, Copperbelt,200,Fixed,One-time,Business,13/01/2025,Open
+JOB-P377,Bean Sorting Help,Food Processor,Harvested beans need sorting.,Mkushi, Central Province,22,Per bag,Short-term,Farmer,16/01/2025,Open
+JOB-P378,Make Traditional Flutes,Artisan,Traditional musicians need flutes.,Kasempa, North-Western,280,Fixed,One-time,Musicians,15/01/2025,Open
+JOB-P379,Sheep Shearing Help,Animal Care,Sheep need shearing for wool.,Choma, Southern Province,12,Per sheep,Short-term,Farmer,14/01/2025,Open
+JOB-P380,Notice Board Repair,Carpenter,Village notice board broken.,Mungwi, Northern Province,180,Fixed,One-time,Village,13/01/2025,Open
+JOB-P381,Papaya Harvest Help,Farm Worker,Papaya trees heavy with fruit.,Mazabuka, Southern Province,280,Daily,Short-term,Farmer,16/01/2025,Open
+JOB-P382,Make Traditional Ropes,Weaver,Strong traditional ropes needed.,Nyimba, Eastern Province,160,Fixed,One-time,Community,15/01/2025,Open
+JOB-P383,Rabbit Farming Help,Animal Care,Rabbit farm needs daily care.,Kafue, Lusaka Province,380,Monthly,Ongoing,Farmer,14/01/2025,Open
+JOB-P384,Farm Bicycle Repair,Mechanic,Farm bicycle needs repair.,Serenje, Central Province,220,Fixed,One-time,Farmer,13/01/2025,Open
+JOB-P385,Seed Sorting Help, Farm Helper,Seeds need sorting for planting.,Isoka, Muchinga Province,260,Daily,Short-term,Company,16/01/2025,Open
+JOB-P386,Make Performance Drums,Artisan,Traditional drummers need new drums.,Mwinilunga, North-Western,600,Fixed,One-time,Drummers,15/01/2025,Open
+JOB-P387,Duck Farming Help,Animal Care,Ducks need daily care.,Siavonga, Southern Province,320,Monthly,Ongoing,Farmer,14/01/2025,Open
+JOB-P388,Library Repair,Handyman,Community library needs repairs.,Kasama, Northern Province,280,Fixed,One-time,Library,13/01/2025,Open
+JOB-P389,Guava Harvest Help,Farm Worker,Guava trees full of fruit.,Chilanga, Lusaka Province,220,Daily,Short-term,Farmer,16/01/2025,Open
+JOB-P390,Make Traditional Hats,Weaver,Traditional hats needed for event.,Senanga, Western Province,300,Fixed,One-time,Organizer,15/01/2025,Open
+JOB-P391,Turkey Farming Help,Animal Care,Turkeys need daily feeding.,Mumbwa, Central Province,450,Monthly,Ongoing,Farmer,14/01/2025,Open
+JOB-P392,Commute Bicycle Fix,Mechanic,Commute bicycle needs repair.,Kapiri Mposhi, Central Province,160,Fixed,One-time,Worker,13/01/2025,Open
+JOB-P393,Nut Sorting Help,Food Processor,Harvested nuts need sorting.,Kalomo, Southern Province,25,Per bag,Short-term,Farmer,16/01/2025,Open
+JOB-P394,Make Dance Shields,Artisan,Traditional dancers need shields.,Mongu, Western Province,500,Fixed,One-time,Dance Group,15/01/2025,Open
+JOB-P395,Quail Farming Help,Animal Care,Quails need daily care.,Chongwe, Lusaka Province,380,Monthly,Ongoing,Farmer,14/01/2025,Open
+JOB-P396,Church Repair,Handyman,Small community church needs repairs.,Mpika, Muchinga Province,400,Fixed,One-time,Church,13/01/2025,Open
+JOB-P397,Lemon Harvest Help,Farm Worker,Lemon trees ready for harvest.,Kabwe, Central Province,280,Daily,Short-term,Farmer,16/01/2025,Open
+JOB-P398,Make Traditional Bags,Weaver,Traditional bags needed for market.,Petauke, Eastern Province,250,Fixed,One-time,Market,15/01/2025,Open
+JOB-P399,Guinea Fowl Care,Animal Care,Guinea fowl need daily care.,Mkushi, Central Province,320,Monthly,Ongoing,Farmer,14/01/2025,Open
+JOB-P400,Family Bicycle Fix,Mechanic,Family bicycle needs repair for errands.,Ndola, Copperbelt,180,Fixed,One-time,Family,13/01/2025,Open

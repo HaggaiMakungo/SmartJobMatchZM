@@ -1,0 +1,71 @@
+name: Frontend CI
+
+on:
+  push:
+    branches: [ main, develop ]
+    paths:
+      - 'frontend/**'
+      - '.github/workflows/frontend-ci.yml'
+  pull_request:
+    branches: [ main, develop ]
+    paths:
+      - 'frontend/**'
+
+jobs:
+  test-jobmatch:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        cache-dependency-path: frontend/jobmatch/package-lock.json
+    
+    - name: Install dependencies
+      working-directory: ./frontend/jobmatch
+      run: npm ci
+    
+    - name: Run linting
+      working-directory: ./frontend/jobmatch
+      run: npm run lint
+    
+    - name: Run tests
+      working-directory: ./frontend/jobmatch
+      run: npm test -- --coverage --watchAll=false
+    
+    - name: Build
+      working-directory: ./frontend/jobmatch
+      run: npm run build
+
+  test-recruiter:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        cache-dependency-path: frontend/recruiter/package-lock.json
+    
+    - name: Install dependencies
+      working-directory: ./frontend/recruiter
+      run: npm ci
+    
+    - name: Run linting
+      working-directory: ./frontend/recruiter
+      run: npm run lint
+    
+    - name: Run tests
+      working-directory: ./frontend/recruiter
+      run: npm test -- --coverage --watchAll=false
+    
+    - name: Build
+      working-directory: ./frontend/recruiter
+      run: npm run build
