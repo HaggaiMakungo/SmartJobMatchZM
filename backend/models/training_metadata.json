@@ -1,0 +1,214 @@
+{
+  "evaluation": {
+    "train": {
+      "auc_roc": 0.8275039155687851,
+      "precision": 0.3236009732360097,
+      "recall": 0.6195652173913043,
+      "f1": 0.4251465103889185,
+      "avg_precision": 0.42885955912526075,
+      "precision_at_10": 0.9,
+      "precision_at_20": 0.9
+    },
+    "val": {
+      "auc_roc": 0.6387111383824217,
+      "precision": 0.21978021978021978,
+      "recall": 0.43478260869565216,
+      "f1": 0.291970802919708,
+      "avg_precision": 0.2023820738584026,
+      "precision_at_10": 0.2,
+      "precision_at_20": 0.15
+    },
+    "test": {
+      "auc_roc": 0.7093413978494625,
+      "precision": 0.25984251968503935,
+      "recall": 0.4782608695652174,
+      "f1": 0.336734693877551,
+      "avg_precision": 0.2607705562155385,
+      "precision_at_10": 0.3,
+      "precision_at_20": 0.25
+    }
+  },
+  "feature_importance": [
+    {
+      "feature": "match_score",
+      "importance": 4856.904158733785
+    },
+    {
+      "feature": "user_years_experience",
+      "importance": 4318.819076443015
+    },
+    {
+      "feature": "user_salary_expectation_avg",
+      "importance": 3559.9098621151643
+    },
+    {
+      "feature": "hour_of_day",
+      "importance": 2321.424847871065
+    },
+    {
+      "feature": "day_of_week",
+      "importance": 2033.9659479380061
+    },
+    {
+      "feature": "salary_gap",
+      "importance": 1847.971844613552
+    },
+    {
+      "feature": "salary_ratio",
+      "importance": 1758.595275580883
+    },
+    {
+      "feature": "match_score_squared",
+      "importance": 1302.3252968024462
+    },
+    {
+      "feature": "job_salary_avg",
+      "importance": 793.3901402130723
+    },
+    {
+      "feature": "employment_status_encoded",
+      "importance": 787.5640844106674
+    },
+    {
+      "feature": "experience_gap",
+      "importance": 715.9911478090216
+    },
+    {
+      "feature": "user_skills_count",
+      "importance": 578.0299737453461
+    },
+    {
+      "feature": "education_level_encoded",
+      "importance": 339.1771272384649
+    },
+    {
+      "feature": "is_business_hours",
+      "importance": 271.4031429192037
+    },
+    {
+      "feature": "salary_score",
+      "importance": 258.4190399646759
+    },
+    {
+      "feature": "experience_score",
+      "importance": 146.31835561990738
+    },
+    {
+      "feature": "user_technical_skills_count",
+      "importance": 138.69236040115356
+    },
+    {
+      "feature": "user_available_immediately",
+      "importance": 127.02388906478882
+    },
+    {
+      "feature": "skills_salary_interaction",
+      "importance": 112.29793870449066
+    },
+    {
+      "feature": "location_salary_interaction",
+      "importance": 93.93979120254517
+    },
+    {
+      "feature": "is_weekend",
+      "importance": 78.34434938430786
+    },
+    {
+      "feature": "user_soft_skills_count",
+      "importance": 76.4618489742279
+    },
+    {
+      "feature": "location_score",
+      "importance": 67.37857985496521
+    },
+    {
+      "feature": "skills_score",
+      "importance": 59.46448040008545
+    },
+    {
+      "feature": "skills_experience_interaction",
+      "importance": 30.86769962310791
+    },
+    {
+      "feature": "skills_match_ratio",
+      "importance": 0.0
+    },
+    {
+      "feature": "skills_missing_count",
+      "importance": 0.0
+    },
+    {
+      "feature": "job_type_encoded",
+      "importance": 0.0
+    },
+    {
+      "feature": "is_small_job",
+      "importance": 0.0
+    },
+    {
+      "feature": "is_corporate_job",
+      "importance": 0.0
+    },
+    {
+      "feature": "job_total_skills_count",
+      "importance": 0.0
+    },
+    {
+      "feature": "job_preferred_skills_count",
+      "importance": 0.0
+    },
+    {
+      "feature": "job_required_skills_count",
+      "importance": 0.0
+    },
+    {
+      "feature": "job_salary_range",
+      "importance": 0.0
+    },
+    {
+      "feature": "skills_matched_count",
+      "importance": 0.0
+    },
+    {
+      "feature": "meets_experience_requirement",
+      "importance": 0.0
+    },
+    {
+      "feature": "salary_exceeds_expectation",
+      "importance": 0.0
+    },
+    {
+      "feature": "location_match_level",
+      "importance": 0.0
+    },
+    {
+      "feature": "same_province",
+      "importance": 0.0
+    },
+    {
+      "feature": "same_city",
+      "importance": 0.0
+    }
+  ],
+  "model_params": {
+    "objective": "binary",
+    "metric": "auc",
+    "boosting_type": "gbdt",
+    "num_leaves": 31,
+    "learning_rate": 0.05,
+    "feature_fraction": 0.8,
+    "bagging_fraction": 0.8,
+    "bagging_freq": 5,
+    "max_depth": 6,
+    "min_child_samples": 20,
+    "verbose": -1,
+    "seed": 42
+  },
+  "data_split": {
+    "train_size": 0.7,
+    "val_size": 0.15,
+    "test_size": 0.15
+  },
+  "trained_at": "2025-11-21T09:31:50.450439",
+  "best_iteration": 52
+}

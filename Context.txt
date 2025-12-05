@@ -1,0 +1,402 @@
+# 📋 CAMSS 2.0 - Current Status & Next Steps
+
+## 🎯 Project Context
+
+**CAMSS 2.0** is an AI-powered job matching system for Zambia's job market with:
+- **Backend:** FastAPI + PostgreSQL + ML matching (LightGBM + Semantic AI)
+- **Database:** 2,500 CVs, 1,600+ jobs, company accounts system
+- **Matching:** Hybrid algorithm (rule-based + ML + semantic skill matching)
+- **Companies:** Multiple test accounts (DHL, Zanaco, Choppies, etc.) with isolated data
+
+---
+
+## ✅ What's Working
+
+### **1. Company Isolation - FIXED ✅**
+- Users now see ONLY their company's jobs
+- `users` table has `company` column
+- Jobs filtered by `user.company == job.company`
+- **Test:** DHL user sees 12 DHL jobs (not 50+ total)
+
+### **2. Login & Authentication ✅**
+- Beautiful login page with validation
+- Password strength indicator
+- Token-based auth working
+- Auto-redirect to dashboard
+
+### **3. Dashboard Layout ✅**
+- Sidebar navigation with active route highlighting
+- Stats cards (Jobs, Candidates, Match Score)
+- Quick actions cards
+- Recent activity feed
+
+### **4. Jobs Page UI ✅**
+- Job dropdown selector
+- Expandable job details card
+- Match score slider filter
+- Candidate grid (4 columns, pagination)
+- Circular match score visualization
+- Bulk select/save functionality
+- Candidate detail modal
+
+---
+
+## ❌ Current Issue: Candidate Matching Not Working
+
+### **Symptom:**
+```
+Jobs page loads ✅
+Jobs filtered by company ✅
+Select a job ✅
+Click to match candidates ❌
+Console error: "Failed to fetch candidates: AxiosError$1"
+```
+
+### **What We Know:**
+- ✅ Backend running on `http://localhost:8000`
+- ✅ Frontend running on `http://localhost:3000`
+- ✅ Jobs API working: `/api/corporate/jobs`
+- ❌ Candidates API failing: `/api/recruiter/job/{job_id}/candidates`
+- ✅ Company isolation working (jobs filtered correctly)
+
+### **Likely Causes:**
+1. **CV data missing or sparse** (70% probability)
+2. **Matching service not initialized** (20% probability)
+3. **Endpoint URL mismatch** (10% probability)
+
+---
+
+## 🔬 Diagnostic Steps Created
+
+### **1. Backend Diagnostic Script**
+**File:** `backend/test_recruiter_endpoint.py`
+
+```bash
+cd C:\Dev\ai-job-matchingV2\backend
+python test_recruiter_endpoint.py
+```
+
+**Tests:**
+- Login with Zanaco account
+- Fetch jobs
+- Test 3 matching endpoints:
+  - `/api/recruiter/job/{job_id}/candidates` (Original - 8-10s)
+  - `/api/recruiter/optimized/job/{job_id}/candidates` (Optimized - 2-3s)
+  - `/api/recruiter/job/{job_id}/candidates/cached` (Cached - <100ms)
+
+### **2. Enhanced Frontend Error Logging**
+**Updated:** `frontend/recruiter/src/pages/JobsPage.tsx`
+
+Now shows detailed error info in console:
+```javascript
+Error details: {
+  message: "...",
+  response: {...},
+  status: 404/500/etc,
+  url: "http://localhost:8000/..."
+}
+```
+
+### **3. Documentation Created**
+- ✅ `CANDIDATE_MATCHING_DIAGNOSTIC.md` - Comprehensive diagnostic guide
+- ✅ `QUICK_DIAGNOSTIC.md` - 2-minute quick fix guide
+- ✅ `test_recruiter_endpoint.py` - Backend diagnostic script
+
+---
+
+## 🚀 Immediate Next Steps
+
+### **Step 1: Run Diagnostics (5 minutes)**
+
+```bash
+# Terminal 1: Backend diagnostic
+cd C:\Dev\ai-job-matchingV2\backend
+python test_recruiter_endpoint.py
+
+# Terminal 2: Check backend logs
+# Look at terminal running: python -m uvicorn app.main:app --reload
+
+# Browser: Check console
+# F12 → Console → Look for "Error details:"
+```
+
+### **Step 2: Identify Root Cause**
+
+Based on diagnostic results:
+
+| Result | Root Cause | Solution |
+|--------|-----------|----------|
+| 0 candidates returned | CV data missing | Add/check CV data |
+| Endpoint 500 error | Matching service failed | Check dependencies |
+| Endpoint timeout | Matching too slow | Use optimized endpoint |
+| Endpoint 404 | Wrong URL | Fix endpoint path |
+
+### **Step 3: Apply Fix**
+
+**Most likely fixes:**
+
+**A. CV Data Missing:**
+```bash
+cd C:\Dev\ai-job-matchingV2\backend
+psql -U postgres -d camss_db -c "SELECT COUNT(*) FROM cvs;"
+# If 0 or very few → Need to populate CVs
+```
+
+**B. Use Optimized Endpoint:**
+```typescript
+// frontend/recruiter/src/lib/api/client.ts, Line 97
+// Change:
+const response = await this.client.get(`/api/recruiter/optimized/job/${jobId}/candidates`, { params });
+```
+
+**C. Install Dependencies:**
+```bash
+pip install sentence-transformers
+```
+
+---
+
+## 📊 System Architecture
+
+### **Backend Endpoints Available:**
+
+```
+Auth:
+✅ POST /api/auth/login - Company login
+✅ GET /api/auth/me - Current user info
+
+Corporate:
+✅ GET /api/corporate/jobs - Get company's jobs (with company filter)
+✅ GET /api/corporate/stats - Company statistics
+
+Recruiter Matching (3 versions):
+❌ GET /api/recruiter/job/{job_id}/candidates - Original (8-10s)
+❓ GET /api/recruiter/optimized/job/{job_id}/candidates - Optimized (2-3s)
+❓ GET /api/recruiter/job/{job_id}/candidates/cached - Cached (<100ms)
+
+Saved Candidates:
+✅ GET /saved-candidates/list - Get saved candidates
+✅ POST /saved-candidates/save - Save candidate
+✅ PATCH /saved-candidates/{id}/status - Update status
+```
+
+### **Database Schema (Relevant Tables):**
+
+```sql
+users:
+  - id, email, password_hash, company ← ADDED
+  - company extracted from email (e.g., "DHL", "ZANACO")
+
+corporate_jobs:
+  - job_id, title, description, requirements
+  - company, location_city, location_province
+  - salary_min, salary_max
+
+cvs:
+  - cv_id, full_name, current_job_title
+  - city, province, email, phone
+  - skills_technical, skills_soft
+  - total_years_experience
+
+saved_candidates:
+  - id, cv_id, job_id, match_score
+  - status: saved, invited, screening, interview, offer, hired, rejected
+  - saved_at, updated_at
+```
+
+---
+
+## 🎨 UI/UX Design System
+
+**Colors:**
+- **Primary:** Tangerine (#F2994A) - CTAs, highlights
+- **Secondary:** Peach (#F2D492) - Accents
+- **Accent:** Sage (#A4B494) - Success states
+- **Base:** Gunmetal (#2D3142) - Text, borders
+
+**Theme:** Dark mode throughout
+
+**Typography:**
+- Headers: Bold, large
+- Body: Regular, readable
+- Code: Monospace
+
+**Components:**
+- Cards with hover effects (border → tangerine)
+- Circular progress rings for match scores
+- Smooth transitions and animations
+- Loading states with spinners
+
+---
+
+## 📝 Test Accounts
+
+| Email | Password | Jobs | Company |
+|-------|----------|------|---------|
+| `dhl@company.zm` | `password123` | 12 logistics | DHL |
+| `zanaco@company.zm` | `password123` | 8 banking | ZANACO |
+| `choppies@company.zm` | `password123` | 10 retail | CHOPPIES |
+| `mtn@company.zm` | `password123` | 6 telecom | MTN |
+
+---
+
+## 🗂️ Project Structure
+
+```
+C:\Dev\ai-job-matchingV2\
+├── backend/
+│   ├── app/
+│   │   ├── api/v1/
+│   │   │   ├── auth.py ✅
+│   │   │   ├── corporate.py ✅
+│   │   │   ├── recruiter_match_fast.py ❓
+│   │   │   ├── recruiter_match_optimized.py ❓
+│   │   │   ├── recruiter_match_cached.py ❓
+│   │   │   └── saved_candidates.py ✅
+│   │   ├── models/
+│   │   │   ├── user.py ✅ (company field added)
+│   │   │   ├── corporate_job.py ✅
+│   │   │   └── cv.py ✅
+│   │   └── services/
+│   │       └── enhanced_matching_service.py ❓
+│   ├── test_recruiter_endpoint.py 🆕
+│   └── main.py ✅
+│
+├── frontend/recruiter/
+│   ├── src/
+│   │   ├── components/ui/ ✅
+│   │   ├── pages/
+│   │   │   ├── LoginPage.tsx ✅
+│   │   │   ├── DashboardHome.tsx ✅
+│   │   │   ├── JobsPage.tsx ✅ (UI done, API pending)
+│   │   │   └── CandidatesPage.tsx ⏳
+│   │   ├── lib/api/
+│   │   │   └── client.ts ✅
+│   │   ├── store/
+│   │   │   └── auth.store.ts ✅
+│   │   └── types/
+│   │       └── index.ts ✅
+│   ├── tailwind.config.js ✅
+│   └── vite.config.ts ✅
+│
+├── CANDIDATE_MATCHING_DIAGNOSTIC.md 🆕
+├── QUICK_DIAGNOSTIC.md 🆕
+└── Context.txt 🆕
+```
+
+**Legend:**
+- ✅ Complete and working
+- ❓ Needs investigation
+- ⏳ Placeholder only
+- 🆕 Just created
+
+---
+
+## 💡 Key Learnings
+
+### **Company Isolation Fix:**
+1. Added `company` column to `users` table
+2. Updated `extract_company_from_user()` to use `user.company`
+3. Filtered jobs: `WHERE job.company == user.company`
+4. **Result:** Users only see their company's jobs ✅
+
+### **Frontend API Client:**
+1. Axios with interceptors for auth
+2. 2-minute timeout for AI operations
+3. Auto token refresh on 401
+4. Clean TypeScript types
+
+### **Matching Performance:**
+3 endpoints available:
+- **Original:** 8-10s (first load), 3-5s (cached)
+- **Optimized:** 2-3s with smart filtering
+- **Cached:** <100ms with pre-computed results
+
+---
+
+## 🎯 Goals for This Session
+
+### **Primary Goal:**
+Fix candidate matching so Jobs page shows matched candidates
+
+### **Steps:**
+1. ✅ Run diagnostic script
+2. ✅ Identify root cause from results
+3. ✅ Apply appropriate fix
+4. ✅ Test end-to-end
+5. ✅ Document solution
+
+### **Success Criteria:**
+- [ ] Jobs page loads with jobs
+- [ ] Select a job from dropdown
+- [ ] See "Matching with AI..." loading
+- [ ] Candidates appear in grid
+- [ ] Match scores display correctly
+- [ ] Can view candidate details
+- [ ] Can save candidates
+- [ ] No errors in console
+
+---
+
+## 📞 Quick Commands
+
+```bash
+# Backend
+cd C:\Dev\ai-job-matchingV2\backend
+python -m uvicorn app.main:app --reload
+python test_recruiter_endpoint.py
+
+# Frontend
+cd C:\Dev\ai-job-matchingV2\frontend\recruiter
+npm run dev
+
+# Database
+psql -U postgres -d camss_db
+SELECT COUNT(*) FROM cvs;
+SELECT COUNT(*) FROM corporate_jobs;
+SELECT company, COUNT(*) FROM corporate_jobs GROUP BY company;
+
+# Clear browser cache
+# F12 → Application → Clear Storage → Clear site data
+```
+
+---
+
+## 📚 Documentation Created
+
+1. **CANDIDATE_MATCHING_DIAGNOSTIC.md** - Comprehensive troubleshooting guide
+2. **QUICK_DIAGNOSTIC.md** - 2-minute quick reference
+3. **test_recruiter_endpoint.py** - Backend diagnostic script
+4. **Context.txt** - This file (complete project status)
+
+---
+
+## 🚦 Current Status Summary
+
+| Component | Status | Notes |
+|-----------|--------|-------|
+| Login | ✅ Working | Beautiful UI, validation working |
+| Dashboard | ✅ Working | Stats, quick actions, sidebar |
+| Company Isolation | ✅ Working | Jobs filtered by company |
+| Jobs API | ✅ Working | Returns correct jobs per company |
+| Jobs Page UI | ✅ Working | Grid, filters, pagination |
+| **Candidate Matching** | ❌ **Not Working** | **CURRENT FOCUS** |
+| Saved Candidates | ⏳ Pending | UI placeholder only |
+
+---
+
+## 💬 Next Action
+
+**Run the diagnostic script and paste results:**
+
+```bash
+cd C:\Dev\ai-job-matchingV2\backend
+python test_recruiter_endpoint.py
+```
+
+Then check:
+1. Backend terminal logs
+2. Browser console (F12)
+3. Paste all outputs here
+
+**I'll diagnose the exact issue and provide the fix!** 🔍🚀

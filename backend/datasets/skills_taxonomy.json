@@ -1,0 +1,2502 @@
+[
+  {
+    "skill": "Maintenance",
+    "frequency": 196,
+    "percentage": 7.84
+  },
+  {
+    "skill": "Sales",
+    "frequency": 136,
+    "percentage": 5.44
+  },
+  {
+    "skill": "Customer Service",
+    "frequency": 101,
+    "percentage": 4.04
+  },
+  {
+    "skill": "Fabrication",
+    "frequency": 99,
+    "percentage": 3.96
+  },
+  {
+    "skill": "Phone Use",
+    "frequency": 99,
+    "percentage": 3.96
+  },
+  {
+    "skill": "Patient Care",
+    "frequency": 96,
+    "percentage": 3.84
+  },
+  {
+    "skill": "Repair",
+    "frequency": 96,
+    "percentage": 3.84
+  },
+  {
+    "skill": "Medication",
+    "frequency": 88,
+    "percentage": 3.52
+  },
+  {
+    "skill": "Health Education",
+    "frequency": 87,
+    "percentage": 3.48
+  },
+  {
+    "skill": "Cleaning",
+    "frequency": 80,
+    "percentage": 3.2
+  },
+  {
+    "skill": "Project Management",
+    "frequency": 78,
+    "percentage": 3.12
+  },
+  {
+    "skill": "Engine Repair",
+    "frequency": 77,
+    "percentage": 3.08
+  },
+  {
+    "skill": "Curriculum Development",
+    "frequency": 65,
+    "percentage": 2.6
+  },
+  {
+    "skill": "Office Management",
+    "frequency": 65,
+    "percentage": 2.6
+  },
+  {
+    "skill": "Assessment",
+    "frequency": 65,
+    "percentage": 2.6
+  },
+  {
+    "skill": "Filing",
+    "frequency": 59,
+    "percentage": 2.36
+  },
+  {
+    "skill": "Cooking",
+    "frequency": 57,
+    "percentage": 2.28
+  },
+  {
+    "skill": "Records",
+    "frequency": 56,
+    "percentage": 2.24
+  },
+  {
+    "skill": "Basic Computer",
+    "frequency": 56,
+    "percentage": 2.24
+  },
+  {
+    "skill": "Safety",
+    "frequency": 51,
+    "percentage": 2.04
+  },
+  {
+    "skill": "Excavator Operation",
+    "frequency": 50,
+    "percentage": 2.0
+  },
+  {
+    "skill": "Electrical Systems",
+    "frequency": 49,
+    "percentage": 1.96
+  },
+  {
+    "skill": "Data Analysis",
+    "frequency": 49,
+    "percentage": 1.96
+  },
+  {
+    "skill": "Welding",
+    "frequency": 49,
+    "percentage": 1.96
+  },
+  {
+    "skill": "Finishing",
+    "frequency": 49,
+    "percentage": 1.96
+  },
+  {
+    "skill": "Crop Management",
+    "frequency": 48,
+    "percentage": 1.92
+  },
+  {
+    "skill": "Transmission",
+    "frequency": 47,
+    "percentage": 1.88
+  },
+  {
+    "skill": "Procurement",
+    "frequency": 47,
+    "percentage": 1.88
+  },
+  {
+    "skill": "Pipe Installation",
+    "frequency": 47,
+    "percentage": 1.88
+  },
+  {
+    "skill": "Arc Welding",
+    "frequency": 46,
+    "percentage": 1.84
+  },
+  {
+    "skill": "Basic Writing",
+    "frequency": 46,
+    "percentage": 1.84
+  },
+  {
+    "skill": "Metal Work",
+    "frequency": 45,
+    "percentage": 1.8
+  },
+  {
+    "skill": "Diagnostics",
+    "frequency": 44,
+    "percentage": 1.76
+  },
+  {
+    "skill": "Bricklaying",
+    "frequency": 43,
+    "percentage": 1.72
+  },
+  {
+    "skill": "Concrete Work",
+    "frequency": 43,
+    "percentage": 1.72
+  },
+  {
+    "skill": "MIG Welding",
+    "frequency": 43,
+    "percentage": 1.72
+  },
+  {
+    "skill": "Electrical Installation",
+    "frequency": 43,
+    "percentage": 1.72
+  },
+  {
+    "skill": "Content Creation",
+    "frequency": 42,
+    "percentage": 1.68
+  },
+  {
+    "skill": "Hair Styling",
+    "frequency": 40,
+    "percentage": 1.6
+  },
+  {
+    "skill": "Recruitment",
+    "frequency": 39,
+    "percentage": 1.56
+  },
+  {
+    "skill": "Soil Science",
+    "frequency": 38,
+    "percentage": 1.52
+  },
+  {
+    "skill": "Teaching",
+    "frequency": 38,
+    "percentage": 1.52
+  },
+  {
+    "skill": "Basic Housework",
+    "frequency": 37,
+    "percentage": 1.48
+  },
+  {
+    "skill": "Employee Relations",
+    "frequency": 36,
+    "percentage": 1.44
+  },
+  {
+    "skill": "Geological Mapping",
+    "frequency": 34,
+    "percentage": 1.36
+  },
+  {
+    "skill": "Makeup",
+    "frequency": 33,
+    "percentage": 1.32
+  },
+  {
+    "skill": "Child Care",
+    "frequency": 32,
+    "percentage": 1.28
+  },
+  {
+    "skill": "Counseling",
+    "frequency": 31,
+    "percentage": 1.24
+  },
+  {
+    "skill": "Media Relations",
+    "frequency": 31,
+    "percentage": 1.24
+  },
+  {
+    "skill": "Manual Labor",
+    "frequency": 31,
+    "percentage": 1.24
+  },
+  {
+    "skill": "Excel",
+    "frequency": 30,
+    "percentage": 1.2
+  },
+  {
+    "skill": "Mine Planning",
+    "frequency": 30,
+    "percentage": 1.2
+  },
+  {
+    "skill": "Skin Care",
+    "frequency": 30,
+    "percentage": 1.2
+  },
+  {
+    "skill": "Construction",
+    "frequency": 30,
+    "percentage": 1.2
+  },
+  {
+    "skill": "Loader",
+    "frequency": 30,
+    "percentage": 1.2
+  },
+  {
+    "skill": "Financial Modeling",
+    "frequency": 29,
+    "percentage": 1.16
+  },
+  {
+    "skill": "Training",
+    "frequency": 29,
+    "percentage": 1.16
+  },
+  {
+    "skill": "Vital Signs",
+    "frequency": 29,
+    "percentage": 1.16
+  },
+  {
+    "skill": "Woodworking",
+    "frequency": 28,
+    "percentage": 1.12
+  },
+  {
+    "skill": "Office Software",
+    "frequency": 28,
+    "percentage": 1.12
+  },
+  {
+    "skill": "Basic Math",
+    "frequency": 28,
+    "percentage": 1.12
+  },
+  {
+    "skill": "Compliance",
+    "frequency": 27,
+    "percentage": 1.08
+  },
+  {
+    "skill": "Machine Maintenance",
+    "frequency": 27,
+    "percentage": 1.08
+  },
+  {
+    "skill": "Case Management",
+    "frequency": 26,
+    "percentage": 1.04
+  },
+  {
+    "skill": "Tour Planning",
+    "frequency": 25,
+    "percentage": 1.0
+  },
+  {
+    "skill": "Furniture Design",
+    "frequency": 25,
+    "percentage": 1.0
+  },
+  {
+    "skill": "Scheduling",
+    "frequency": 25,
+    "percentage": 1.0
+  },
+  {
+    "skill": "Analysis",
+    "frequency": 25,
+    "percentage": 1.0
+  },
+  {
+    "skill": "Office Support",
+    "frequency": 25,
+    "percentage": 1.0
+  },
+  {
+    "skill": "Exploration",
+    "frequency": 25,
+    "percentage": 1.0
+  },
+  {
+    "skill": "Team Leadership",
+    "frequency": 24,
+    "percentage": 0.96
+  },
+  {
+    "skill": "Wiring",
+    "frequency": 24,
+    "percentage": 0.96
+  },
+  {
+    "skill": "Typing",
+    "frequency": 24,
+    "percentage": 0.96
+  },
+  {
+    "skill": "Bicycle Riding",
+    "frequency": 24,
+    "percentage": 0.96
+  },
+  {
+    "skill": "Farmer Training",
+    "frequency": 23,
+    "percentage": 0.92
+  },
+  {
+    "skill": "Testing",
+    "frequency": 23,
+    "percentage": 0.92
+  },
+  {
+    "skill": "Diet Planning",
+    "frequency": 22,
+    "percentage": 0.88
+  },
+  {
+    "skill": "Research",
+    "frequency": 22,
+    "percentage": 0.88
+  },
+  {
+    "skill": "Bulldozer",
+    "frequency": 22,
+    "percentage": 0.88
+  },
+  {
+    "skill": "Pattern Making",
+    "frequency": 22,
+    "percentage": 0.88
+  },
+  {
+    "skill": "Communication",
+    "frequency": 22,
+    "percentage": 0.88
+  },
+  {
+    "skill": "CAD",
+    "frequency": 21,
+    "percentage": 0.84
+  },
+  {
+    "skill": "Water Systems",
+    "frequency": 21,
+    "percentage": 0.84
+  },
+  {
+    "skill": "Quality Control",
+    "frequency": 21,
+    "percentage": 0.84
+  },
+  {
+    "skill": "Furniture Making",
+    "frequency": 21,
+    "percentage": 0.84
+  },
+  {
+    "skill": "Area Knowledge",
+    "frequency": 21,
+    "percentage": 0.84
+  },
+  {
+    "skill": "Social Media",
+    "frequency": 20,
+    "percentage": 0.8
+  },
+  {
+    "skill": "Conservation",
+    "frequency": 20,
+    "percentage": 0.8
+  },
+  {
+    "skill": "Budgeting",
+    "frequency": 20,
+    "percentage": 0.8
+  },
+  {
+    "skill": "Chemical Processes",
+    "frequency": 20,
+    "percentage": 0.8
+  },
+  {
+    "skill": "Washing",
+    "frequency": 20,
+    "percentage": 0.8
+  },
+  {
+    "skill": "Ironing",
+    "frequency": 20,
+    "percentage": 0.8
+  },
+  {
+    "skill": "Python",
+    "frequency": 19,
+    "percentage": 0.76
+  },
+  {
+    "skill": "Network Administration",
+    "frequency": 19,
+    "percentage": 0.76
+  },
+  {
+    "skill": "News Writing",
+    "frequency": 19,
+    "percentage": 0.76
+  },
+  {
+    "skill": "Sewing",
+    "frequency": 19,
+    "percentage": 0.76
+  },
+  {
+    "skill": "Metal Identification",
+    "frequency": 19,
+    "percentage": 0.76
+  },
+  {
+    "skill": "Security Awareness",
+    "frequency": 19,
+    "percentage": 0.76
+  },
+  {
+    "skill": "AutoCAD",
+    "frequency": 18,
+    "percentage": 0.72
+  },
+  {
+    "skill": "Guest Services",
+    "frequency": 18,
+    "percentage": 0.72
+  },
+  {
+    "skill": "Interviewing",
+    "frequency": 18,
+    "percentage": 0.72
+  },
+  {
+    "skill": "Cultural Knowledge",
+    "frequency": 18,
+    "percentage": 0.72
+  },
+  {
+    "skill": "Fashion Design",
+    "frequency": 18,
+    "percentage": 0.72
+  },
+  {
+    "skill": "Computer Skills",
+    "frequency": 18,
+    "percentage": 0.72
+  },
+  {
+    "skill": "Troubleshooting",
+    "frequency": 18,
+    "percentage": 0.72
+  },
+  {
+    "skill": "Load Haul Dump",
+    "frequency": 18,
+    "percentage": 0.72
+  },
+  {
+    "skill": "Car Cleaning",
+    "frequency": 18,
+    "percentage": 0.72
+  },
+  {
+    "skill": "Java",
+    "frequency": 17,
+    "percentage": 0.68
+  },
+  {
+    "skill": "Environmental Monitoring",
+    "frequency": 17,
+    "percentage": 0.68
+  },
+  {
+    "skill": "Blueprint Reading",
+    "frequency": 17,
+    "percentage": 0.68
+  },
+  {
+    "skill": "Safety Management",
+    "frequency": 17,
+    "percentage": 0.68
+  },
+  {
+    "skill": "Nutritional Assessment",
+    "frequency": 17,
+    "percentage": 0.68
+  },
+  {
+    "skill": "Structural Design",
+    "frequency": 17,
+    "percentage": 0.68
+  },
+  {
+    "skill": "Payroll",
+    "frequency": 16,
+    "percentage": 0.64
+  },
+  {
+    "skill": "Financial Analysis",
+    "frequency": 16,
+    "percentage": 0.64
+  },
+  {
+    "skill": "Video Editing",
+    "frequency": 16,
+    "percentage": 0.64
+  },
+  {
+    "skill": "Excavator",
+    "frequency": 16,
+    "percentage": 0.64
+  },
+  {
+    "skill": "Call Center Operations",
+    "frequency": 16,
+    "percentage": 0.64
+  },
+  {
+    "skill": "Complaint Handling",
+    "frequency": 16,
+    "percentage": 0.64
+  },
+  {
+    "skill": "HVAC Installation",
+    "frequency": 16,
+    "percentage": 0.64
+  },
+  {
+    "skill": "Cabinet Making",
+    "frequency": 16,
+    "percentage": 0.64
+  },
+  {
+    "skill": "Team Management",
+    "frequency": 16,
+    "percentage": 0.64
+  },
+  {
+    "skill": "Carpentry",
+    "frequency": 16,
+    "percentage": 0.64
+  },
+  {
+    "skill": "Security",
+    "frequency": 16,
+    "percentage": 0.64
+  },
+  {
+    "skill": "Electrical",
+    "frequency": 16,
+    "percentage": 0.64
+  },
+  {
+    "skill": "Web Development",
+    "frequency": 16,
+    "percentage": 0.64
+  },
+  {
+    "skill": "Basic First Aid",
+    "frequency": 16,
+    "percentage": 0.64
+  },
+  {
+    "skill": "Hardware Repair",
+    "frequency": 15,
+    "percentage": 0.6
+  },
+  {
+    "skill": "Equipment Operation",
+    "frequency": 15,
+    "percentage": 0.6
+  },
+  {
+    "skill": "Machine Design",
+    "frequency": 15,
+    "percentage": 0.6
+  },
+  {
+    "skill": "Power Systems",
+    "frequency": 15,
+    "percentage": 0.6
+  },
+  {
+    "skill": "Loader Operation",
+    "frequency": 15,
+    "percentage": 0.6
+  },
+  {
+    "skill": "Machining",
+    "frequency": 15,
+    "percentage": 0.6
+  },
+  {
+    "skill": "Data Entry",
+    "frequency": 15,
+    "percentage": 0.6
+  },
+  {
+    "skill": "Teacher Training",
+    "frequency": 15,
+    "percentage": 0.6
+  },
+  {
+    "skill": "Optimization",
+    "frequency": 15,
+    "percentage": 0.6
+  },
+  {
+    "skill": "Production",
+    "frequency": 15,
+    "percentage": 0.6
+  },
+  {
+    "skill": "Software Support",
+    "frequency": 14,
+    "percentage": 0.56
+  },
+  {
+    "skill": "Community Development",
+    "frequency": 14,
+    "percentage": 0.56
+  },
+  {
+    "skill": "Inventory Management",
+    "frequency": 14,
+    "percentage": 0.56
+  },
+  {
+    "skill": "Quality Systems",
+    "frequency": 14,
+    "percentage": 0.56
+  },
+  {
+    "skill": "Auditing",
+    "frequency": 14,
+    "percentage": 0.56
+  },
+  {
+    "skill": "SQL",
+    "frequency": 14,
+    "percentage": 0.56
+  },
+  {
+    "skill": "Operations",
+    "frequency": 14,
+    "percentage": 0.56
+  },
+  {
+    "skill": "Investment Analysis",
+    "frequency": 14,
+    "percentage": 0.56
+  },
+  {
+    "skill": "Extension Services",
+    "frequency": 14,
+    "percentage": 0.56
+  },
+  {
+    "skill": "Food Preparation",
+    "frequency": 14,
+    "percentage": 0.56
+  },
+  {
+    "skill": "Detailing",
+    "frequency": 14,
+    "percentage": 0.56
+  },
+  {
+    "skill": "Phone Charging",
+    "frequency": 14,
+    "percentage": 0.56
+  },
+  {
+    "skill": "Playing",
+    "frequency": 14,
+    "percentage": 0.56
+  },
+  {
+    "skill": "CRM Software",
+    "frequency": 13,
+    "percentage": 0.52
+  },
+  {
+    "skill": "Event Planning",
+    "frequency": 13,
+    "percentage": 0.52
+  },
+  {
+    "skill": "Community Work",
+    "frequency": 13,
+    "percentage": 0.52
+  },
+  {
+    "skill": "Basic Electronics",
+    "frequency": 13,
+    "percentage": 0.52
+  },
+  {
+    "skill": "Carrying Goods",
+    "frequency": 13,
+    "percentage": 0.52
+  },
+  {
+    "skill": "Organizing",
+    "frequency": 13,
+    "percentage": 0.52
+  },
+  {
+    "skill": "Fruit Knowledge",
+    "frequency": 13,
+    "percentage": 0.52
+  },
+  {
+    "skill": "Animal Husbandry",
+    "frequency": 13,
+    "percentage": 0.52
+  },
+  {
+    "skill": "Classroom Management",
+    "frequency": 12,
+    "percentage": 0.48
+  },
+  {
+    "skill": "Calendar Management",
+    "frequency": 12,
+    "percentage": 0.48
+  },
+  {
+    "skill": "Electrical Design",
+    "frequency": 12,
+    "percentage": 0.48
+  },
+  {
+    "skill": "Program Management",
+    "frequency": 12,
+    "percentage": 0.48
+  },
+  {
+    "skill": "Market Analysis",
+    "frequency": 12,
+    "percentage": 0.48
+  },
+  {
+    "skill": "Process Optimization",
+    "frequency": 12,
+    "percentage": 0.48
+  },
+  {
+    "skill": "Reservations",
+    "frequency": 12,
+    "percentage": 0.48
+  },
+  {
+    "skill": "Marketing",
+    "frequency": 12,
+    "percentage": 0.48
+  },
+  {
+    "skill": "Mechanical Design",
+    "frequency": 12,
+    "percentage": 0.48
+  },
+  {
+    "skill": "Reporting",
+    "frequency": 12,
+    "percentage": 0.48
+  },
+  {
+    "skill": "Carrying Water",
+    "frequency": 12,
+    "percentage": 0.48
+  },
+  {
+    "skill": "Shoe Cleaning",
+    "frequency": 12,
+    "percentage": 0.48
+  },
+  {
+    "skill": "Polishing",
+    "frequency": 12,
+    "percentage": 0.48
+  },
+  {
+    "skill": "AWS",
+    "frequency": 11,
+    "percentage": 0.44
+  },
+  {
+    "skill": "Revit",
+    "frequency": 11,
+    "percentage": 0.44
+  },
+  {
+    "skill": "Structural Analysis",
+    "frequency": 11,
+    "percentage": 0.44
+  },
+  {
+    "skill": "GIS",
+    "frequency": 11,
+    "percentage": 0.44
+  },
+  {
+    "skill": "Reservation Systems",
+    "frequency": 11,
+    "percentage": 0.44
+  },
+  {
+    "skill": "Chemical Analysis",
+    "frequency": 11,
+    "percentage": 0.44
+  },
+  {
+    "skill": "Laboratory Techniques",
+    "frequency": 11,
+    "percentage": 0.44
+  },
+  {
+    "skill": "Language Skills",
+    "frequency": 11,
+    "percentage": 0.44
+  },
+  {
+    "skill": "Control Systems",
+    "frequency": 11,
+    "percentage": 0.44
+  },
+  {
+    "skill": "Wood Finishing",
+    "frequency": 11,
+    "percentage": 0.44
+  },
+  {
+    "skill": "Digital Marketing",
+    "frequency": 11,
+    "percentage": 0.44
+  },
+  {
+    "skill": "Hotel Operations",
+    "frequency": 11,
+    "percentage": 0.44
+  },
+  {
+    "skill": "Collecting",
+    "frequency": 11,
+    "percentage": 0.44
+  },
+  {
+    "skill": "Folding",
+    "frequency": 11,
+    "percentage": 0.44
+  },
+  {
+    "skill": "SEO",
+    "frequency": 10,
+    "percentage": 0.4
+  },
+  {
+    "skill": "Front Office Operations",
+    "frequency": 10,
+    "percentage": 0.4
+  },
+  {
+    "skill": "Document Preparation",
+    "frequency": 10,
+    "percentage": 0.4
+  },
+  {
+    "skill": "Coloring",
+    "frequency": 10,
+    "percentage": 0.4
+  },
+  {
+    "skill": "Extensions",
+    "frequency": 10,
+    "percentage": 0.4
+  },
+  {
+    "skill": "Revenue Management",
+    "frequency": 10,
+    "percentage": 0.4
+  },
+  {
+    "skill": "Organization",
+    "frequency": 10,
+    "percentage": 0.4
+  },
+  {
+    "skill": "Collection",
+    "frequency": 10,
+    "percentage": 0.4
+  },
+  {
+    "skill": "Delivery Services",
+    "frequency": 10,
+    "percentage": 0.4
+  },
+  {
+    "skill": "React",
+    "frequency": 9,
+    "percentage": 0.36
+  },
+  {
+    "skill": "Docker",
+    "frequency": 9,
+    "percentage": 0.36
+  },
+  {
+    "skill": "PLC Programming",
+    "frequency": 9,
+    "percentage": 0.36
+  },
+  {
+    "skill": "Records Management",
+    "frequency": 9,
+    "percentage": 0.36
+  },
+  {
+    "skill": "Epidemiology",
+    "frequency": 9,
+    "percentage": 0.36
+  },
+  {
+    "skill": "Sanitation",
+    "frequency": 9,
+    "percentage": 0.36
+  },
+  {
+    "skill": "Wildlife Monitoring",
+    "frequency": 9,
+    "percentage": 0.36
+  },
+  {
+    "skill": "Anti-poaching",
+    "frequency": 9,
+    "percentage": 0.36
+  },
+  {
+    "skill": "Instrument Calibration",
+    "frequency": 9,
+    "percentage": 0.36
+  },
+  {
+    "skill": "Community Mobilization",
+    "frequency": 9,
+    "percentage": 0.36
+  },
+  {
+    "skill": "Boiler Making",
+    "frequency": 9,
+    "percentage": 0.36
+  },
+  {
+    "skill": "Coordination",
+    "frequency": 9,
+    "percentage": 0.36
+  },
+  {
+    "skill": "Process Engineering",
+    "frequency": 9,
+    "percentage": 0.36
+  },
+  {
+    "skill": "Administration",
+    "frequency": 9,
+    "percentage": 0.36
+  },
+  {
+    "skill": "Water Carrying",
+    "frequency": 9,
+    "percentage": 0.36
+  },
+  {
+    "skill": "Mixing Concrete",
+    "frequency": 9,
+    "percentage": 0.36
+  },
+  {
+    "skill": "Attention",
+    "frequency": 9,
+    "percentage": 0.36
+  },
+  {
+    "skill": "Money Handling",
+    "frequency": 9,
+    "percentage": 0.36
+  },
+  {
+    "skill": "Process Improvement",
+    "frequency": 8,
+    "percentage": 0.32
+  },
+  {
+    "skill": "Waste Management",
+    "frequency": 8,
+    "percentage": 0.32
+  },
+  {
+    "skill": "Child Development",
+    "frequency": 8,
+    "percentage": 0.32
+  },
+  {
+    "skill": "Risk Management",
+    "frequency": 8,
+    "percentage": 0.32
+  },
+  {
+    "skill": "Customs",
+    "frequency": 8,
+    "percentage": 0.32
+  },
+  {
+    "skill": "Program Evaluation",
+    "frequency": 8,
+    "percentage": 0.32
+  },
+  {
+    "skill": "Market Research",
+    "frequency": 8,
+    "percentage": 0.32
+  },
+  {
+    "skill": "PLC",
+    "frequency": 8,
+    "percentage": 0.32
+  },
+  {
+    "skill": "Food Safety",
+    "frequency": 8,
+    "percentage": 0.32
+  },
+  {
+    "skill": "Surveying",
+    "frequency": 8,
+    "percentage": 0.32
+  },
+  {
+    "skill": "Resource Estimation",
+    "frequency": 8,
+    "percentage": 0.32
+  },
+  {
+    "skill": "Precision Work",
+    "frequency": 8,
+    "percentage": 0.32
+  },
+  {
+    "skill": "Joinery",
+    "frequency": 8,
+    "percentage": 0.32
+  },
+  {
+    "skill": "Front Desk",
+    "frequency": 8,
+    "percentage": 0.32
+  },
+  {
+    "skill": "Cybersecurity",
+    "frequency": 8,
+    "percentage": 0.32
+  },
+  {
+    "skill": "Network Management",
+    "frequency": 8,
+    "percentage": 0.32
+  },
+  {
+    "skill": "Supervision",
+    "frequency": 8,
+    "percentage": 0.32
+  },
+  {
+    "skill": "Programming",
+    "frequency": 8,
+    "percentage": 0.32
+  },
+  {
+    "skill": "Food Handling",
+    "frequency": 8,
+    "percentage": 0.32
+  },
+  {
+    "skill": "Kubernetes",
+    "frequency": 7,
+    "percentage": 0.28
+  },
+  {
+    "skill": "Medication Administration",
+    "frequency": 7,
+    "percentage": 0.28
+  },
+  {
+    "skill": "Emergency Response",
+    "frequency": 7,
+    "percentage": 0.28
+  },
+  {
+    "skill": "QuickBooks",
+    "frequency": 7,
+    "percentage": 0.28
+  },
+  {
+    "skill": "Tax Preparation",
+    "frequency": 7,
+    "percentage": 0.28
+  },
+  {
+    "skill": "Supply Chain",
+    "frequency": 7,
+    "percentage": 0.28
+  },
+  {
+    "skill": "Soil Analysis",
+    "frequency": 7,
+    "percentage": 0.28
+  },
+  {
+    "skill": "Lesson Planning",
+    "frequency": 7,
+    "percentage": 0.28
+  },
+  {
+    "skill": "Laboratory Management",
+    "frequency": 7,
+    "percentage": 0.28
+  },
+  {
+    "skill": "Needs Assessment",
+    "frequency": 7,
+    "percentage": 0.28
+  },
+  {
+    "skill": "Policy Research",
+    "frequency": 7,
+    "percentage": 0.28
+  },
+  {
+    "skill": "Stakeholder Engagement",
+    "frequency": 7,
+    "percentage": 0.28
+  },
+  {
+    "skill": "Special Education",
+    "frequency": 7,
+    "percentage": 0.28
+  },
+  {
+    "skill": "Individualized Planning",
+    "frequency": 7,
+    "percentage": 0.28
+  },
+  {
+    "skill": "Employee Records",
+    "frequency": 7,
+    "percentage": 0.28
+  },
+  {
+    "skill": "Payroll Support",
+    "frequency": 7,
+    "percentage": 0.28
+  },
+  {
+    "skill": "Customer Support",
+    "frequency": 7,
+    "percentage": 0.28
+  },
+  {
+    "skill": "CRM",
+    "frequency": 7,
+    "percentage": 0.28
+  },
+  {
+    "skill": "Executive Support",
+    "frequency": 7,
+    "percentage": 0.28
+  },
+  {
+    "skill": "Safety Systems",
+    "frequency": 7,
+    "percentage": 0.28
+  },
+  {
+    "skill": "CAD Design",
+    "frequency": 7,
+    "percentage": 0.28
+  },
+  {
+    "skill": "Basic Maintenance",
+    "frequency": 7,
+    "percentage": 0.28
+  },
+  {
+    "skill": "Vigilance",
+    "frequency": 7,
+    "percentage": 0.28
+  },
+  {
+    "skill": "Material Handling",
+    "frequency": 7,
+    "percentage": 0.28
+  },
+  {
+    "skill": "Handicraft",
+    "frequency": 7,
+    "percentage": 0.28
+  },
+  {
+    "skill": "Safety Protocols",
+    "frequency": 6,
+    "percentage": 0.24
+  },
+  {
+    "skill": "EHR",
+    "frequency": 6,
+    "percentage": 0.24
+  },
+  {
+    "skill": "Brake Systems",
+    "frequency": 6,
+    "percentage": 0.24
+  },
+  {
+    "skill": "Labor Laws",
+    "frequency": 6,
+    "percentage": 0.24
+  },
+  {
+    "skill": "Field Work",
+    "frequency": 6,
+    "percentage": 0.24
+  },
+  {
+    "skill": "Educational Technology",
+    "frequency": 6,
+    "percentage": 0.24
+  },
+  {
+    "skill": "Social Media Management",
+    "frequency": 6,
+    "percentage": 0.24
+  },
+  {
+    "skill": "Google Ads",
+    "frequency": 6,
+    "percentage": 0.24
+  },
+  {
+    "skill": "Budget Management",
+    "frequency": 6,
+    "percentage": 0.24
+  },
+  {
+    "skill": "Irrigation Systems",
+    "frequency": 6,
+    "percentage": 0.24
+  },
+  {
+    "skill": "Transportation Planning",
+    "frequency": 6,
+    "percentage": 0.24
+  },
+  {
+    "skill": "Nail Art",
+    "frequency": 6,
+    "percentage": 0.24
+  },
+  {
+    "skill": "Crisis Intervention",
+    "frequency": 6,
+    "percentage": 0.24
+  },
+  {
+    "skill": "Delivery Assistance",
+    "frequency": 6,
+    "percentage": 0.24
+  },
+  {
+    "skill": "Prenatal Care",
+    "frequency": 6,
+    "percentage": 0.24
+  },
+  {
+    "skill": "Public Relations",
+    "frequency": 6,
+    "percentage": 0.24
+  },
+  {
+    "skill": "Agribusiness",
+    "frequency": 6,
+    "percentage": 0.24
+  },
+  {
+    "skill": "Value Chain",
+    "frequency": 6,
+    "percentage": 0.24
+  },
+  {
+    "skill": "Logistics",
+    "frequency": 6,
+    "percentage": 0.24
+  },
+  {
+    "skill": "Data Collection",
+    "frequency": 6,
+    "percentage": 0.24
+  },
+  {
+    "skill": "Lathe Operation",
+    "frequency": 6,
+    "percentage": 0.24
+  },
+  {
+    "skill": "Business Management",
+    "frequency": 6,
+    "percentage": 0.24
+  },
+  {
+    "skill": "Assembly",
+    "frequency": 6,
+    "percentage": 0.24
+  },
+  {
+    "skill": "Tour Guiding",
+    "frequency": 6,
+    "percentage": 0.24
+  },
+  {
+    "skill": "Problem-solving",
+    "frequency": 6,
+    "percentage": 0.24
+  },
+  {
+    "skill": "Financial Management",
+    "frequency": 6,
+    "percentage": 0.24
+  },
+  {
+    "skill": "Financial Reporting",
+    "frequency": 6,
+    "percentage": 0.24
+  },
+  {
+    "skill": "Mine Operations",
+    "frequency": 6,
+    "percentage": 0.24
+  },
+  {
+    "skill": "Sustainability",
+    "frequency": 6,
+    "percentage": 0.24
+  },
+  {
+    "skill": "Network Security",
+    "frequency": 6,
+    "percentage": 0.24
+  },
+  {
+    "skill": "Design",
+    "frequency": 6,
+    "percentage": 0.24
+  },
+  {
+    "skill": "Engineering Analysis",
+    "frequency": 6,
+    "percentage": 0.24
+  },
+  {
+    "skill": "Installation",
+    "frequency": 6,
+    "percentage": 0.24
+  },
+  {
+    "skill": "Environmental Management",
+    "frequency": 6,
+    "percentage": 0.24
+  },
+  {
+    "skill": "Carrying",
+    "frequency": 6,
+    "percentage": 0.24
+  },
+  {
+    "skill": "Parking Assistance",
+    "frequency": 6,
+    "percentage": 0.24
+  },
+  {
+    "skill": "Fishing",
+    "frequency": 6,
+    "percentage": 0.24
+  },
+  {
+    "skill": "Fish Handling",
+    "frequency": 6,
+    "percentage": 0.24
+  },
+  {
+    "skill": "Herbal Medicine",
+    "frequency": 6,
+    "percentage": 0.24
+  },
+  {
+    "skill": "Traditional Healing",
+    "frequency": 6,
+    "percentage": 0.24
+  },
+  {
+    "skill": "Economic Modeling",
+    "frequency": 5,
+    "percentage": 0.2
+  },
+  {
+    "skill": "Report Writing",
+    "frequency": 5,
+    "percentage": 0.2
+  },
+  {
+    "skill": "ECU Programming",
+    "frequency": 5,
+    "percentage": 0.2
+  },
+  {
+    "skill": "Postnatal Care",
+    "frequency": 5,
+    "percentage": 0.2
+  },
+  {
+    "skill": "Strategic Planning",
+    "frequency": 5,
+    "percentage": 0.2
+  },
+  {
+    "skill": "Legal Research",
+    "frequency": 5,
+    "percentage": 0.2
+  },
+  {
+    "skill": "Contract Review",
+    "frequency": 5,
+    "percentage": 0.2
+  },
+  {
+    "skill": "Litigation",
+    "frequency": 5,
+    "percentage": 0.2
+  },
+  {
+    "skill": "Fundraising",
+    "frequency": 5,
+    "percentage": 0.2
+  },
+  {
+    "skill": "Cataloging",
+    "frequency": 5,
+    "percentage": 0.2
+  },
+  {
+    "skill": "Information Retrieval",
+    "frequency": 5,
+    "percentage": 0.2
+  },
+  {
+    "skill": "Digital Archives",
+    "frequency": 5,
+    "percentage": 0.2
+  },
+  {
+    "skill": "SolidWorks",
+    "frequency": 5,
+    "percentage": 0.2
+  },
+  {
+    "skill": "Technical Drawing",
+    "frequency": 5,
+    "percentage": 0.2
+  },
+  {
+    "skill": "Database Management",
+    "frequency": 5,
+    "percentage": 0.2
+  },
+  {
+    "skill": "Backup Systems",
+    "frequency": 5,
+    "percentage": 0.2
+  },
+  {
+    "skill": "Animal Health",
+    "frequency": 5,
+    "percentage": 0.2
+  },
+  {
+    "skill": "Livestock Management",
+    "frequency": 5,
+    "percentage": 0.2
+  },
+  {
+    "skill": "Breeding",
+    "frequency": 5,
+    "percentage": 0.2
+  },
+  {
+    "skill": "Mineral Processing",
+    "frequency": 5,
+    "percentage": 0.2
+  },
+  {
+    "skill": "Travel Planning",
+    "frequency": 5,
+    "percentage": 0.2
+  },
+  {
+    "skill": "Forging",
+    "frequency": 5,
+    "percentage": 0.2
+  },
+  {
+    "skill": "Business Strategy",
+    "frequency": 5,
+    "percentage": 0.2
+  },
+  {
+    "skill": "Staff Training",
+    "frequency": 5,
+    "percentage": 0.2
+  },
+  {
+    "skill": "Tourism Development",
+    "frequency": 5,
+    "percentage": 0.2
+  },
+  {
+    "skill": "Leadership",
+    "frequency": 5,
+    "percentage": 0.2
+  },
+  {
+    "skill": "Process Design",
+    "frequency": 5,
+    "percentage": 0.2
+  },
+  {
+    "skill": "Safety Procedures",
+    "frequency": 5,
+    "percentage": 0.2
+  },
+  {
+    "skill": "Fitting",
+    "frequency": 5,
+    "percentage": 0.2
+  },
+  {
+    "skill": "Basic Repairs",
+    "frequency": 5,
+    "percentage": 0.2
+  },
+  {
+    "skill": "Basic Mechanics",
+    "frequency": 5,
+    "percentage": 0.2
+  },
+  {
+    "skill": "Basic Construction",
+    "frequency": 5,
+    "percentage": 0.2
+  },
+  {
+    "skill": "Basic Electricity",
+    "frequency": 5,
+    "percentage": 0.2
+  },
+  {
+    "skill": "Basket Weaving",
+    "frequency": 5,
+    "percentage": 0.2
+  },
+  {
+    "skill": "Crop Farming",
+    "frequency": 5,
+    "percentage": 0.2
+  },
+  {
+    "skill": "Fabric Knowledge",
+    "frequency": 4,
+    "percentage": 0.16
+  },
+  {
+    "skill": "Extraction",
+    "frequency": 4,
+    "percentage": 0.16
+  },
+  {
+    "skill": "Finance",
+    "frequency": 4,
+    "percentage": 0.16
+  },
+  {
+    "skill": "Environmental Health",
+    "frequency": 4,
+    "percentage": 0.16
+  },
+  {
+    "skill": "Inspection",
+    "frequency": 4,
+    "percentage": 0.16
+  },
+  {
+    "skill": "Gender Analysis",
+    "frequency": 4,
+    "percentage": 0.16
+  },
+  {
+    "skill": "Microfinance",
+    "frequency": 4,
+    "percentage": 0.16
+  },
+  {
+    "skill": "Loan Management",
+    "frequency": 4,
+    "percentage": 0.16
+  },
+  {
+    "skill": "Plant Operation",
+    "frequency": 4,
+    "percentage": 0.16
+  },
+  {
+    "skill": "Equipment Monitoring",
+    "frequency": 4,
+    "percentage": 0.16
+  },
+  {
+    "skill": "Production Management",
+    "frequency": 4,
+    "percentage": 0.16
+  },
+  {
+    "skill": "Value Chains",
+    "frequency": 4,
+    "percentage": 0.16
+  },
+  {
+    "skill": "Business Planning",
+    "frequency": 4,
+    "percentage": 0.16
+  },
+  {
+    "skill": "Network Design",
+    "frequency": 4,
+    "percentage": 0.16
+  },
+  {
+    "skill": "Analytics",
+    "frequency": 4,
+    "percentage": 0.16
+  },
+  {
+    "skill": "Education",
+    "frequency": 4,
+    "percentage": 0.16
+  },
+  {
+    "skill": "Network Support",
+    "frequency": 4,
+    "percentage": 0.16
+  },
+  {
+    "skill": "Software",
+    "frequency": 4,
+    "percentage": 0.16
+  },
+  {
+    "skill": "Irrigation",
+    "frequency": 4,
+    "percentage": 0.16
+  },
+  {
+    "skill": "HR Strategy",
+    "frequency": 4,
+    "percentage": 0.16
+  },
+  {
+    "skill": "ETABS",
+    "frequency": 4,
+    "percentage": 0.16
+  },
+  {
+    "skill": "Staff Supervision",
+    "frequency": 4,
+    "percentage": 0.16
+  },
+  {
+    "skill": "Skincare",
+    "frequency": 4,
+    "percentage": 0.16
+  },
+  {
+    "skill": "Extension",
+    "frequency": 4,
+    "percentage": 0.16
+  },
+  {
+    "skill": "Restoration",
+    "frequency": 4,
+    "percentage": 0.16
+  },
+  {
+    "skill": "Beauty Treatments",
+    "frequency": 4,
+    "percentage": 0.16
+  },
+  {
+    "skill": "Database",
+    "frequency": 4,
+    "percentage": 0.16
+  },
+  {
+    "skill": "IT Infrastructure",
+    "frequency": 4,
+    "percentage": 0.16
+  },
+  {
+    "skill": "Database Development",
+    "frequency": 4,
+    "percentage": 0.16
+  },
+  {
+    "skill": "Precision Machining",
+    "frequency": 4,
+    "percentage": 0.16
+  },
+  {
+    "skill": "Plowing",
+    "frequency": 4,
+    "percentage": 0.16
+  },
+  {
+    "skill": "Planting",
+    "frequency": 4,
+    "percentage": 0.16
+  },
+  {
+    "skill": "Service",
+    "frequency": 4,
+    "percentage": 0.16
+  },
+  {
+    "skill": "Basic Hygiene",
+    "frequency": 4,
+    "percentage": 0.16
+  },
+  {
+    "skill": "Sorting",
+    "frequency": 4,
+    "percentage": 0.16
+  },
+  {
+    "skill": "Hand Skills",
+    "frequency": 4,
+    "percentage": 0.16
+  },
+  {
+    "skill": "Irrigation Design",
+    "frequency": 3,
+    "percentage": 0.12
+  },
+  {
+    "skill": "Mechanization",
+    "frequency": 3,
+    "percentage": 0.12
+  },
+  {
+    "skill": "Content Writing",
+    "frequency": 3,
+    "percentage": 0.12
+  },
+  {
+    "skill": "Plumbing Installation",
+    "frequency": 3,
+    "percentage": 0.12
+  },
+  {
+    "skill": "Nutrition Assessment",
+    "frequency": 3,
+    "percentage": 0.12
+  },
+  {
+    "skill": "Tailoring",
+    "frequency": 3,
+    "percentage": 0.12
+  },
+  {
+    "skill": "Hardware",
+    "frequency": 3,
+    "percentage": 0.12
+  },
+  {
+    "skill": "Agile",
+    "frequency": 3,
+    "percentage": 0.12
+  },
+  {
+    "skill": "Calibration",
+    "frequency": 3,
+    "percentage": 0.12
+  },
+  {
+    "skill": "Strategy",
+    "frequency": 3,
+    "percentage": 0.12
+  },
+  {
+    "skill": "Cloud Architecture",
+    "frequency": 3,
+    "percentage": 0.12
+  },
+  {
+    "skill": "Customer Experience",
+    "frequency": 3,
+    "percentage": 0.12
+  },
+  {
+    "skill": "Quality",
+    "frequency": 3,
+    "percentage": 0.12
+  },
+  {
+    "skill": "Drilling",
+    "frequency": 3,
+    "percentage": 0.12
+  },
+  {
+    "skill": "Sampling",
+    "frequency": 3,
+    "percentage": 0.12
+  },
+  {
+    "skill": "Protection",
+    "frequency": 3,
+    "percentage": 0.12
+  },
+  {
+    "skill": "Risk Assessment",
+    "frequency": 3,
+    "percentage": 0.12
+  },
+  {
+    "skill": "Events",
+    "frequency": 3,
+    "percentage": 0.12
+  },
+  {
+    "skill": "Event Management",
+    "frequency": 3,
+    "percentage": 0.12
+  },
+  {
+    "skill": "IT Support",
+    "frequency": 3,
+    "percentage": 0.12
+  },
+  {
+    "skill": "Modeling",
+    "frequency": 3,
+    "percentage": 0.12
+  },
+  {
+    "skill": "Operations Management",
+    "frequency": 3,
+    "percentage": 0.12
+  },
+  {
+    "skill": "Environmental Assessment",
+    "frequency": 3,
+    "percentage": 0.12
+  },
+  {
+    "skill": "Talent Management",
+    "frequency": 3,
+    "percentage": 0.12
+  },
+  {
+    "skill": "Educational Leadership",
+    "frequency": 3,
+    "percentage": 0.12
+  },
+  {
+    "skill": "Partnership Development",
+    "frequency": 3,
+    "percentage": 0.12
+  },
+  {
+    "skill": "Measurement",
+    "frequency": 3,
+    "percentage": 0.12
+  },
+  {
+    "skill": "Community Outreach",
+    "frequency": 3,
+    "percentage": 0.12
+  },
+  {
+    "skill": "Staff Management",
+    "frequency": 3,
+    "percentage": 0.12
+  },
+  {
+    "skill": "Vehicle Operation",
+    "frequency": 3,
+    "percentage": 0.12
+  },
+  {
+    "skill": "Route Knowledge",
+    "frequency": 3,
+    "percentage": 0.12
+  },
+  {
+    "skill": "Basic Fabrication",
+    "frequency": 3,
+    "percentage": 0.12
+  },
+  {
+    "skill": "Livestock Care",
+    "frequency": 3,
+    "percentage": 0.12
+  },
+  {
+    "skill": "Basic Installations",
+    "frequency": 3,
+    "percentage": 0.12
+  },
+  {
+    "skill": "Repairs",
+    "frequency": 3,
+    "percentage": 0.12
+  },
+  {
+    "skill": "Basic Diagnostics",
+    "frequency": 3,
+    "percentage": 0.12
+  },
+  {
+    "skill": "Selling",
+    "frequency": 3,
+    "percentage": 0.12
+  },
+  {
+    "skill": "Motorcycle Riding",
+    "frequency": 3,
+    "percentage": 0.12
+  },
+  {
+    "skill": "Negotiation",
+    "frequency": 3,
+    "percentage": 0.12
+  },
+  {
+    "skill": "Brick Making",
+    "frequency": 3,
+    "percentage": 0.12
+  },
+  {
+    "skill": "Vegetable Sales",
+    "frequency": 3,
+    "percentage": 0.12
+  },
+  {
+    "skill": "Knowledge of Area",
+    "frequency": 3,
+    "percentage": 0.12
+  },
+  {
+    "skill": "Window Cleaning",
+    "frequency": 3,
+    "percentage": 0.12
+  },
+  {
+    "skill": "Delivery",
+    "frequency": 3,
+    "percentage": 0.12
+  },
+  {
+    "skill": "Pottery",
+    "frequency": 3,
+    "percentage": 0.12
+  },
+  {
+    "skill": "Clay Work",
+    "frequency": 3,
+    "percentage": 0.12
+  },
+  {
+    "skill": "Charcoal Making",
+    "frequency": 3,
+    "percentage": 0.12
+  },
+  {
+    "skill": "Basic Mining",
+    "frequency": 3,
+    "percentage": 0.12
+  },
+  {
+    "skill": "River Navigation",
+    "frequency": 3,
+    "percentage": 0.12
+  },
+  {
+    "skill": "Fish Preservation",
+    "frequency": 3,
+    "percentage": 0.12
+  },
+  {
+    "skill": "Agricultural Labor",
+    "frequency": 3,
+    "percentage": 0.12
+  },
+  {
+    "skill": "Strength",
+    "frequency": 3,
+    "percentage": 0.12
+  },
+  {
+    "skill": "Architectural Design",
+    "frequency": 2,
+    "percentage": 0.08
+  },
+  {
+    "skill": "Diesel Engines",
+    "frequency": 2,
+    "percentage": 0.08
+  },
+  {
+    "skill": "Hydraulic Systems",
+    "frequency": 2,
+    "percentage": 0.08
+  },
+  {
+    "skill": "Precision Fitting",
+    "frequency": 2,
+    "percentage": 0.08
+  },
+  {
+    "skill": "Market Development",
+    "frequency": 2,
+    "percentage": 0.08
+  },
+  {
+    "skill": "QC",
+    "frequency": 2,
+    "percentage": 0.08
+  },
+  {
+    "skill": "Projects",
+    "frequency": 2,
+    "percentage": 0.08
+  },
+  {
+    "skill": "Construction Management",
+    "frequency": 2,
+    "percentage": 0.08
+  },
+  {
+    "skill": "Incident Response",
+    "frequency": 2,
+    "percentage": 0.08
+  },
+  {
+    "skill": "DevOps",
+    "frequency": 2,
+    "percentage": 0.08
+  },
+  {
+    "skill": "Tool Making",
+    "frequency": 2,
+    "percentage": 0.08
+  },
+  {
+    "skill": "Disease Prevention",
+    "frequency": 2,
+    "percentage": 0.08
+  },
+  {
+    "skill": "Tour Operations",
+    "frequency": 2,
+    "percentage": 0.08
+  },
+  {
+    "skill": "Hospitality Management",
+    "frequency": 2,
+    "percentage": 0.08
+  },
+  {
+    "skill": "Therapy",
+    "frequency": 2,
+    "percentage": 0.08
+  },
+  {
+    "skill": "Loaders",
+    "frequency": 2,
+    "percentage": 0.08
+  },
+  {
+    "skill": "Performance Management",
+    "frequency": 2,
+    "percentage": 0.08
+  },
+  {
+    "skill": "Plumbing Systems",
+    "frequency": 2,
+    "percentage": 0.08
+  },
+  {
+    "skill": "Livestock",
+    "frequency": 2,
+    "percentage": 0.08
+  },
+  {
+    "skill": "Product Development",
+    "frequency": 2,
+    "percentage": 0.08
+  },
+  {
+    "skill": "Production Planning",
+    "frequency": 2,
+    "percentage": 0.08
+  },
+  {
+    "skill": "Bookkeeping",
+    "frequency": 2,
+    "percentage": 0.08
+  },
+  {
+    "skill": "Vehicle Diagnostics",
+    "frequency": 2,
+    "percentage": 0.08
+  },
+  {
+    "skill": "Portfolio Management",
+    "frequency": 2,
+    "percentage": 0.08
+  },
+  {
+    "skill": "Maintenance Planning",
+    "frequency": 2,
+    "percentage": 0.08
+  },
+  {
+    "skill": "Boiler Operation",
+    "frequency": 2,
+    "percentage": 0.08
+  },
+  {
+    "skill": "Office Administration",
+    "frequency": 2,
+    "percentage": 0.08
+  },
+  {
+    "skill": "Content Strategy",
+    "frequency": 2,
+    "percentage": 0.08
+  },
+  {
+    "skill": "Geological Modeling",
+    "frequency": 2,
+    "percentage": 0.08
+  },
+  {
+    "skill": "Teacher Support",
+    "frequency": 2,
+    "percentage": 0.08
+  },
+  {
+    "skill": "Mineral Exploration",
+    "frequency": 2,
+    "percentage": 0.08
+  },
+  {
+    "skill": "Production Optimization",
+    "frequency": 2,
+    "percentage": 0.08
+  },
+  {
+    "skill": "Network Protection",
+    "frequency": 2,
+    "percentage": 0.08
+  },
+  {
+    "skill": "Hotel Management",
+    "frequency": 2,
+    "percentage": 0.08
+  },
+  {
+    "skill": "Revenue Optimization",
+    "frequency": 2,
+    "percentage": 0.08
+  },
+  {
+    "skill": "Transportation",
+    "frequency": 2,
+    "percentage": 0.08
+  },
+  {
+    "skill": "Harvesting",
+    "frequency": 2,
+    "percentage": 0.08
+  },
+  {
+    "skill": "Automation",
+    "frequency": 2,
+    "percentage": 0.08
+  },
+  {
+    "skill": "Pharmaceutical Care",
+    "frequency": 2,
+    "percentage": 0.08
+  },
+  {
+    "skill": "Azure",
+    "frequency": 2,
+    "percentage": 0.08
+  },
+  {
+    "skill": "Phone Handling",
+    "frequency": 2,
+    "percentage": 0.08
+  },
+  {
+    "skill": "Laundry",
+    "frequency": 2,
+    "percentage": 0.08
+  },
+  {
+    "skill": "Navigation",
+    "frequency": 2,
+    "percentage": 0.08
+  },
+  {
+    "skill": "Wood Cutting",
+    "frequency": 2,
+    "percentage": 0.08
+  },
+  {
+    "skill": "Hair Braiding",
+    "frequency": 2,
+    "percentage": 0.08
+  },
+  {
+    "skill": "Basic Styling",
+    "frequency": 2,
+    "percentage": 0.08
+  },
+  {
+    "skill": "Car Washing",
+    "frequency": 2,
+    "percentage": 0.08
+  },
+  {
+    "skill": "Farming",
+    "frequency": 2,
+    "percentage": 0.08
+  },
+  {
+    "skill": "Tea Making",
+    "frequency": 2,
+    "percentage": 0.08
+  },
+  {
+    "skill": "Shoe Repair",
+    "frequency": 2,
+    "percentage": 0.08
+  },
+  {
+    "skill": "Boat Handling",
+    "frequency": 2,
+    "percentage": 0.08
+  },
+  {
+    "skill": "Forest Management",
+    "frequency": 2,
+    "percentage": 0.08
+  },
+  {
+    "skill": "Gold Panning",
+    "frequency": 2,
+    "percentage": 0.08
+  },
+  {
+    "skill": "Beekeeping",
+    "frequency": 2,
+    "percentage": 0.08
+  },
+  {
+    "skill": "Honey Extraction",
+    "frequency": 2,
+    "percentage": 0.08
+  },
+  {
+    "skill": "Charcoal Sales",
+    "frequency": 2,
+    "percentage": 0.08
+  },
+  {
+    "skill": "Basic Shoe Repair",
+    "frequency": 2,
+    "percentage": 0.08
+  },
+  {
+    "skill": "Goods Carrying",
+    "frequency": 2,
+    "percentage": 0.08
+  },
+  {
+    "skill": "Knowledge of Kitwe",
+    "frequency": 2,
+    "percentage": 0.08
+  },
+  {
+    "skill": "Metal Sorting",
+    "frequency": 2,
+    "percentage": 0.08
+  },
+  {
+    "skill": "Identification",
+    "frequency": 2,
+    "percentage": 0.08
+  },
+  {
+    "skill": "Material Collection",
+    "frequency": 2,
+    "percentage": 0.08
+  },
+  {
+    "skill": "Cisco Routers",
+    "frequency": 1,
+    "percentage": 0.04
+  },
+  {
+    "skill": "Firewalls",
+    "frequency": 1,
+    "percentage": 0.04
+  },
+  {
+    "skill": "3D Modeling",
+    "frequency": 1,
+    "percentage": 0.04
+  },
+  {
+    "skill": "Mine Management",
+    "frequency": 1,
+    "percentage": 0.04
+  },
+  {
+    "skill": "Safety Leadership",
+    "frequency": 1,
+    "percentage": 0.04
+  },
+  {
+    "skill": "Languages",
+    "frequency": 1,
+    "percentage": 0.04
+  },
+  {
+    "skill": "Electrical Maintenance",
+    "frequency": 1,
+    "percentage": 0.04
+  },
+  {
+    "skill": "Economic Analysis",
+    "frequency": 1,
+    "percentage": 0.04
+  },
+  {
+    "skill": "Data",
+    "frequency": 1,
+    "percentage": 0.04
+  },
+  {
+    "skill": "Masonry",
+    "frequency": 1,
+    "percentage": 0.04
+  },
+  {
+    "skill": "Tax Compliance",
+    "frequency": 1,
+    "percentage": 0.04
+  },
+  {
+    "skill": "Environmental Compliance",
+    "frequency": 1,
+    "percentage": 0.04
+  },
+  {
+    "skill": "Advanced Diagnostics",
+    "frequency": 1,
+    "percentage": 0.04
+  },
+  {
+    "skill": "Team Training",
+    "frequency": 1,
+    "percentage": 0.04
+  },
+  {
+    "skill": "Crop Science",
+    "frequency": 1,
+    "percentage": 0.04
+  },
+  {
+    "skill": "Adobe Creative Suite",
+    "frequency": 1,
+    "percentage": 0.04
+  },
+  {
+    "skill": "UI/UX Design",
+    "frequency": 1,
+    "percentage": 0.04
+  },
+  {
+    "skill": "Branding",
+    "frequency": 1,
+    "percentage": 0.04
+  },
+  {
+    "skill": "Solar Installation",
+    "frequency": 1,
+    "percentage": 0.04
+  }
+]

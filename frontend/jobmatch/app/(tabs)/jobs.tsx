@@ -89,17 +89,22 @@ export default function JobsScreen() {
   });
 
   // Fetch job categories
-  const { data: categories = [] } = useQuery({
+  const { data: categoriesResponse } = useQuery({
     queryKey: ['jobCategories'],
     queryFn: () => jobsService.getCategories(),
     staleTime: 30 * 60 * 1000,
   });
 
+  // Safely handle categories - ensure it's always an array
+  const categories = Array.isArray(categoriesResponse) ? categoriesResponse : [];
+
   const isLoading = matchesLoading || jobsLoading;
   const topMatches = matchesData?.matches || [];
+  
+  // Safely construct allJobs array with proper type checking
   const allJobs = jobsData ? [
-    ...jobsData.corporate_jobs || [],
-    ...jobsData.personal_jobs || [],
+    ...(Array.isArray(jobsData.corporate_jobs) ? jobsData.corporate_jobs : []),
+    ...(Array.isArray(jobsData.personal_jobs) ? jobsData.personal_jobs : []),
   ] : [];
   
   // Pagination logic
@@ -319,7 +324,7 @@ export default function JobsScreen() {
     );
   };
 
-  // Build category list with 'All' first
+  // Build category list with 'All' first - ensure categories is an array
   const categoryList = ['All', ...categories].map(cat => ({
     id: cat,
     name: cat,

@@ -4,33 +4,55 @@ import { useRouter, Stack } from 'expo-router';
 import { useThemeStore } from '@/store/themeStore';
 import { getTheme } from '@/utils/theme';
 import { useQuery } from '@tanstack/react-query';
-import { matchService } from '@/services/match.service';
-import { ArrowLeft, Sparkles, Filter, ChevronRight } from 'lucide-react-native';
+import { mlMatchService } from '@/services/match.service';
+import { ArrowLeft, Sparkles, ChevronRight, Briefcase, Zap } from 'lucide-react-native';
+import { useCvId } from '@/hooks/useMatching';
 
 export default function JobMatchesScreen() {
   const router = useRouter();
   const { isDarkMode } = useThemeStore();
   const colors = getTheme(isDarkMode);
+  const cvId = useCvId();
+  
+  // Simplified state - removed ranking method toggle
   const [itemsPerPage, setItemsPerPage] = useState<5 | 10 | 20>(10);
   const [currentPage, setCurrentPage] = useState(1);
-  const [minScore, setMinScore] = useState(0); // Minimum match score filter
+  const [minScore, setMinScore] = useState(0); // Minimum match score filter (0-100)
+  const [jobType, setJobType] = useState<'all' | 'corporate' | 'small'>('all');
+  const [showSalaryMatchOnly, setShowSalaryMatchOnly] = useState(false); // NEW: Salary filter
 
-  // Fetch all qualified matches (up to 50)
+  // Always use hybrid matching (best performance)
   const {
     data: matchData,
     isLoading,
     refetch,
     error,
   } = useQuery({
-    queryKey: ['allMatches'],
-    queryFn: () => matchService.getAIMatchedJobs(50, 'both'),
+    queryKey: ['hybrid-matches', cvId, jobType],
+    queryFn: () => mlMatchService.getHybridMatches(
+      cvId!, 
+      100, // Fetch more, filter client-side
+      jobType === 'all' ? undefined : jobType
+    ),
+    enabled: !!cvId,
     staleTime: 5 * 60 * 1000,
   });
 
   const allMatches = matchData?.matches || [];
   
-  // Filter by minimum score
-  const filteredMatches = allMatches.filter(match => match.match_score >= minScore);
+  // Filter by minimum score (convert 0-100 to 0-1 for comparison)
+  let filteredMatches = allMatches.filter(match => {
+    const scoreToUse = match.hybrid_score || match.rule_score;
+    return scoreToUse * 100 >= minScore;
+  });
+
+  // NEW: Filter by salary match if enabled
+  if (showSalaryMatchOnly) {
+    filteredMatches = filteredMatches.filter(match => {
+      // Salary match is "good" if salary_score >= 0.7 (70%)
+      return match.sub_scores?.salary >= 0.7;
+    });
+  }
   
   // Calculate pagination
   const totalItems = filteredMatches.length;
@@ -40,17 +62,17 @@ export default function JobMatchesScreen() {
   const currentMatches = filteredMatches.slice(startIndex, endIndex);
 
   // Statistics
-  const stats = matchService.getMatchStats(filteredMatches);
+  const stats = mlMatchService.getMLMatchStats(filteredMatches);
 
   const getMatchColor = (score: number) => {
-    if (score >= 85) return '#10B981';
-    if (score >= 70) return '#F59E0B';
+    if (score >= 0.85) return '#10B981';
+    if (score >= 0.70) return '#F59E0B';
     return '#9CA3AF';
   };
 
   const getMatchLabel = (score: number) => {
-    if (score >= 85) return 'Excellent';
-    if (score >= 70) return 'Good';
+    if (score >= 0.85) return 'Excellent';
+    if (score >= 0.70) return 'Good';
     return 'Fair';
   };
 
@@ -73,7 +95,7 @@ export default function JobMatchesScreen() {
 
   const onRefresh = async () => {
     await refetch();
-    setCurrentPage(1); // Reset to first page
+    setCurrentPage(1);
   };
 
   const goToPage = (page: number) => {
@@ -121,7 +143,7 @@ export default function JobMatchesScreen() {
                   fontSize: 24,
                   fontWeight: 'bold',
                 }}>
-                  Your Qualified Matches
+                  Your Best Matches
                 </Text>
               </View>
               <Text style={{
@@ -130,7 +152,7 @@ export default function JobMatchesScreen() {
                 opacity: 0.8,
                 marginTop: 4,
               }}>
-                {totalItems} jobs match your profile
+                {totalItems} jobs tailored for you
               </Text>
             </View>
           </View>
@@ -176,7 +198,7 @@ export default function JobMatchesScreen() {
               borderRadius: 12,
             }}>
               <Text style={{ color: colors.accent, fontSize: 20, fontWeight: 'bold' }}>
-                {stats.averageScore}%
+                {stats.averageHybridScore}%
               </Text>
               <Text style={{ color: colors.textMuted, fontSize: 11 }}>
                 Avg Match
@@ -193,6 +215,46 @@ export default function JobMatchesScreen() {
         >
           {/* Filters */}
           <View style={{ paddingHorizontal: 24, paddingVertical: 20 }}>
+            {/* Job Type Filter */}
+            <View style={{ marginBottom: 16 }}>
+              <Text style={{
+                color: colors.text,
+                fontSize: 14,
+                fontWeight: '600',
+                marginBottom: 8,
+              }}>
+                Job Type
+              </Text>
+              <View style={{ flexDirection: 'row', gap: 8 }}>
+                {['all', 'corporate', 'small'].map((type) => (
+                  <TouchableOpacity
+                    key={type}
+                    onPress={() => {
+                      setJobType(type as 'all' | 'corporate' | 'small');
+                      setCurrentPage(1);
+                    }}
+                    style={{
+                      flex: 1,
+                      paddingVertical: 10,
+                      borderRadius: 8,
+                      backgroundColor: jobType === type ? colors.actionBox : colors.card,
+                      borderWidth: 1.5,
+                      borderColor: jobType === type ? colors.actionText : colors.cardBorder,
+                      alignItems: 'center',
+                    }}
+                  >
+                    <Text style={{
+                      color: jobType === type ? colors.actionText : colors.textMuted,
+                      fontWeight: '600',
+                      fontSize: 13,
+                    }}>
+                      {type === 'all' ? 'All Jobs' : type === 'corporate' ? 'Professional' : 'Gig Economy'}
+                    </Text>
+                  </TouchableOpacity>
+                ))}
+              </View>
+            </View>
+
             {/* Items per page selector */}
             <View style={{ marginBottom: 16 }}>
               <Text style={{
@@ -271,6 +333,57 @@ export default function JobMatchesScreen() {
               </View>
             </View>
 
+            {/* NEW: Salary Match Filter */}
+            <View style={{ marginBottom: 16 }}>
+              <TouchableOpacity
+                onPress={() => {
+                  setShowSalaryMatchOnly(!showSalaryMatchOnly);
+                  setCurrentPage(1);
+                }}
+                style={{
+                  flexDirection: 'row',
+                  alignItems: 'center',
+                  backgroundColor: showSalaryMatchOnly ? colors.actionBox : colors.card,
+                  padding: 12,
+                  borderRadius: 10,
+                  borderWidth: 1.5,
+                  borderColor: showSalaryMatchOnly ? colors.actionText : colors.cardBorder,
+                }}
+              >
+                <View style={{
+                  width: 20,
+                  height: 20,
+                  borderRadius: 4,
+                  borderWidth: 2,
+                  borderColor: showSalaryMatchOnly ? colors.actionText : colors.cardBorder,
+                  backgroundColor: showSalaryMatchOnly ? colors.actionText : 'transparent',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  marginRight: 10,
+                }}>
+                  {showSalaryMatchOnly && (
+                    <Text style={{ color: 'white', fontSize: 12, fontWeight: 'bold' }}>✓</Text>
+                  )}
+                </View>
+                <Text style={{
+                  color: showSalaryMatchOnly ? colors.actionText : colors.text,
+                  fontSize: 14,
+                  fontWeight: '600',
+                  flex: 1,
+                }}>
+                  💰 Only show jobs matching my salary expectations
+                </Text>
+              </TouchableOpacity>
+              <Text style={{
+                color: colors.textMuted,
+                fontSize: 12,
+                marginTop: 6,
+                marginLeft: 30,
+              }}>
+                Filter out jobs with significantly different salary ranges
+              </Text>
+            </View>
+
             {/* Pagination Info */}
             <View style={{
               flexDirection: 'row',
@@ -293,7 +406,7 @@ export default function JobMatchesScreen() {
               <View style={{ paddingVertical: 40, alignItems: 'center' }}>
                 <ActivityIndicator size="large" color={colors.accent} />
                 <Text style={{ color: colors.textMuted, marginTop: 12 }}>
-                  Finding your matches...
+                  Finding your best matches...
                 </Text>
               </View>
             ) : error ? (
@@ -326,8 +439,8 @@ export default function JobMatchesScreen() {
                   No matches found
                 </Text>
                 <Text style={{ color: colors.textMuted, fontSize: 14, textAlign: 'center' }}>
-                  {minScore > 0 
-                    ? `Try lowering the minimum match score filter`
+                  {minScore > 0 || showSalaryMatchOnly
+                    ? `Try adjusting your filters to see more opportunities`
                     : `Complete your profile to get better matches`
                   }
                 </Text>
@@ -336,6 +449,10 @@ export default function JobMatchesScreen() {
               <>
                 {currentMatches.map((match, index) => {
                   const job = match.job;
+                  const hybridScore = match.hybrid_score || match.rule_score;
+                  const matchedSkillsCount = match.matched_skills?.length || 0;
+                  const missingSkillsCount = match.missing_skills?.length || 0;
+                  
                   return (
                     <TouchableOpacity
                       key={`${job.job_id}-${index}`}
@@ -344,7 +461,7 @@ export default function JobMatchesScreen() {
                         router.push({
                           pathname: '/job-details',
                           params: {
-                            id: job.job_id || job.id,
+                            id: job.job_id,
                             curated: 'true',
                           },
                         });
@@ -357,27 +474,47 @@ export default function JobMatchesScreen() {
                         borderWidth: 1.5,
                         borderColor: colors.cardBorder,
                         borderLeftWidth: 4,
-                        borderLeftColor: getMatchColor(match.match_score),
+                        borderLeftColor: getMatchColor(hybridScore),
                       }}>
-                        {/* Match Score Badge */}
+                        {/* Match Score Badge with Hybrid indicator */}
                         <View style={{
                           position: 'absolute',
                           top: 16,
                           right: 16,
-                          backgroundColor: getMatchColor(match.match_score),
-                          paddingHorizontal: 12,
-                          paddingVertical: 6,
-                          borderRadius: 20,
+                          flexDirection: 'row',
+                          gap: 6,
+                          alignItems: 'center',
                         }}>
-                          <Text style={{ color: 'white', fontSize: 12, fontWeight: 'bold' }}>
-                            {Math.round(match.match_score)}%
-                          </Text>
+                          <View style={{
+                            backgroundColor: '#10B981' + '20',
+                            paddingHorizontal: 8,
+                            paddingVertical: 4,
+                            borderRadius: 12,
+                            flexDirection: 'row',
+                            alignItems: 'center',
+                            gap: 4,
+                          }}>
+                            <Zap size={12} color="#10B981" strokeWidth={2.5} />
+                            <Text style={{ color: '#10B981', fontSize: 10, fontWeight: 'bold' }}>
+                              AI
+                            </Text>
+                          </View>
+                          <View style={{
+                            backgroundColor: getMatchColor(hybridScore),
+                            paddingHorizontal: 12,
+                            paddingVertical: 6,
+                            borderRadius: 20,
+                          }}>
+                            <Text style={{ color: 'white', fontSize: 12, fontWeight: 'bold' }}>
+                              {Math.round(hybridScore * 100)}%
+                            </Text>
+                          </View>
                         </View>
 
                         {/* Job Icon & Title */}
-                        <View style={{ flexDirection: 'row', marginBottom: 12, paddingRight: 60 }}>
+                        <View style={{ flexDirection: 'row', marginBottom: 12, paddingRight: 90 }}>
                           <Text style={{ fontSize: 40, marginRight: 12 }}>
-                            {getJobIcon(job.category)}
+                            {getJobIcon(job.title)}
                           </Text>
                           <View style={{ flex: 1 }}>
                             <Text style={{
@@ -393,90 +530,130 @@ export default function JobMatchesScreen() {
                               fontSize: 14,
                               fontWeight: '600',
                             }}>
-                              {job.company || job.posted_by || 'Various Companies'}
+                              {job.company || 'Various Companies'}
                             </Text>
                           </View>
                         </View>
 
+                        {/* Skills Preview */}
+                        {(matchedSkillsCount > 0 || missingSkillsCount > 0) && (
+                          <View style={{
+                            flexDirection: 'row',
+                            gap: 8,
+                            marginBottom: 12,
+                            flexWrap: 'wrap',
+                          }}>
+                            {matchedSkillsCount > 0 && (
+                              <View style={{
+                                backgroundColor: '#10B981' + '20',
+                                paddingHorizontal: 10,
+                                paddingVertical: 6,
+                                borderRadius: 8,
+                                flexDirection: 'row',
+                                alignItems: 'center',
+                                gap: 4,
+                              }}>
+                                <Text style={{ fontSize: 12 }}>✅</Text>
+                                <Text style={{
+                                  color: '#10B981',
+                                  fontSize: 12,
+                                  fontWeight: 'bold',
+                                }}>
+                                  {matchedSkillsCount} skill{matchedSkillsCount !== 1 ? 's' : ''} matched
+                                </Text>
+                              </View>
+                            )}
+                            {missingSkillsCount > 0 && (
+                              <View style={{
+                                backgroundColor: colors.textMuted + '20',
+                                paddingHorizontal: 10,
+                                paddingVertical: 6,
+                                borderRadius: 8,
+                                flexDirection: 'row',
+                                alignItems: 'center',
+                                gap: 4,
+                              }}>
+                                <Text style={{ fontSize: 12 }}>⚠️</Text>
+                                <Text style={{
+                                  color: colors.textMuted,
+                                  fontSize: 12,
+                                  fontWeight: '600',
+                                }}>
+                                  {missingSkillsCount} skill{missingSkillsCount !== 1 ? 's' : ''} needed
+                                </Text>
+                              </View>
+                            )}
+                          </View>
+                        )}
+
                         {/* Job Details */}
                         <View style={{ gap: 6, marginBottom: 12 }}>
                           <Text style={{ color: colors.textMuted, fontSize: 13 }}>
-                            📍 {job.location_city || job.location || 'Zambia'}
+                            📍 {job.location_city || 'Zambia'}
                           </Text>
                           {(job.salary_min_zmw || job.budget) && (
                             <Text style={{ color: colors.accent, fontSize: 13, fontWeight: '600' }}>
                               💰 {job.salary_min_zmw 
-                                ? `ZMW ${job.salary_min_zmw.toLocaleString()} - ${job.salary_max_zmw?.toLocaleString()}`
+                                ? `ZMW ${job.salary_min_zmw.toLocaleString()}${job.salary_max_zmw ? ` - ${job.salary_max_zmw.toLocaleString()}` : '+'}`
                                 : `ZMW ${job.budget?.toLocaleString()}`
                               }
                             </Text>
                           )}
                         </View>
 
-                        {/* AI Explanation */}
-                        {match.explanation && (
+                        {/* Match Reasons (first 2) */}
+                        {match.reasons && match.reasons.length > 0 && (
                           <View style={{
                             backgroundColor: colors.background,
                             padding: 12,
                             borderRadius: 10,
                             marginBottom: 12,
                           }}>
-                            <Text style={{
-                              color: colors.textMuted,
-                              fontSize: 12,
-                              lineHeight: 18,
-                            }}>
-                              {match.explanation}
-                            </Text>
+                            {match.reasons.slice(0, 2).map((reason, idx) => (
+                              <Text
+                                key={idx}
+                                style={{
+                                  color: colors.textMuted,
+                                  fontSize: 12,
+                                  lineHeight: 18,
+                                  marginBottom: idx === 0 && match.reasons.length > 1 ? 4 : 0,
+                                }}
+                              >
+                                • {reason}
+                              </Text>
+                            ))}
                           </View>
                         )}
 
                         {/* Badges */}
                         <View style={{ flexDirection: 'row', gap: 8, flexWrap: 'wrap' }}>
                           <View style={{
-                            backgroundColor: getMatchColor(match.match_score) + '20',
+                            backgroundColor: getMatchColor(hybridScore) + '20',
                             paddingHorizontal: 10,
                             paddingVertical: 5,
                             borderRadius: 8,
                           }}>
                             <Text style={{
-                              color: getMatchColor(match.match_score),
+                              color: getMatchColor(hybridScore),
                               fontSize: 11,
                               fontWeight: 'bold',
                             }}>
-                              {getMatchLabel(match.match_score)} Match
+                              {getMatchLabel(hybridScore)} Match
                             </Text>
                           </View>
-                          
-                          {match.collar_type && (
-                            <View style={{
-                              backgroundColor: colors.accent + '20',
-                              paddingHorizontal: 10,
-                              paddingVertical: 5,
-                              borderRadius: 8,
-                            }}>
-                              <Text style={{
-                                color: colors.accent,
-                                fontSize: 11,
-                                fontWeight: 'bold',
-                              }}>
-                                {match.collar_type} Collar
-                              </Text>
-                            </View>
-                          )}
 
                           <View style={{
-                            backgroundColor: job.type === 'corporate' ? colors.actionBox : '#10B981' + '30',
+                            backgroundColor: job.job_type === 'corp' ? colors.actionBox : '#10B981' + '30',
                             paddingHorizontal: 10,
                             paddingVertical: 5,
                             borderRadius: 8,
                           }}>
                             <Text style={{
-                              color: job.type === 'corporate' ? colors.actionText : '#10B981',
+                              color: job.job_type === 'corp' ? colors.actionText : '#10B981',
                               fontSize: 11,
                               fontWeight: 'bold',
                             }}>
-                              {job.type === 'corporate' ? 'Professional' : 'Gig'}
+                              {job.job_type === 'corp' ? 'Professional' : 'Gig'}
                             </Text>
                           </View>
                         </View>

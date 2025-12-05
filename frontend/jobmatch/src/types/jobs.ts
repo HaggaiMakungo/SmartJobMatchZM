@@ -55,7 +55,7 @@ export interface PersonalJob extends BaseJob {
 // Union type for any job
 export type Job = CorporateJob | PersonalJob;
 
-// Job with AI match score
+// Job with AI match score (legacy rule-based)
 export interface JobWithMatch {
   job: Job;
   match_score: number;
@@ -66,6 +66,86 @@ export interface JobWithMatch {
     experience: number;
     skills: number;
     location: number;
+  };
+}
+
+// ==================== ML MATCHING TYPES ====================
+
+/** Ranking method for job matches */
+export type RankingMethod = 'rule' | 'ml' | 'hybrid';
+
+/** Job data from ML matching API */
+export interface MLJobData {
+  job_id: string;
+  location_city: string | null;
+  location_province: string | null;
+  salary_min_zmw: number | null;
+  salary_max_zmw: number | null;
+  budget: number | null;
+  required_skills: string;
+  preferred_skills: string;
+  company: string;
+  title: string;
+  job_type: 'corp' | 'small';
+}
+
+/** Sub-scores breakdown from matching algorithm */
+export interface MatchSubScores {
+  location: number;
+  salary: number;
+  skills: number;
+  experience: number;
+  context_boost?: number;
+}
+
+/** ML-enhanced job match with all scoring details */
+export interface MLJobMatch {
+  job: MLJobData;
+  match_score: number;       // Overall match score (0-1)
+  ml_score: number;          // ML predicted application probability (0-1)
+  rule_score: number;        // Rule-based score (0-1)
+  hybrid_score: number | null; // Blended score (0-1)
+  sub_scores: MatchSubScores;
+  reasons: string[];         // Match explanation reasons
+  matched_skills: string[];  // Skills that matched
+  missing_skills: string[];  // Skills candidate is missing
+}
+
+/** Response from ML match endpoints */
+export interface MLMatchResponse {
+  cv_id: string;
+  total_matches: number;
+  matches: MLJobMatch[];
+  ranking_method: RankingMethod;
+  ml_model_loaded: boolean;
+  timestamp: string;
+}
+
+/** ML Model information */
+export interface MLModelInfo {
+  model_loaded: boolean;
+  model_type: string | null;
+  model_path: string;
+  n_features: number | null;
+  trained_at: string | null;
+  best_iteration: number | null;
+  test_auc: number | null;
+  message: string;
+}
+
+/** Match statistics for ML matches */
+export interface MLMatchStats {
+  total: number;
+  averageScore: number;
+  averageMLScore: number;
+  averageHybridScore: number;
+  maxScore: number;
+  minScore: number;
+  byQuality: {
+    excellent: number;  // >= 0.85
+    good: number;       // >= 0.70
+    fair: number;       // >= 0.50
+    low: number;        // < 0.50
   };
 }
 

@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 44 35 25; /* Peach (light mode background) */
+    --foreground: 210 20 18; /* Gunmetal (light mode text) */
+    --card: 0 0 100%; /* White cards */
+    --card-foreground: 210 20 18; /* Gunmetal */
+    --popover: 0 0 100%;
+    --popover-foreground: 210 20 18;
+    --primary: 24 85 57; /* Tangerine */
+    --primary-foreground: 0 0 100%; /* White text on tangerine */
+    --secondary: 36 15 57; /* Sage */
+    --secondary-foreground: 210 20 18;
+    --muted: 36 15 69; /* Lighter sage */
+    --muted-foreground: 210 20 40;
+    --accent: 24 85 57; /* Tangerine */
+    --accent-foreground: 0 0 100%;
+    --destructive: 0 84 60;
+    --destructive-foreground: 0 0 100%;
+    --border: 36 15 79;
+    --input: 36 15 79;
+    --ring: 24 85 57;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 210 20 18; /* Gunmetal (dark mode background) */
+    --foreground: 44 35 86; /* Peach (dark mode text) */
+    --card: 210 20 22; /* Darker gunmetal for cards */
+    --card-foreground: 44 35 86;
+    --popover: 210 20 22;
+    --popover-foreground: 44 35 86;
+    --primary: 24 85 57; /* Tangerine stays same */
+    --primary-foreground: 0 0 100%;
+    --secondary: 36 15 40;
+    --secondary-foreground: 44 35 86;
+    --muted: 36 15 30;
+    --muted-foreground: 44 35 70;
+    --accent: 24 85 57;
+    --accent-foreground: 0 0 100%;
+    --destructive: 0 84 60;
+    --destructive-foreground: 0 0 100%;
+    --border: 36 15 30;
+    --input: 36 15 30;
+    --ring: 24 85 57;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Toast Animation */
+@keyframes slide-in {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-in {
+  animation: slide-in 0.3s ease-out;
+}
+
+/* Custom Tangerine Slider */
+.slider-tangerine::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #f29559;
+  cursor: pointer;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.slider-tangerine::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: #f29559;
+  cursor: pointer;
+  border-radius: 50%;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.slider-tangerine::-webkit-slider-runnable-track {
+  background: linear-gradient(to right, #f29559 0%, #f29559 var(--value), #b8b08d33 var(--value), #b8b08d33 100%);
+  height: 8px;
+  border-radius: 4px;
+}
+
+/* Match score filter slider */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #FF6B35;
+  cursor: pointer;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  border: 2px solid white;
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: #FF6B35;
+  cursor: pointer;
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  background: #f85c1f;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
+}
+
+input[type="range"]::-moz-range-thumb:hover {
+  background: #f85c1f;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
+}

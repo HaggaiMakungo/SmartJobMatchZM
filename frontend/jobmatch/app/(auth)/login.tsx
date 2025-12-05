@@ -49,13 +49,13 @@ export default function LoginScreen() {
   // Quick login for Job Seeker (Brian Mwale)
   const handleJobSeekerTestLogin = () => {
     setValue('email', 'brian.mwale@example.com');
-    setValue('password', 'password123');
+    setValue('password', 'Brian123');
   };
 
   // Quick login for Personal Employer (Mark Ziligone)
   const handleEmployerTestLogin = () => {
     setValue('email', 'mark.ziligone@example.com');
-    setValue('password', 'password123');
+    setValue('password', 'Mark123');
   };
 
   const onSubmit = async (data: LoginFormData) => {

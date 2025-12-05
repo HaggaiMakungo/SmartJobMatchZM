@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Light mode - Peach background, Gunmetal text */
+    --background: 38 61% 76%;           /* #f2d492 - peach */
+    --foreground: 207 28% 18%;          /* #202c39 - gunmetal */
+    
+    /* Cards - White with peach borders */
+    --card: 0 0% 100%;                  /* #FFFFFF */
+    --card-foreground: 207 28% 18%;     /* #202c39 - gunmetal */
+    
+    /* Primary - Tangerine accent */
+    --primary: 22 86% 65%;              /* #f29559 - tangerine */
+    --primary-foreground: 0 0% 100%;    /* #FFFFFF */
+    
+    /* Secondary - Gunmetal */
+    --secondary: 207 28% 18%;           /* #202c39 - gunmetal */
+    --secondary-foreground: 38 61% 76%; /* #f2d492 - peach */
+    
+    /* Muted - Sage */
+    --muted: 43 20% 64%;                /* #b8b08d - sage */
+    --muted-foreground: 43 24% 38%;     /* #78704b - sage-dark */
+    
+    /* Accent - Tangerine with hover */
+    --accent: 22 86% 65%;               /* #f29559 - tangerine */
+    --accent-foreground: 207 28% 18%;   /* #202c39 - gunmetal */
+    
+    /* Destructive - Keep red for errors */
+    --destructive: 0 84.2% 60.2%;       /* Red */
+    --destructive-foreground: 0 0% 98%; /* White */
+    
+    /* Borders - Peach accent */
+    --border: 40 76% 61%;               /* #eab84c - peach-600 */
+    --input: 40 76% 61%;                /* #eab84c - peach-600 */
+    --ring: 22 86% 65%;                 /* #f29559 - tangerine */
+    
+    /* Action boxes - Peach yellow with gunmetal text */
+    --action-box: 38 61% 76%;           /* #f2d492 - peach */
+    --action-text: 207 28% 18%;         /* #202c39 - gunmetal */
+    
+    --radius: 1rem;
+  }
+
+  .dark {
+    /* Dark mode - Gunmetal background, Peach text */
+    --background: 207 28% 18%;          /* #202c39 - gunmetal */
+    --foreground: 38 61% 76%;           /* #f2d492 - peach */
+    
+    /* Cards - Gunmetal secondary with darker borders */
+    --card: 207 27% 20%;                /* #283845 - secondary */
+    --card-foreground: 38 61% 76%;      /* #f2d492 - peach */
+    
+    /* Primary - Tangerine accent (stays same) */
+    --primary: 22 86% 65%;              /* #f29559 - tangerine */
+    --primary-foreground: 0 0% 100%;    /* #FFFFFF */
+    
+    /* Secondary - Darker gunmetal */
+    --secondary: 207 27% 20%;           /* #283845 - gunmetal secondary */
+    --secondary-foreground: 38 61% 76%; /* #f2d492 - peach */
+    
+    /* Muted - Sage (stays same) */
+    --muted: 43 20% 64%;                /* #b8b08d - sage */
+    --muted-foreground: 43 18% 76%;     /* #d5d0bb - sage-light */
+    
+    /* Accent - Tangerine with lighter hover */
+    --accent: 22 86% 65%;               /* #f29559 - tangerine */
+    --accent-foreground: 0 0% 100%;     /* #FFFFFF */
+    
+    /* Destructive - Keep red for errors */
+    --destructive: 0 62.8% 30.6%;       /* Darker red */
+    --destructive-foreground: 0 0% 98%; /* White */
+    
+    /* Borders - Darker blue-gray */
+    --border: 207 26% 36%;              /* #456077 - secondary-600 */
+    --input: 207 26% 36%;               /* #456077 - secondary-600 */
+    --ring: 22 86% 70%;                 /* #f4ab7b - tangerine-300 */
+    
+    /* Action boxes - Peach yellow with gunmetal text (same as light) */
+    --action-box: 38 61% 76%;           /* #f2d492 - peach */
+    --action-text: 207 28% 18%;         /* #202c39 - gunmetal */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom utility classes for mobile app colors */
+@layer utilities {
+  .bg-action {
+    background-color: hsl(var(--action-box));
+    color: hsl(var(--action-text));
+  }
+  
+  .text-tangerine {
+    color: #f29559;
+  }
+  
+  .text-sage {
+    color: #b8b08d;
+  }
+  
+  .border-peach {
+    border-color: #eab84c;
+  }
+}

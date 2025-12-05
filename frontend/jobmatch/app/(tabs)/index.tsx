@@ -3,7 +3,9 @@ import { View, Text, ScrollView, TouchableOpacity, Image, ActivityIndicator, Ref
 import { useRouter } from 'expo-router';
 import { useAuthStore } from '@/store/authStore';
 import { useThemeStore } from '@/store/themeStore';
-import { useAIMatchedJobs } from '@/hooks/useMatching';
+import { useCvId } from '@/hooks/useMatching';
+import { mlMatchService } from '@/services/match.service';
+import { useQuery } from '@tanstack/react-query';
 import { useCandidateProfile, useSavedJobs, useMyApplications } from '@/hooks/useCandidate';
 import { Card } from '@/components/ui/Card';
 import { getTheme } from '@/utils/theme';
@@ -27,8 +29,14 @@ export default function HomeScreen() {
   const { isDarkMode, toggleTheme } = useThemeStore();
   const colors = getTheme(isDarkMode);
 
-  // Fetch real data from backend
-  const { data: matchData, isLoading: matchLoading, error: matchError, refetch: refetchMatches } = useAIMatchedJobs(3);
+  // Fetch real data from backend using hybrid matching
+  const cvId = useCvId();
+  const { data: matchData, isLoading: matchLoading, error: matchError, refetch: refetchMatches } = useQuery({
+    queryKey: ['home-hybrid-matches', cvId],
+    queryFn: () => mlMatchService.getHybridMatches(cvId!, 5),
+    enabled: !!cvId,
+    staleTime: 5 * 60 * 1000,
+  });
   
   // Get user's matched categories for relevant job count
   const matchedCategories = matchData?.matches?.map(m => m.job.category).filter((v, i, a) => a.indexOf(v) === i) || [];
@@ -76,18 +84,17 @@ export default function HomeScreen() {
     topMatches: matchData?.matches?.length || 0,
   };
 
-  // Top matches from CAMSS
+  // Top matches from hybrid ML matching
   const topMatches = matchData?.matches?.map(match => ({
-    id: match.job.id,
+    id: match.job.job_id,
     title: match.job.title,
     company: match.job.company || 'Company',
-    location: match.job.location || 'Zambia',
-    matchScore: Math.round(match.match_score),
-    collarType: match.collar_type,
-    salary: match.job.salary_min && match.job.salary_max
-      ? `K${match.job.salary_min.toLocaleString()} - K${match.job.salary_max.toLocaleString()}`
-      : 'Negotiable',
-    explanation: match.explanation,
+    location: match.job.location_city || 'Zambia',
+    matchScore: Math.round((match.hybrid_score || match.rule_score) * 100),
+    salary: match.job.salary_min_zmw && match.job.salary_max_zmw
+      ? `K${match.job.salary_min_zmw.toLocaleString()} - K${match.job.salary_max_zmw.toLocaleString()}`
+      : match.job.budget ? `K${match.job.budget.toLocaleString()}` : 'Negotiable',
+    reasons: match.reasons || [],
   })) || [];
 
   // Mock popular jobs (TODO: Add endpoint for this)

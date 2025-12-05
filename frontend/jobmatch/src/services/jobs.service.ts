@@ -41,18 +41,42 @@ export const jobsService = {
 
   /**
    * Get list of personal/gig jobs with filtering
+   * Note: Backend calls these "small jobs" internally
    */
   getPersonalJobs: async (filters?: PersonalJobFilters): Promise<PersonalJob[]> => {
-    const response = await api.get('/jobs/personal', { params: filters });
-    return response.data.map((job: any) => ({ ...job, type: 'personal' as const }));
+    // Try new /jobs/personal endpoint first (with alias), fallback to /jobs/small
+    try {
+      const response = await api.get('/jobs/personal', { params: filters });
+      return response.data.map((job: any) => ({ ...job, type: 'personal' as const }));
+    } catch (error: any) {
+      if (error.response?.status === 404) {
+        // Fallback to old endpoint
+        console.log('📡 Falling back to /jobs/small endpoint');
+        const response = await api.get('/jobs/small', { params: filters });
+        return response.data.map((job: any) => ({ ...job, type: 'personal' as const }));
+      }
+      throw error;
+    }
   },
 
   /**
    * Get a specific personal job by job_id (e.g., JOB-P001)
+   * Note: Backend calls these "small jobs" internally
    */
   getPersonalJob: async (jobId: string): Promise<PersonalJob> => {
-    const response = await api.get(`/jobs/personal/${jobId}`);
-    return { ...response.data, type: 'personal' as const };
+    // Try new /jobs/personal endpoint first (with alias), fallback to /jobs/small
+    try {
+      const response = await api.get(`/jobs/personal/${jobId}`);
+      return { ...response.data, type: 'personal' as const };
+    } catch (error: any) {
+      if (error.response?.status === 404) {
+        // Fallback to old endpoint
+        console.log('📡 Falling back to /jobs/small/{id} endpoint');
+        const response = await api.get(`/jobs/small/${jobId}`);
+        return { ...response.data, type: 'personal' as const };
+      }
+      throw error;
+    }
   },
 
   // ============================================
@@ -69,7 +93,25 @@ export const jobsService = {
     category?: string;
   }): Promise<AllJobsResponse> => {
     const response = await api.get('/jobs/all', { params });
-    return response.data;
+    
+    console.log('📦 Raw API Response:', JSON.stringify(response.data, null, 2).substring(0, 500));
+    
+    // Ensure arrays exist even if API returns null/undefined
+    // Backend now returns both 'personal_jobs' AND 'small_jobs' keys for compatibility
+    const corporateJobs = Array.isArray(response.data.corporate_jobs) ? response.data.corporate_jobs : [];
+    const personalJobs = Array.isArray(response.data.personal_jobs) 
+      ? response.data.personal_jobs  // New: Backend added this alias
+      : Array.isArray(response.data.small_jobs) 
+        ? response.data.small_jobs     // Fallback: Original backend key
+        : [];
+    
+    console.log(`📊 Processed: ${corporateJobs.length} corporate, ${personalJobs.length} personal jobs`);
+    
+    return {
+      ...response.data,
+      corporate_jobs: corporateJobs,
+      personal_jobs: personalJobs,
+    };
   },
 
   /**
@@ -103,7 +145,7 @@ export const jobsService = {
    */
   getCategories: async (): Promise<string[]> => {
     const response = await api.get('/jobs/categories');
-    return response.data;
+    return response.data.categories || response.data;
   },
 
   // ============================================

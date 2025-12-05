@@ -91,8 +91,16 @@ export default function JobDetailsScreen() {
   };
 
   const handleApply = () => {
-    // TODO: Navigate to application screen
-    console.log('Apply to job:', jobId);
+    // Navigate to application form with job details
+    router.push({
+      pathname: '/application-form',
+      params: {
+        jobId: job.job_id || jobId,
+        jobTitle: job.title,
+        company: job.type === 'corporate' ? job.company : (job.posted_by || 'Personal Employer'),
+        jobType: job.type,
+      },
+    });
   };
 
   const getMatchScoreColor = (score: number) => {

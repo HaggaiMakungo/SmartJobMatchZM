@@ -1,0 +1,602 @@
+[
+  {
+    "skill_a": "Medication",
+    "skill_b": "Patient Care",
+    "co_occurrences": 88,
+    "jaccard_similarity": 0.917
+  },
+  {
+    "skill_a": "Health Education",
+    "skill_b": "Patient Care",
+    "co_occurrences": 59,
+    "jaccard_similarity": 0.476
+  },
+  {
+    "skill_a": "Health Education",
+    "skill_b": "Medication",
+    "co_occurrences": 58,
+    "jaccard_similarity": 0.496
+  },
+  {
+    "skill_a": "Maintenance",
+    "skill_b": "Repair",
+    "co_occurrences": 57,
+    "jaccard_similarity": 0.243
+  },
+  {
+    "skill_a": "Assessment",
+    "skill_b": "Curriculum Development",
+    "co_occurrences": 55,
+    "jaccard_similarity": 0.733
+  },
+  {
+    "skill_a": "Basic Computer",
+    "skill_b": "Phone Use",
+    "co_occurrences": 53,
+    "jaccard_similarity": 0.52
+  },
+  {
+    "skill_a": "Cleaning",
+    "skill_b": "Cooking",
+    "co_occurrences": 50,
+    "jaccard_similarity": 0.575
+  },
+  {
+    "skill_a": "Fabrication",
+    "skill_b": "Welding",
+    "co_occurrences": 49,
+    "jaccard_similarity": 0.495
+  },
+  {
+    "skill_a": "Customer Service",
+    "skill_b": "Sales",
+    "co_occurrences": 48,
+    "jaccard_similarity": 0.254
+  },
+  {
+    "skill_a": "Engine Repair",
+    "skill_b": "Transmission",
+    "co_occurrences": 47,
+    "jaccard_similarity": 0.61
+  },
+  {
+    "skill_a": "Basic Writing",
+    "skill_b": "Phone Use",
+    "co_occurrences": 46,
+    "jaccard_similarity": 0.465
+  },
+  {
+    "skill_a": "Office Management",
+    "skill_b": "Records",
+    "co_occurrences": 45,
+    "jaccard_similarity": 0.592
+  },
+  {
+    "skill_a": "Pipe Installation",
+    "skill_b": "Repair",
+    "co_occurrences": 44,
+    "jaccard_similarity": 0.444
+  },
+  {
+    "skill_a": "Bricklaying",
+    "skill_b": "Concrete Work",
+    "co_occurrences": 43,
+    "jaccard_similarity": 1.0
+  },
+  {
+    "skill_a": "Arc Welding",
+    "skill_b": "MIG Welding",
+    "co_occurrences": 43,
+    "jaccard_similarity": 0.935
+  },
+  {
+    "skill_a": "Arc Welding",
+    "skill_b": "Fabrication",
+    "co_occurrences": 43,
+    "jaccard_similarity": 0.422
+  },
+  {
+    "skill_a": "Fabrication",
+    "skill_b": "MIG Welding",
+    "co_occurrences": 43,
+    "jaccard_similarity": 0.434
+  },
+  {
+    "skill_a": "Electrical Installation",
+    "skill_b": "Maintenance",
+    "co_occurrences": 43,
+    "jaccard_similarity": 0.219
+  },
+  {
+    "skill_a": "Fabrication",
+    "skill_b": "Metal Work",
+    "co_occurrences": 43,
+    "jaccard_similarity": 0.426
+  },
+  {
+    "skill_a": "Office Management",
+    "skill_b": "Procurement",
+    "co_occurrences": 39,
+    "jaccard_similarity": 0.534
+  },
+  {
+    "skill_a": "Crop Management",
+    "skill_b": "Soil Science",
+    "co_occurrences": 38,
+    "jaccard_similarity": 0.792
+  },
+  {
+    "skill_a": "Curriculum Development",
+    "skill_b": "Teaching",
+    "co_occurrences": 38,
+    "jaccard_similarity": 0.585
+  },
+  {
+    "skill_a": "Assessment",
+    "skill_b": "Teaching",
+    "co_occurrences": 38,
+    "jaccard_similarity": 0.585
+  },
+  {
+    "skill_a": "Metal Work",
+    "skill_b": "Welding",
+    "co_occurrences": 38,
+    "jaccard_similarity": 0.679
+  },
+  {
+    "skill_a": "Diagnostics",
+    "skill_b": "Engine Repair",
+    "co_occurrences": 37,
+    "jaccard_similarity": 0.44
+  },
+  {
+    "skill_a": "Bricklaying",
+    "skill_b": "Finishing",
+    "co_occurrences": 37,
+    "jaccard_similarity": 0.673
+  },
+  {
+    "skill_a": "Concrete Work",
+    "skill_b": "Finishing",
+    "co_occurrences": 37,
+    "jaccard_similarity": 0.673
+  },
+  {
+    "skill_a": "Employee Relations",
+    "skill_b": "Recruitment",
+    "co_occurrences": 32,
+    "jaccard_similarity": 0.744
+  },
+  {
+    "skill_a": "Procurement",
+    "skill_b": "Records",
+    "co_occurrences": 32,
+    "jaccard_similarity": 0.451
+  },
+  {
+    "skill_a": "Hair Styling",
+    "skill_b": "Makeup",
+    "co_occurrences": 30,
+    "jaccard_similarity": 0.698
+  },
+  {
+    "skill_a": "Excavator Operation",
+    "skill_b": "Loader",
+    "co_occurrences": 30,
+    "jaccard_similarity": 0.6
+  },
+  {
+    "skill_a": "Hair Styling",
+    "skill_b": "Skin Care",
+    "co_occurrences": 29,
+    "jaccard_similarity": 0.707
+  },
+  {
+    "skill_a": "Makeup",
+    "skill_b": "Skin Care",
+    "co_occurrences": 29,
+    "jaccard_similarity": 0.853
+  },
+  {
+    "skill_a": "Patient Care",
+    "skill_b": "Vital Signs",
+    "co_occurrences": 29,
+    "jaccard_similarity": 0.302
+  },
+  {
+    "skill_a": "Medication",
+    "skill_b": "Vital Signs",
+    "co_occurrences": 29,
+    "jaccard_similarity": 0.33
+  },
+  {
+    "skill_a": "Data Analysis",
+    "skill_b": "Geological Mapping",
+    "co_occurrences": 28,
+    "jaccard_similarity": 0.509
+  },
+  {
+    "skill_a": "Case Management",
+    "skill_b": "Counseling",
+    "co_occurrences": 26,
+    "jaccard_similarity": 0.839
+  },
+  {
+    "skill_a": "Maintenance",
+    "skill_b": "Pipe Installation",
+    "co_occurrences": 26,
+    "jaccard_similarity": 0.12
+  },
+  {
+    "skill_a": "Furniture Design",
+    "skill_b": "Woodworking",
+    "co_occurrences": 25,
+    "jaccard_similarity": 0.893
+  },
+  {
+    "skill_a": "Office Management",
+    "skill_b": "Scheduling",
+    "co_occurrences": 25,
+    "jaccard_similarity": 0.385
+  },
+  {
+    "skill_a": "Content Creation",
+    "skill_b": "Media Relations",
+    "co_occurrences": 25,
+    "jaccard_similarity": 0.521
+  },
+  {
+    "skill_a": "Engine Repair",
+    "skill_b": "Maintenance",
+    "co_occurrences": 25,
+    "jaccard_similarity": 0.101
+  },
+  {
+    "skill_a": "Diagnostics",
+    "skill_b": "Maintenance",
+    "co_occurrences": 25,
+    "jaccard_similarity": 0.116
+  },
+  {
+    "skill_a": "Filing",
+    "skill_b": "Office Support",
+    "co_occurrences": 25,
+    "jaccard_similarity": 0.424
+  },
+  {
+    "skill_a": "Records",
+    "skill_b": "Scheduling",
+    "co_occurrences": 24,
+    "jaccard_similarity": 0.421
+  },
+  {
+    "skill_a": "Procurement",
+    "skill_b": "Scheduling",
+    "co_occurrences": 24,
+    "jaccard_similarity": 0.5
+  },
+  {
+    "skill_a": "Excel",
+    "skill_b": "Financial Modeling",
+    "co_occurrences": 24,
+    "jaccard_similarity": 0.686
+  },
+  {
+    "skill_a": "Filing",
+    "skill_b": "Typing",
+    "co_occurrences": 24,
+    "jaccard_similarity": 0.407
+  },
+  {
+    "skill_a": "Office Software",
+    "skill_b": "Typing",
+    "co_occurrences": 24,
+    "jaccard_similarity": 0.857
+  },
+  {
+    "skill_a": "Filing",
+    "skill_b": "Office Software",
+    "co_occurrences": 24,
+    "jaccard_similarity": 0.381
+  },
+  {
+    "skill_a": "Exploration",
+    "skill_b": "Geological Mapping",
+    "co_occurrences": 24,
+    "jaccard_similarity": 0.686
+  },
+  {
+    "skill_a": "Excavator Operation",
+    "skill_b": "Maintenance",
+    "co_occurrences": 23,
+    "jaccard_similarity": 0.103
+  },
+  {
+    "skill_a": "Loader",
+    "skill_b": "Maintenance",
+    "co_occurrences": 23,
+    "jaccard_similarity": 0.113
+  },
+  {
+    "skill_a": "Crop Management",
+    "skill_b": "Farmer Training",
+    "co_occurrences": 22,
+    "jaccard_similarity": 0.449
+  },
+  {
+    "skill_a": "Data Analysis",
+    "skill_b": "Exploration",
+    "co_occurrences": 22,
+    "jaccard_similarity": 0.423
+  },
+  {
+    "skill_a": "Basic Math",
+    "skill_b": "Sales",
+    "co_occurrences": 22,
+    "jaccard_similarity": 0.155
+  },
+  {
+    "skill_a": "Farmer Training",
+    "skill_b": "Soil Science",
+    "co_occurrences": 21,
+    "jaccard_similarity": 0.525
+  },
+  {
+    "skill_a": "Pipe Installation",
+    "skill_b": "Water Systems",
+    "co_occurrences": 21,
+    "jaccard_similarity": 0.447
+  },
+  {
+    "skill_a": "Repair",
+    "skill_b": "Water Systems",
+    "co_occurrences": 21,
+    "jaccard_similarity": 0.219
+  },
+  {
+    "skill_a": "Electrical Systems",
+    "skill_b": "Engine Repair",
+    "co_occurrences": 21,
+    "jaccard_similarity": 0.2
+  },
+  {
+    "skill_a": "CAD",
+    "skill_b": "Project Management",
+    "co_occurrences": 20,
+    "jaccard_similarity": 0.253
+  },
+  {
+    "skill_a": "Electrical Systems",
+    "skill_b": "Transmission",
+    "co_occurrences": 20,
+    "jaccard_similarity": 0.263
+  },
+  {
+    "skill_a": "Ironing",
+    "skill_b": "Washing",
+    "co_occurrences": 20,
+    "jaccard_similarity": 1.0
+  },
+  {
+    "skill_a": "Pattern Making",
+    "skill_b": "Sewing",
+    "co_occurrences": 19,
+    "jaccard_similarity": 0.864
+  },
+  {
+    "skill_a": "Maintenance",
+    "skill_b": "Testing",
+    "co_occurrences": 19,
+    "jaccard_similarity": 0.095
+  },
+  {
+    "skill_a": "Area Knowledge",
+    "skill_b": "Bicycle Riding",
+    "co_occurrences": 19,
+    "jaccard_similarity": 0.731
+  },
+  {
+    "skill_a": "Interviewing",
+    "skill_b": "News Writing",
+    "co_occurrences": 18,
+    "jaccard_similarity": 0.947
+  },
+  {
+    "skill_a": "Fashion Design",
+    "skill_b": "Pattern Making",
+    "co_occurrences": 18,
+    "jaccard_similarity": 0.818
+  },
+  {
+    "skill_a": "Electrical Installation",
+    "skill_b": "Testing",
+    "co_occurrences": 18,
+    "jaccard_similarity": 0.375
+  },
+  {
+    "skill_a": "Computer Skills",
+    "skill_b": "Office Support",
+    "co_occurrences": 18,
+    "jaccard_similarity": 0.72
+  },
+  {
+    "skill_a": "Computer Skills",
+    "skill_b": "Filing",
+    "co_occurrences": 18,
+    "jaccard_similarity": 0.305
+  },
+  {
+    "skill_a": "Excavator Operation",
+    "skill_b": "Load Haul Dump",
+    "co_occurrences": 18,
+    "jaccard_similarity": 0.36
+  },
+  {
+    "skill_a": "Excavator Operation",
+    "skill_b": "Machine Maintenance",
+    "co_occurrences": 18,
+    "jaccard_similarity": 0.305
+  },
+  {
+    "skill_a": "Load Haul Dump",
+    "skill_b": "Machine Maintenance",
+    "co_occurrences": 18,
+    "jaccard_similarity": 0.667
+  },
+  {
+    "skill_a": "Diet Planning",
+    "skill_b": "Nutritional Assessment",
+    "co_occurrences": 17,
+    "jaccard_similarity": 0.773
+  },
+  {
+    "skill_a": "Diet Planning",
+    "skill_b": "Health Education",
+    "co_occurrences": 17,
+    "jaccard_similarity": 0.185
+  },
+  {
+    "skill_a": "Fashion Design",
+    "skill_b": "Sewing",
+    "co_occurrences": 17,
+    "jaccard_similarity": 0.85
+  },
+  {
+    "skill_a": "Project Management",
+    "skill_b": "Structural Design",
+    "co_occurrences": 17,
+    "jaccard_similarity": 0.218
+  },
+  {
+    "skill_a": "Java",
+    "skill_b": "Python",
+    "co_occurrences": 16,
+    "jaccard_similarity": 0.8
+  },
+  {
+    "skill_a": "Electrical Systems",
+    "skill_b": "Maintenance",
+    "co_occurrences": 16,
+    "jaccard_similarity": 0.07
+  },
+  {
+    "skill_a": "Health Education",
+    "skill_b": "Nutritional Assessment",
+    "co_occurrences": 16,
+    "jaccard_similarity": 0.182
+  },
+  {
+    "skill_a": "News Writing",
+    "skill_b": "Video Editing",
+    "co_occurrences": 16,
+    "jaccard_similarity": 0.842
+  },
+  {
+    "skill_a": "Interviewing",
+    "skill_b": "Video Editing",
+    "co_occurrences": 16,
+    "jaccard_similarity": 0.889
+  },
+  {
+    "skill_a": "Call Center Operations",
+    "skill_b": "Complaint Handling",
+    "co_occurrences": 16,
+    "jaccard_similarity": 1.0
+  },
+  {
+    "skill_a": "HVAC Installation",
+    "skill_b": "Repair",
+    "co_occurrences": 16,
+    "jaccard_similarity": 0.167
+  },
+  {
+    "skill_a": "HVAC Installation",
+    "skill_b": "Maintenance",
+    "co_occurrences": 16,
+    "jaccard_similarity": 0.082
+  },
+  {
+    "skill_a": "Electrical",
+    "skill_b": "Engine Repair",
+    "co_occurrences": 16,
+    "jaccard_similarity": 0.208
+  },
+  {
+    "skill_a": "Electrical",
+    "skill_b": "Transmission",
+    "co_occurrences": 16,
+    "jaccard_similarity": 0.34
+  },
+  {
+    "skill_a": "Basic First Aid",
+    "skill_b": "Child Care",
+    "co_occurrences": 16,
+    "jaccard_similarity": 0.5
+  },
+  {
+    "skill_a": "Machine Design",
+    "skill_b": "Project Management",
+    "co_occurrences": 15,
+    "jaccard_similarity": 0.192
+  },
+  {
+    "skill_a": "Bulldozer",
+    "skill_b": "Excavator",
+    "co_occurrences": 15,
+    "jaccard_similarity": 0.652
+  },
+  {
+    "skill_a": "Excavator",
+    "skill_b": "Loader Operation",
+    "co_occurrences": 15,
+    "jaccard_similarity": 0.938
+  },
+  {
+    "skill_a": "Bulldozer",
+    "skill_b": "Loader Operation",
+    "co_occurrences": 15,
+    "jaccard_similarity": 0.682
+  },
+  {
+    "skill_a": "Curriculum Development",
+    "skill_b": "Teacher Training",
+    "co_occurrences": 15,
+    "jaccard_similarity": 0.231
+  },
+  {
+    "skill_a": "Assessment",
+    "skill_b": "Teacher Training",
+    "co_occurrences": 15,
+    "jaccard_similarity": 0.231
+  },
+  {
+    "skill_a": "Construction",
+    "skill_b": "Project Management",
+    "co_occurrences": 15,
+    "jaccard_similarity": 0.161
+  },
+  {
+    "skill_a": "Maintenance",
+    "skill_b": "Wiring",
+    "co_occurrences": 15,
+    "jaccard_similarity": 0.073
+  },
+  {
+    "skill_a": "Payroll",
+    "skill_b": "Recruitment",
+    "co_occurrences": 14,
+    "jaccard_similarity": 0.341
+  },
+  {
+    "skill_a": "Employee Relations",
+    "skill_b": "Payroll",
+    "co_occurrences": 14,
+    "jaccard_similarity": 0.368
+  },
+  {
+    "skill_a": "Compliance",
+    "skill_b": "Environmental Monitoring",
+    "co_occurrences": 14,
+    "jaccard_similarity": 0.467
+  }
+]
