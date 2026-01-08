@@ -115,7 +115,7 @@ ai-job-matchingV2/
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/ai-job-matchingV2.git
+git clone https://github.com/HaggaiMakungo/SmartJobMatchZM.git
 cd ai-job-matchingV2/backend
 ```
 
@@ -394,7 +394,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 For issues, questions, or contributions:
 - Open an issue on GitHub
-- Contact: [your-email@example.com]
+- Contact: [makungohaggai@gmail.com]
 
 ## Roadmap
 
@@ -408,7 +408,7 @@ For issues, questions, or contributions:
 
 ## Security
 
-If you discover a security vulnerability, please email [security@example.com] instead of using the issue tracker.
+If you discover a security vulnerability, please email [makungohaggai@gmail.com] instead of using the issue tracker.
 
 ---
 
