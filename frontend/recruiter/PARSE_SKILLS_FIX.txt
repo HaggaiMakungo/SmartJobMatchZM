@@ -1,0 +1,26 @@
+// TEMP FIX FILE - Copy this parseSkills function into CandidatesPage.tsx
+
+const parseSkills = (skills: any): string[] => {
+  if (Array.isArray(skills)) return skills;
+  if (typeof skills === 'string' && skills.trim().length > 0) {
+    try {
+      // Try parsing as JSON first
+      const parsed = JSON.parse(skills);
+      return Array.isArray(parsed) ? parsed : [];
+    } catch {
+      // Check if it's comma-separated or space-separated
+      if (skills.includes(',')) {
+        return skills.split(',').map(s => s.trim()).filter(Boolean);
+      } else if (skills.includes(' ')) {
+        // Space-separated - split by whitespace
+        return skills.split(/\s+/).map(s => s.trim()).filter(s => s.length > 0);
+      } else {
+        // Single skill
+        return [skills.trim()];
+      }
+    }
+  }
+  return [];
+};
+
+// Replace lines 48-60 in CandidatesPage.tsx with the function above

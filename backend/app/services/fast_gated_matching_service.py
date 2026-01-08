@@ -1,9 +1,3 @@
-"""
-SPRINT A - FAST GATING PATCH (WITHOUT SEMANTIC MATCHING)
-=========================================================
-Exact string matching only - much faster!
-"""
-
 from typing import List, Dict, Optional
 from sqlalchemy.orm import Session
 import time
@@ -31,7 +25,7 @@ WEIGHTS = {
 
 class FastGatedMatchingService:
     """
-    Fast matching with exact skill matching (no semantic AI).
+    Fast matching with exact skill matching
     Sprint A implementation - optimized for speed.
     """
     

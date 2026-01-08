@@ -1,5 +1,6 @@
 import { create } from 'zustand';
 import type { User } from '../types';
+import { clearAllScrollPositions } from '../hooks/useScrollRestoration';
 
 interface AuthState {
   user: User | null;
@@ -24,6 +25,11 @@ export const useAuthStore = create<AuthState>((set) => ({
   
   logout: () => {
     localStorage.removeItem('auth_token');
+    
+    // Clear all caches on logout
+    localStorage.removeItem('camss-page-cache');
+    clearAllScrollPositions();
+    
     set({ user: null, isAuthenticated: false });
   },
 }));

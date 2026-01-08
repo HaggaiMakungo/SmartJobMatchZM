@@ -1,7 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { 
   ChevronDown, 
-  ChevronUp, 
   MapPin, 
   DollarSign, 
   Calendar,
@@ -10,57 +9,100 @@ import {
   SlidersHorizontal,
   BookmarkPlus,
   Eye,
-  Download,
   CheckSquare,
-  Square
+  Square,
+  Plus,
+  RotateCcw,
+  TrendingUp
 } from 'lucide-react';
 import { apiClient } from '@/lib/api/client';
 import { useAuthStore } from '@/store/auth.store';
+import { usePageCacheStore } from '@/store/page-cache.store';
+import { useScrollRestoration } from '@/hooks/useScrollRestoration';
+import { getMatchScoreColor, getMatchScoreTextColor } from '@/utils/matchScoreColors';
+import PostJobModal from '@/components/PostJobModal';
+import ResumeIndicator from '@/components/ui/ResumeIndicator';
+import CandidateDetailModal from '@/components/CandidateDetailModal';
 import type { Job, MatchedCandidate } from '@/types';
 
 export default function JobsPage() {
   const { user } = useAuthStore();
+  const { jobsPage, setJobsPageCache, resetJobsPageCache } = usePageCacheStore();
+  const scrollContainerRef = useScrollRestoration({ key: 'jobs-page' });
+  const isInitialMount = useRef(true);
+  
+  // Initialize state from cache
   const [jobs, setJobs] = useState<Job[]>([]);
   const [selectedJob, setSelectedJob] = useState<Job | null>(null);
   const [candidates, setCandidates] = useState<MatchedCandidate[]>([]);
   const [loading, setLoading] = useState(false);
   const [jobsLoading, setJobsLoading] = useState(true);
-  const [isJobExpanded, setIsJobExpanded] = useState(false);
-  const [minMatchScore, setMinMatchScore] = useState(0);
-  const [sortBy, setSortBy] = useState<'match_score' | 'experience' | 'location'>('match_score');
-  const [currentPage, setCurrentPage] = useState(1);
-  const [selectedCandidates, setSelectedCandidates] = useState<Set<string>>(new Set());
-  const [showFilters, setShowFilters] = useState(false);
+  const [minMatchScore, setMinMatchScore] = useState(jobsPage.minMatchScore);
+  const [sortBy, setSortBy] = useState<'match_score' | 'experience' | 'location'>(jobsPage.sortBy);
+  const [currentPage, setCurrentPage] = useState(jobsPage.currentPage);
+  const [selectedCandidates, setSelectedCandidates] = useState<Set<string>>(
+    new Set(jobsPage.selectedCandidateIds)
+  );
+  const [showFilters, setShowFilters] = useState(jobsPage.showFilters);
+  const [showPostJobModal, setShowPostJobModal] = useState(false);
   
   const candidatesPerPage = 20;
 
+  // Check if resuming from cache
+  const isResumingFromCache = jobsPage.lastFetched > 0 && isInitialMount.current;
+  const cacheAgeMinutes = Math.floor((Date.now() - jobsPage.lastFetched) / 60000);
+
+  // Fetch jobs on mount
   useEffect(() => {
     fetchJobs();
+    isInitialMount.current = false;
   }, []);
 
+  // Restore selected job from cache after jobs are loaded
+  useEffect(() => {
+    if (jobs.length > 0 && jobsPage.selectedJobId) {
+      const cachedJob = jobs.find(j => j.id === jobsPage.selectedJobId);
+      if (cachedJob) {
+        setSelectedJob(cachedJob);
+      } else {
+        setSelectedJob(jobs[0]);
+      }
+    } else if (jobs.length > 0 && !selectedJob) {
+      setSelectedJob(jobs[0]);
+    }
+  }, [jobs, jobsPage.selectedJobId]);
+
+  // Fetch candidates when job changes
   useEffect(() => {
     if (selectedJob) {
       fetchCandidates();
     }
   }, [selectedJob, minMatchScore]);
 
+  // Cache state changes
+  useEffect(() => {
+    setJobsPageCache({
+      selectedJobId: selectedJob?.id || null,
+      minMatchScore,
+      sortBy,
+      showFilters,
+      currentPage,
+      selectedCandidateIds: Array.from(selectedCandidates),
+    });
+  }, [selectedJob, minMatchScore, sortBy, showFilters, currentPage, selectedCandidates]);
+
   const fetchJobs = async () => {
     try {
       setJobsLoading(true);
       const data = await apiClient.getJobs();
       
-      // Handle different response formats
       const jobsArray = Array.isArray(data) ? data : [];
-      
       console.log('Jobs fetched:', jobsArray.length, jobsArray);
       
       setJobs(jobsArray);
-      if (jobsArray.length > 0) {
-        setSelectedJob(jobsArray[0]);
-      }
     } catch (error) {
       console.error('Failed to fetch jobs:', error);
-      setJobs([]); // Set empty array on error
+      setJobs([]);
     } finally {
       setJobsLoading(false);
     }
@@ -78,9 +120,7 @@ export default function JobsPage() {
       
       console.log('Candidates response:', data);
       
-      // Handle the response format from backend
       const candidatesList = data.matched_candidates || data.candidates || [];
-      
       setCandidates(candidatesList);
       setCurrentPage(1);
       setSelectedCandidates(new Set());
@@ -102,7 +142,6 @@ export default function JobsPage() {
     const job = jobs.find(j => j.id === jobId);
     if (job) {
       setSelectedJob(job);
-      setIsJobExpanded(false);
     }
   };
 
@@ -154,20 +193,17 @@ export default function JobsPage() {
     setSelectedCandidates(newSelected);
   };
 
-  const getMatchScoreColor = (score: number) => {
-    if (score >= 80) return 'text-green-400 bg-green-400/10';
-    if (score >= 60) return 'text-yellow-400 bg-yellow-400/10';
-    return 'text-red-400 bg-red-400/10';
+  const handleResetFilters = () => {
+    setMinMatchScore(0);
+    setSortBy('match_score');
+    setCurrentPage(1);
+    setShowFilters(false);
   };
 
-  const getMatchScoreRingColor = (score: number) => {
-    if (score >= 80) return 'stroke-green-400';
-    if (score >= 60) return 'stroke-yellow-400';
-    return 'stroke-red-400';
-  };
-
-  // Sorting
-  const sortedCandidates = [...candidates].sort((a, b) => {
+  // Sorting and filtering
+  const filteredAndSortedCandidates = [...candidates]
+    .filter(candidate => candidate.match_score >= minMatchScore)
+    .sort((a, b) => {
     switch (sortBy) {
       case 'match_score':
         return b.match_score - a.match_score;
@@ -180,9 +216,14 @@ export default function JobsPage() {
     }
   });
 
+  // Calculate average match score
+  const averageMatchScore = filteredAndSortedCandidates.length > 0
+    ? Math.round(filteredAndSortedCandidates.reduce((sum, c) => sum + c.match_score, 0) / filteredAndSortedCandidates.length)
+    : 0;
+
   // Pagination
-  const totalPages = Math.ceil(sortedCandidates.length / candidatesPerPage);
-  const paginatedCandidates = sortedCandidates.slice(
+  const totalPages = Math.ceil(filteredAndSortedCandidates.length / candidatesPerPage);
+  const paginatedCandidates = filteredAndSortedCandidates.slice(
     (currentPage - 1) * candidatesPerPage,
     currentPage * candidatesPerPage
   );
@@ -196,7 +237,15 @@ export default function JobsPage() {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6" ref={scrollContainerRef}>
+      {/* Resume Indicator */}
+      {isResumingFromCache && cacheAgeMinutes < 60 && (
+        <ResumeIndicator
+          pageName="Jobs Page"
+          cacheAge={cacheAgeMinutes}
+          onReset={resetJobsPageCache}
+        />
+      )}
       {/* Header */}
       <div className="flex items-center justify-between">
         <div>
@@ -204,92 +253,108 @@ export default function JobsPage() {
           <p className="text-gray-400">Find the perfect candidates for your positions</p>
         </div>
         
-        {selectedCandidates.size > 0 && (
-          <div className="flex items-center gap-3">
-            <span className="text-sm text-gray-400">
-              {selectedCandidates.size} selected
-            </span>
-            <button
-              onClick={handleBulkSave}
-              className="flex items-center gap-2 px-4 py-2 bg-tangerine hover:bg-tangerine/90 text-white rounded-lg transition"
-            >
-              <BookmarkPlus className="w-4 h-4" />
-              Save Selected
-            </button>
-          </div>
-        )}
+        <div className="flex items-center gap-3">
+          <button
+            onClick={() => setShowPostJobModal(true)}
+            className="flex items-center gap-2 px-4 py-2 bg-tangerine hover:bg-tangerine/90 text-white rounded-lg transition"
+          >
+            <Plus className="w-4 h-4" />
+            Post Job
+          </button>
+          
+          {selectedCandidates.size > 0 && (
+            <>
+              <span className="text-sm text-gray-400">
+                {selectedCandidates.size} selected
+              </span>
+              <button
+                onClick={handleBulkSave}
+                className="flex items-center gap-2 px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg transition"
+              >
+                <BookmarkPlus className="w-4 h-4" />
+                Save Selected
+              </button>
+            </>
+          )}
+        </div>
       </div>
 
-      {/* Job Selection */}
+      {/* Job Selection with Average Match Score */}
       <div className="bg-gray-800 border border-gray-700 rounded-lg p-6">
-        <label className="block text-sm font-medium text-gray-300 mb-2">
-          Select Job
-        </label>
-        <select
-          value={selectedJob?.id || ''}
-          onChange={(e) => handleJobChange(e.target.value)}
-          className="w-full px-4 py-3 bg-gray-900 border border-gray-700 text-white rounded-lg focus:ring-2 focus:ring-tangerine focus:border-transparent outline-none transition"
-        >
-          {jobs.map((job) => (
-            <option key={job.id} value={job.id}>
-              {job.title} - {job.location}
-            </option>
-          ))}
-        </select>
+        <div className="flex items-center justify-between gap-6">
+          {/* Left: Job Dropdown (narrower) */}
+          <div className="flex-1 max-w-2xl">
+            <label className="block text-sm font-medium text-gray-300 mb-2">
+              Select Job
+            </label>
+            <select
+              value={selectedJob?.id || ''}
+              onChange={(e) => handleJobChange(e.target.value)}
+              className="w-full px-4 py-3 bg-gray-900 border border-gray-700 text-white rounded-lg focus:ring-2 focus:ring-tangerine focus:border-transparent outline-none transition"
+            >
+              {jobs.map((job) => (
+                <option key={job.id} value={job.id}>
+                  {job.title} - {job.location}
+                </option>
+              ))}
+            </select>
+          </div>
+
+          {/* Right: Average Match Score */}
+          <div className="bg-gray-900 border border-gray-700 rounded-lg px-6 py-4">
+            <div className="flex items-center gap-3">
+              <div className="w-12 h-12 rounded-full bg-tangerine/10 flex items-center justify-center">
+                <TrendingUp className="w-6 h-6 text-tangerine" />
+              </div>
+              <div>
+                <p className="text-sm text-gray-400">Average Match</p>
+                <p className="text-2xl font-bold text-tangerine">{averageMatchScore}%</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
-      {/* Selected Job Details */}
+      {/* Selected Job Details - Always Expanded */}
       {selectedJob && (
         <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
           <div className="p-6">
-            <div className="flex items-start justify-between">
-              <div className="flex-1">
-                <h2 className="text-2xl font-bold text-white mb-3">{selectedJob.title}</h2>
-                
-                <div className="flex flex-wrap gap-4 text-sm text-gray-300 mb-4">
-                  <div className="flex items-center gap-2">
-                    <MapPin className="w-4 h-4 text-tangerine" />
-                    {selectedJob.location}
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <DollarSign className="w-4 h-4 text-sage" />
-                    {selectedJob.salary_range || 'Not specified'}
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Calendar className="w-4 h-4 text-peach" />
-                    Posted {new Date(selectedJob.created_at).toLocaleDateString()}
-                  </div>
+            <div className="flex-1">
+              <h2 className="text-2xl font-bold text-white mb-3">{selectedJob.title}</h2>
+              
+              <div className="flex flex-wrap gap-4 text-sm text-gray-300 mb-4">
+                <div className="flex items-center gap-2">
+                  <MapPin className="w-4 h-4 text-tangerine" />
+                  {selectedJob.location}
                 </div>
-
-                {isJobExpanded && (
-                  <div className="space-y-4 mt-4 pt-4 border-t border-gray-700">
-                    {selectedJob.description && (
-                      <div>
-                        <h3 className="text-sm font-semibold text-gray-300 mb-2">Description</h3>
-                        <p className="text-sm text-gray-400">{selectedJob.description}</p>
-                      </div>
-                    )}
-                    
-                    {selectedJob.requirements && (
-                      <div>
-                        <h3 className="text-sm font-semibold text-gray-300 mb-2">Requirements</h3>
-                        <p className="text-sm text-gray-400">{selectedJob.requirements}</p>
-                      </div>
-                    )}
-                  </div>
-                )}
+                <div className="flex items-center gap-2">
+                  <DollarSign className="w-4 h-4 text-sage" />
+                  {selectedJob.salary_range || 'Not specified'}
+                </div>
+                <div className="flex items-center gap-2">
+                  <Calendar className="w-4 h-4 text-peach" />
+                  Posted {new Date(selectedJob.created_at).toLocaleDateString()}
+                </div>
               </div>
 
-              <button
-                onClick={() => setIsJobExpanded(!isJobExpanded)}
-                className="ml-4 p-2 hover:bg-gray-700 rounded-lg transition"
-              >
-                {isJobExpanded ? (
-                  <ChevronUp className="w-5 h-5 text-gray-400" />
-                ) : (
-                  <ChevronDown className="w-5 h-5 text-gray-400" />
-                )}
-              </button>
+              {/* Always show description and requirements */}
+              {(selectedJob.description || selectedJob.requirements) && (
+                <div className="space-y-4 mt-4 pt-4 border-t border-gray-700">
+                  {selectedJob.description && (
+                    <div>
+                      <h3 className="text-sm font-semibold text-gray-300 mb-2">Description</h3>
+                      <p className="text-sm text-gray-400 whitespace-pre-wrap leading-relaxed">{selectedJob.description}</p>
+                    </div>
+                  )}
+                  
+                  {selectedJob.requirements && (
+                    <div>
+                      <h3 className="text-sm font-semibold text-gray-300 mb-2">Requirements</h3>
+                      <p className="text-sm text-gray-400 whitespace-pre-wrap leading-relaxed">{selectedJob.requirements}</p>
+                    </div>
+                  )}
+                </div>
+              )}
             </div>
           </div>
         </div>
@@ -299,13 +364,24 @@ export default function JobsPage() {
       <div className="bg-gray-800 border border-gray-700 rounded-lg p-6">
         <div className="flex items-center justify-between mb-4">
           <h3 className="text-lg font-semibold text-white">Filters & Sort</h3>
-          <button
-            onClick={() => setShowFilters(!showFilters)}
-            className="flex items-center gap-2 text-sm text-gray-400 hover:text-white transition"
-          >
-            <SlidersHorizontal className="w-4 h-4" />
-            {showFilters ? 'Hide' : 'Show'} Filters
-          </button>
+          <div className="flex items-center gap-2">
+            {(minMatchScore > 0 || sortBy !== 'match_score') && (
+              <button
+                onClick={handleResetFilters}
+                className="flex items-center gap-2 text-sm text-gray-400 hover:text-white transition"
+              >
+                <RotateCcw className="w-4 h-4" />
+                Reset
+              </button>
+            )}
+            <button
+              onClick={() => setShowFilters(!showFilters)}
+              className="flex items-center gap-2 text-sm text-gray-400 hover:text-white transition"
+            >
+              <SlidersHorizontal className="w-4 h-4" />
+              {showFilters ? 'Hide' : 'Show'} Filters
+            </button>
+          </div>
         </div>
 
         {showFilters && (
@@ -373,7 +449,7 @@ export default function JobsPage() {
         <>
           <div className="flex items-center justify-between">
             <p className="text-sm text-gray-400">
-              Showing {paginatedCandidates.length} of {sortedCandidates.length} candidates
+              Showing {paginatedCandidates.length} of {filteredAndSortedCandidates.length} candidates
             </p>
           </div>
 
@@ -385,8 +461,7 @@ export default function JobsPage() {
                 isSelected={selectedCandidates.has(candidate.cv_id)}
                 onToggleSelect={() => toggleCandidateSelection(candidate.cv_id)}
                 onSave={() => handleSaveCandidate(candidate)}
-                getMatchScoreColor={getMatchScoreColor}
-                getMatchScoreRingColor={getMatchScoreRingColor}
+                jobTitle={selectedJob?.title}
               />
             ))}
           </div>
@@ -403,19 +478,33 @@ export default function JobsPage() {
               </button>
               
               <div className="flex items-center gap-2">
-                {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
-                  <button
-                    key={page}
-                    onClick={() => setCurrentPage(page)}
-                    className={`w-10 h-10 rounded-lg transition ${
-                      currentPage === page
-                        ? 'bg-tangerine text-white'
-                        : 'bg-gray-800 border border-gray-700 text-gray-300 hover:border-tangerine'
-                    }`}
-                  >
-                    {page}
-                  </button>
-                ))}
+                {Array.from({ length: Math.min(totalPages, 5) }, (_, i) => {
+                  // Show first page, last page, current page, and pages around current
+                  let page: number;
+                  if (totalPages <= 5) {
+                    page = i + 1;
+                  } else if (currentPage <= 3) {
+                    page = i + 1;
+                  } else if (currentPage >= totalPages - 2) {
+                    page = totalPages - 4 + i;
+                  } else {
+                    page = currentPage - 2 + i;
+                  }
+                  
+                  return (
+                    <button
+                      key={page}
+                      onClick={() => setCurrentPage(page)}
+                      className={`w-10 h-10 rounded-lg transition ${
+                        currentPage === page
+                          ? 'bg-tangerine text-white'
+                          : 'bg-gray-800 border border-gray-700 text-gray-300 hover:border-tangerine'
+                      }`}
+                    >
+                      {page}
+                    </button>
+                  );
+                })}
               </div>
 
               <button
@@ -448,6 +537,16 @@ export default function JobsPage() {
           </div>
         </div>
       )}
+
+      {/* Post Job Modal */}
+      <PostJobModal
+        isOpen={showPostJobModal}
+        onClose={() => setShowPostJobModal(false)}
+        onSuccess={() => {
+          fetchJobs();
+          alert('Job posted successfully!');
+        }}
+      />
     </div>
   );
 }
@@ -458,20 +557,22 @@ function CandidateCard({
   isSelected,
   onToggleSelect,
   onSave, 
-  getMatchScoreColor,
-  getMatchScoreRingColor 
+  jobTitle
 }: { 
   candidate: MatchedCandidate;
   isSelected: boolean;
   onToggleSelect: () => void;
   onSave: () => void;
-  getMatchScoreColor: (score: number) => string;
-  getMatchScoreRingColor: (score: number) => string;
+  jobTitle?: string;
 }) {
   const [showModal, setShowModal] = useState(false);
-  const matchPercent = Math.round(candidate.match_score * 100);
+  const matchPercent = Math.round(candidate.match_score);
   const circumference = 2 * Math.PI * 36;
   const strokeDashoffset = circumference - (matchPercent / 100) * circumference;
+  
+  // Get smooth gradient color based on score
+  const ringColor = getMatchScoreColor(matchPercent);
+  const textColor = getMatchScoreTextColor(matchPercent);
 
   return (
     <>
@@ -490,9 +591,10 @@ function CandidateCard({
           )}
         </button>
 
-        {/* Match Score Ring */}
+        {/* Match Score Ring with Smooth Color Gradient */}
         <div className="relative w-20 h-20 mx-auto mb-4">
           <svg className="transform -rotate-90 w-20 h-20">
+            {/* Background circle */}
             <circle
               cx="40"
               cy="40"
@@ -502,21 +604,25 @@ function CandidateCard({
               fill="transparent"
               className="text-gray-700"
             />
+            {/* Progress circle with smooth color */}
             <circle
               cx="40"
               cy="40"
               r="36"
-              stroke="currentColor"
+              stroke={ringColor}
               strokeWidth="6"
               fill="transparent"
               strokeDasharray={circumference}
               strokeDashoffset={strokeDashoffset}
-              className={getMatchScoreRingColor(matchPercent)}
               strokeLinecap="round"
+              className="transition-all duration-300"
             />
           </svg>
           <div className="absolute inset-0 flex items-center justify-center">
-            <span className={`text-lg font-bold ${getMatchScoreColor(matchPercent).split(' ')[0]}`}>
+            <span 
+              className="text-lg font-bold" 
+              style={{ color: ringColor }}
+            >
               {matchPercent}%
             </span>
           </div>
@@ -579,130 +685,13 @@ function CandidateCard({
 
       {/* Candidate Detail Modal */}
       {showModal && (
-        <CandidateModal
+        <CandidateDetailModal
           candidate={candidate}
+          jobTitle={jobTitle}
           onClose={() => setShowModal(false)}
           onSave={onSave}
         />
       )}
     </>
-  );
-}
-
-// Candidate Modal Component
-function CandidateModal({ 
-  candidate, 
-  onClose, 
-  onSave 
-}: { 
-  candidate: MatchedCandidate;
-  onClose: () => void;
-  onSave: () => void;
-}) {
-  return (
-    <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-      <div className="bg-gray-800 border border-gray-700 rounded-lg max-w-3xl w-full max-h-[90vh] overflow-y-auto">
-        <div className="p-6">
-          {/* Header */}
-          <div className="flex items-start justify-between mb-6">
-            <div>
-              <h2 className="text-2xl font-bold text-white mb-2">
-                {candidate.full_name}
-              </h2>
-              <p className="text-gray-400">{candidate.current_position}</p>
-            </div>
-            <button
-              onClick={onClose}
-              className="text-gray-400 hover:text-white transition"
-            >
-              ✕
-            </button>
-          </div>
-
-          {/* Match Score */}
-          <div className="bg-gray-900/50 rounded-lg p-4 mb-6">
-            <div className="flex items-center justify-between">
-              <span className="text-gray-300">Match Score</span>
-              <span className="text-2xl font-bold text-tangerine">
-                {Math.round(candidate.match_score * 100)}%
-              </span>
-            </div>
-          </div>
-
-          {/* Details Grid */}
-          <div className="grid grid-cols-2 gap-4 mb-6">
-            {candidate.location && (
-              <div>
-                <p className="text-sm text-gray-400 mb-1">Location</p>
-                <p className="text-white">{candidate.location}</p>
-              </div>
-            )}
-            {candidate.years_experience && (
-              <div>
-                <p className="text-sm text-gray-400 mb-1">Experience</p>
-                <p className="text-white">{candidate.years_experience} years</p>
-              </div>
-            )}
-            {candidate.education && (
-              <div>
-                <p className="text-sm text-gray-400 mb-1">Education</p>
-                <p className="text-white">{candidate.education}</p>
-              </div>
-            )}
-            {candidate.email && (
-              <div>
-                <p className="text-sm text-gray-400 mb-1">Email</p>
-                <p className="text-white">{candidate.email}</p>
-              </div>
-            )}
-          </div>
-
-          {/* Skills */}
-          {candidate.top_skills && candidate.top_skills.length > 0 && (
-            <div className="mb-6">
-              <h3 className="text-lg font-semibold text-white mb-3">Skills</h3>
-              <div className="flex flex-wrap gap-2">
-                {candidate.top_skills.map((skill, idx) => (
-                  <span
-                    key={idx}
-                    className="px-3 py-1 bg-tangerine/10 text-tangerine rounded-lg"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {/* Match Reason */}
-          {candidate.match_reason && (
-            <div className="mb-6">
-              <h3 className="text-lg font-semibold text-white mb-3">Why They Match</h3>
-              <p className="text-gray-300">{candidate.match_reason}</p>
-            </div>
-          )}
-
-          {/* Actions */}
-          <div className="flex gap-3">
-            <button
-              onClick={() => {
-                onSave();
-                onClose();
-              }}
-              className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-tangerine hover:bg-tangerine/90 text-white rounded-lg transition"
-            >
-              <BookmarkPlus className="w-5 h-5" />
-              Save Candidate
-            </button>
-            <button
-              onClick={onClose}
-              className="px-4 py-3 bg-gray-700 hover:bg-gray-600 text-white rounded-lg transition"
-            >
-              Close
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
   );
 }

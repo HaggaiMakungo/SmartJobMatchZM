@@ -49,13 +49,13 @@ export default function LoginScreen() {
   // Quick login for Job Seeker (Brian Mwale)
   const handleJobSeekerTestLogin = () => {
     setValue('email', 'brian.mwale@example.com');
-    setValue('password', 'Brian123');
+    setValue('password', 'password123');
   };
 
   // Quick login for Personal Employer (Mark Ziligone)
   const handleEmployerTestLogin = () => {
     setValue('email', 'mark.ziligone@example.com');
-    setValue('password', 'Mark123');
+    setValue('password', 'password123');
   };
 
   const onSubmit = async (data: LoginFormData) => {
@@ -118,7 +118,7 @@ export default function LoginScreen() {
                   justifyContent: 'center',
                   marginBottom: 16
                 }}>
-                  <Text style={{ fontSize: 40 }}>👤</Text>
+                  <Text style={{ fontSize: 40, color: '#FFFFFF', fontWeight: 'bold' }}>C</Text>
                 </View>
                 <Text style={{ 
                   fontSize: 32, 
@@ -154,7 +154,7 @@ export default function LoginScreen() {
                     textAlign: 'center',
                     fontWeight: '500'
                   }}>
-                    🧪 Job Seeker (Brian Mwale)
+                    Job Seeker (Brian Mwale)
                   </Text>
                 </TouchableOpacity>
 
@@ -173,7 +173,7 @@ export default function LoginScreen() {
                     textAlign: 'center',
                     fontWeight: '500'
                   }}>
-                    💼 Personal Employer (Mark Ziligone)
+                    Personal Employer (Mark Ziligone)
                   </Text>
                 </TouchableOpacity>
                 
@@ -192,7 +192,7 @@ export default function LoginScreen() {
                     textAlign: 'center',
                     fontWeight: '500'
                   }}>
-                    🔧 Network Diagnostic Tool
+                    Network Diagnostic Tool
                   </Text>
                 </TouchableOpacity>
               </View>
@@ -214,7 +214,7 @@ export default function LoginScreen() {
                       keyboardType="email-address"
                       autoCapitalize="none"
                       autoComplete="email"
-                      leftIcon={<Text style={{ fontSize: 20 }}>📧</Text>}
+                      leftIcon={<Text style={{ fontSize: 18, color: '#f29559' }}>@</Text>}
                     />
                   )}
                 />
@@ -234,7 +234,7 @@ export default function LoginScreen() {
                         error={errors.password?.message}
                         secureTextEntry
                         autoCapitalize="none"
-                        leftIcon={<Text style={{ fontSize: 20 }}>🔒</Text>}
+                        leftIcon={<Text style={{ fontSize: 18, color: '#f29559' }}>*</Text>}
                       />
                     )}
                   />
@@ -301,7 +301,7 @@ export default function LoginScreen() {
               {/* Footer */}
               <View style={{ marginTop: 'auto', paddingTop: 32 }}>
                 <Text style={{ color: '#9f9566', textAlign: 'center', fontSize: 12 }}>
-                  Made in Zambia 🇿🇲
+                  Made in Zambia
                 </Text>
                 <Text style={{ color: '#78704b', textAlign: 'center', fontSize: 11, marginTop: 4 }}>
                   Version 1.0.0 • Powered by AI

@@ -21,15 +21,11 @@ from datetime import datetime, timedelta
 import random
 import uuid
 
-# ============================================================================
-# CONFIGURATION
-# ============================================================================
-
 DB_CONFIG = {
     'host': 'localhost',
     'database': 'job_match_db',
     'user': 'postgres',
-    'password': 'your_password'  # UPDATE THIS!
+    'password': 'Winter123'  
 }
 
 # Simulation parameters

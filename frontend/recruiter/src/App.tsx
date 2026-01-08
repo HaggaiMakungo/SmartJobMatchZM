@@ -1,6 +1,8 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { QueryClientProvider } from '@tanstack/react-query';
+import { queryClient } from './lib/queryClient';
 import { useAuthStore } from './store/auth.store';
+import { NetworkIndicator } from './components/ui/CacheIndicator';
 
 // Pages
 import LoginPage from './pages/LoginPage';
@@ -8,17 +10,8 @@ import DashboardLayout from './pages/DashboardLayout';
 import DashboardHome from './pages/DashboardHome';
 import JobsPage from './pages/JobsPage';
 import CandidatesPage from './pages/CandidatesPage';
-
-// Create React Query client
-const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      refetchOnWindowFocus: false,
-      retry: 1,
-      staleTime: 5 * 60 * 1000, // 5 minutes
-    },
-  },
-});
+import AnalyticsPage from './pages/AnalyticsPage';
+import SettingsPage from './pages/SettingsPage';
 
 // Protected Route Component
 function ProtectedRoute({ children }: { children: React.ReactNode }) {
@@ -36,6 +29,9 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
+        {/* Network status indicator */}
+        <NetworkIndicator />
+        
         <Routes>
           {/* Public Routes */}
           <Route path="/login" element={<LoginPage />} />
@@ -52,6 +48,8 @@ function App() {
             <Route index element={<DashboardHome />} />
             <Route path="jobs" element={<JobsPage />} />
             <Route path="candidates" element={<CandidatesPage />} />
+            <Route path="analytics" element={<AnalyticsPage />} />
+            <Route path="settings" element={<SettingsPage />} />
           </Route>
 
           {/* Redirect root to dashboard */}

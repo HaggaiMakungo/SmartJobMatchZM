@@ -6,8 +6,9 @@
     "scheme": "jobmatch"
   },
   "scripts": {
-    "start": "expo start",
-    "start:clear": "expo start --clear",
+    "start": "expo start --android",
+    "start:clear": "expo start --android --clear",
+    "start:usb": "set REACT_NATIVE_PACKAGER_HOSTNAME=192.168.250.249 && expo start --android --lan",
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
@@ -30,6 +31,7 @@
     "expo-image-picker": "~17.0.8",
     "expo-linear-gradient": "~15.0.7",
     "expo-linking": "~8.0.8",
+    "expo-network": "~8.0.8",
     "expo-notifications": "~0.32.12",
     "expo-router": "~6.0.14",
     "expo-secure-store": "~15.0.7",

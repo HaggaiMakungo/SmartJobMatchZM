@@ -12,6 +12,15 @@ export default {
         sage: '#A4B494',
         gunmetal: '#2D3142',
       },
+      keyframes: {
+        shrinkWidth: {
+          '0%': { width: '100%' },
+          '100%': { width: '0%' },
+        },
+      },
+      animation: {
+        'shrink-width': 'shrinkWidth linear',
+      },
     },
   },
 }

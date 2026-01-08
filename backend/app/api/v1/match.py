@@ -119,84 +119,113 @@ async def get_filtered_matches(
 
 @router.get("/ai/jobs")
 def get_ai_matched_jobs(
-    current_user: User = Depends(get_current_user),
     db: Session = Depends(get_db),
-    top_k: int = Query(20, ge=1, le=50),
-    job_type: str = Query('both')
+    top_k: int = Query(5, ge=1, le=50),
+    job_type: str = Query('corporate')
 ):
     """
-    Get AI-matched jobs for the current logged-in user.
-    
-    - **top_k**: Number of top matches to return (1-50)
-    - **job_type**: 'corp', 'small', or 'both'
-    
-    Uses CAMSS 2.0 algorithm with Zambian market context.
+    Get AI-matched jobs (DEMO MODE - NO AUTH)
     """
-    try:
-        # Find user's CV by email
-        cv = db.query(CV).filter(CV.email == current_user.email).first()
-        
-        if not cv:
-            return {
-                "user_id": current_user.id,
-                "matches": [],
-                "total_jobs_scored": 0,
-                "message": "No CV data available. Please upload your CV."
-            }
-        
-        # Get matches using new service
-        matching_service = MatchingService(db)
-        result = matching_service.find_matches(
-            cv_id=cv.cv_id,
-            job_type=job_type,
-            limit=top_k,
-            min_score=0.3
-        )
-        
-        if 'error' in result:
-            return {
-                "user_id": current_user.id,
-                "matches": [],
-                "total_jobs_scored": 0,
-                "message": result['error']
-            }
-        
-        # Transform to frontend-expected format
-        formatted_matches = []
-        for match in result['matches']:
-            formatted_matches.append({
-                "job": {
-                    "id": match['job_id'],
-                    "job_id": match['job_id'],
-                    "type": match['job_type'],
-                    "title": match['title'],
-                    "company": match['company'],
-                    "location": match.get('location_city', 'N/A'),
-                    "salary_range": f"ZMW {match.get('salary_max_zmw', match.get('budget', 'N/A')):,.0f}" if match.get('salary_max_zmw') or match.get('budget') else 'N/A',
-                    "category": match.get('category', 'Unknown'),
-                    "is_active": True
-                },
-                "match_score": round(match['match_score'] * 100, 1),  # Convert to percentage
-                "explanation": ", ".join(match['match_reasons']),
-                "components": match['match_breakdown'],
-                "matched_skills": match['matched_skills'],
-                "missing_skills": match['missing_skills']
-            })
-        
-        return {
-            "user_id": current_user.id,
-            "cv_id": cv.cv_id,
-            "matches": formatted_matches,
-            "total_jobs_scored": result['total_matches']
+    # DEMO MODE: Return mock matched jobs
+    mock_jobs = [
+        {
+            "job": {
+                "id": "JOB000001",
+                "job_id": "JOB000001",
+                "type": "corporate",
+                "title": "Software Developer",
+                "company": "Tech Solutions Ltd",
+                "location": "Lusaka",
+                "salary_range": "ZMW 8,000 - 15,000",
+                "category": "Technology",
+                "is_active": True
+            },
+            "match_score": 85.0,
+            "explanation": "Strong skills match, Relevant experience",
+            "components": {"skills": 0.90, "experience": 0.85},
+            "matched_skills": ["Python", "JavaScript", "React"],
+            "missing_skills": ["Docker"]
+        },
+        {
+            "job": {
+                "id": "JOB000003",
+                "job_id": "JOB000003",
+                "type": "corporate",
+                "title": "Data Analyst",
+                "company": "Zambia Analytics Corp",
+                "location": "Lusaka",
+                "salary_range": "ZMW 6,500 - 12,000",
+                "category": "Technology",
+                "is_active": True
+            },
+            "match_score": 78.0,
+            "explanation": "Good skills match, Growing field",
+            "components": {"skills": 0.85, "experience": 0.75},
+            "matched_skills": ["Python", "SQL"],
+            "missing_skills": ["R", "Tableau"]
+        },
+        {
+            "job": {
+                "id": "JOB000005",
+                "job_id": "JOB000005",
+                "type": "corporate",
+                "title": "Network Engineer",
+                "company": "Zambia Online",
+                "location": "Lusaka",
+                "salary_range": "ZMW 10,000 - 19,000",
+                "category": "Technology",
+                "is_active": True
+            },
+            "match_score": 72.0,
+            "explanation": "Technical background, Career growth",
+            "components": {"skills": 0.70, "experience": 0.72},
+            "matched_skills": ["Networking"],
+            "missing_skills": ["CCNA", "Firewall"]
+        },
+        {
+            "job": {
+                "id": "JOB000002",
+                "job_id": "JOB000002",
+                "type": "corporate",
+                "title": "Marketing Manager",
+                "company": "Zambia Marketing Solutions",
+                "location": "Lusaka",
+                "salary_range": "ZMW 10,000 - 18,000",
+                "category": "Marketing",
+                "is_active": True
+            },
+            "match_score": 65.0,
+            "explanation": "Management potential, Good fit",
+            "components": {"skills": 0.60, "experience": 0.65},
+            "matched_skills": ["Communication"],
+            "missing_skills": ["SEO", "Google Ads"]
+        },
+        {
+            "job": {
+                "id": "JOB000004",
+                "job_id": "JOB000004",
+                "type": "corporate",
+                "title": "IT Support Specialist",
+                "company": "Zambia IT Services",
+                "location": "Livingstone",
+                "salary_range": "ZMW 4,500 - 8,500",
+                "category": "Technology",
+                "is_active": True
+            },
+            "match_score": 58.0,
+            "explanation": "Entry-level friendly",
+            "components": {"skills": 0.55, "experience": 0.60},
+            "matched_skills": ["Windows"],
+            "missing_skills": ["Active Directory", "ITIL"]
         }
-        
-    except HTTPException:
-        raise
-    except Exception as e:
-        import traceback
-        print(f"Error in get_ai_matched_jobs: {str(e)}")
-        print(traceback.format_exc())
-        raise HTTPException(status_code=500, detail=f"Error generating AI matches: {str(e)}")
+    ]
+    
+    return {
+        "user_id": 1,
+        "cv_id": "demo_candidate",
+        "matches": mock_jobs[:top_k],
+        "total_jobs_scored": len(mock_jobs)
+    }
 
 
 @router.get("/ai/job/{job_id}")

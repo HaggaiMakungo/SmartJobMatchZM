@@ -1,149 +1,300 @@
-# 🎯 START HERE - Git Setup for SmartJobMatchZM
+# 🎯 WHAT TO DO NOW - Step-by-Step
 
-## 👋 Welcome!
+## ⚡ 3-Minute Quick Start
 
-You're about to set up Git and GitHub for your SmartJobMatchZM project. This should take about **10 minutes**.
+### 1. Open 3 Windows
 
----
-
-## 🚀 Quick Start (Choose Your Path)
-
-### Path A: Automated (Recommended) ⚡
-
-**Windows Users:**
-1. Open Command Prompt or PowerShell
-2. Navigate to your project:
-   ```cmd
-   cd C:\Dev\ai-job-matchingV2
-   ```
-3. Run the script:
-   ```cmd
-   INITIALIZE_GIT.bat
-   ```
-4. Follow the on-screen instructions
-
-**Linux/Mac Users:**
-1. Open Terminal
-2. Navigate to your project:
-   ```bash
-   cd /path/to/ai-job-matchingV2
-   ```
-3. Make script executable and run:
-   ```bash
-   chmod +x initialize_git.sh
-   ./initialize_git.sh
-   ```
-4. Follow the on-screen instructions
-
----
-
-### Path B: Manual Setup (If Scripts Don't Work) 📝
-
-See **[GIT_SETUP.md](GIT_SETUP.md)** for detailed manual instructions.
-
----
-
-## 📁 What You Have
-
-Your project now includes these helpful files:
-
-| File | Purpose |
-|------|---------|
-| `INITIALIZE_GIT.bat` | Windows setup script (RUN THIS!) |
-| `initialize_git.sh` | Linux/Mac setup script (RUN THIS!) |
-| `GIT_CHECKLIST.md` | Step-by-step task checklist |
-| `GIT_QUICKSTART.md` | Daily command reference |
-| `GIT_SETUP.md` | Detailed setup guide |
-| `GIT_TROUBLESHOOTING.md` | Solutions to common problems |
-| `PROJECT_STATUS.md` | Full project roadmap |
-| `SETUP_COMPLETE.md` | What to do after setup |
-
----
-
-## ✅ Three Steps to Success
-
-### 1️⃣ Initialize Git (5 min)
-Run `INITIALIZE_GIT.bat` and enter:
-- Your GitHub username
-- Your GitHub email
-
-### 2️⃣ Create GitHub Repo (2 min)
-- Go to: https://github.com/new
-- Name: `SmartJobMatchZM`
-- Description: `AI-Powered Job Matching Platform for Zambia`
-- **Don't check any boxes!**
-- Click "Create repository"
-
-### 3️⃣ Connect & Push (3 min)
+**Terminal 1 - Backend:**
 ```bash
-git remote add origin https://github.com/YOUR_USERNAME/SmartJobMatchZM.git
-git push -u origin main
+cd C:\Dev\ai-job-matchingV2\backend
+python test_recruiter_endpoint.py
+```
+
+**Terminal 2 - Backend Logs:**
+```bash
+cd C:\Dev\ai-job-matchingV2\backend
+# Look at existing terminal running: python -m uvicorn app.main:app --reload
+```
+
+**Browser - Frontend:**
+1. Go to `http://localhost:3000/login`
+2. Login: `zanaco@company.zm` / `password123`
+3. Click "Jobs" in sidebar
+4. Press F12 → Console tab
+5. Select a job from dropdown
+6. Watch for errors
+
+---
+
+### 2. Collect These 3 Outputs
+
+**A. Diagnostic Script Output:**
+```bash
+# Terminal 1 will show:
+✅ Login successful!
+✅ Found X jobs
+📋 Testing with job: ...
+✅/❌ Success/Failed: ...
+```
+
+**Copy this entire output!**
+
+---
+
+**B. Backend Logs:**
+```bash
+# Terminal 2 should show when you select a job:
+INFO: 127.0.0.1:xxxxx - "GET /api/recruiter/job/..." 200/404/500
+```
+
+**Copy any errors or unusual logs!**
+
+---
+
+**C. Browser Console:**
+```javascript
+// Browser console will show:
+Failed to fetch candidates: AxiosError
+Error details: {
+  message: "...",
+  response: {...},
+  status: XXX,
+  url: "..."
+}
+```
+
+**Copy the Error details object!**
+
+---
+
+### 3. Paste All 3 Outputs Here
+
+Once you have all 3 outputs, paste them and I'll tell you:
+- ✅ Exactly what's wrong
+- ✅ Exactly how to fix it
+- ✅ Step-by-step commands
+
+---
+
+## 🔍 What Each Output Tells Us
+
+### Diagnostic Script Results
+
+**If you see:**
+```
+✅ Found 15 candidates
+```
+→ Backend works! Issue is in frontend.
+
+**If you see:**
+```
+✅ Found 0 candidates
+```
+→ CV data missing or matching filters too strict.
+
+**If you see:**
+```
+❌ Failed: 500 Internal Server Error
+```
+→ Backend error. Check matching service.
+
+**If you see:**
+```
+❌ Timeout after 30s
+```
+→ Matching too slow. Need optimized endpoint.
+
+---
+
+### Backend Logs Tell Us
+
+**If you see:**
+```
+INFO: ... "GET /api/recruiter/job/ZANACO_001/candidates" 200
+```
+→ Request succeeded! Check frontend response handling.
+
+**If you see:**
+```
+ERROR: KeyError: 'company'
+```
+→ User model not updated. Run migration.
+
+**If you see:**
+```
+ERROR: No module named 'sentence_transformers'
+```
+→ Missing dependency. Run: `pip install sentence-transformers`
+
+**If you see:**
+```
+ERROR: Matching service failed to initialize
+```
+→ ML model issue. Check model files.
+
+---
+
+### Browser Console Tells Us
+
+**If you see:**
+```
+status: 404
+```
+→ Endpoint not found. Check URL.
+
+**If you see:**
+```
+status: 500
+```
+→ Server error. Check backend logs.
+
+**If you see:**
+```
+status: 403
+```
+→ Forbidden. Company mismatch.
+
+**If you see:**
+```
+message: "timeout of 120000ms exceeded"
+```
+→ Matching too slow. Use optimized endpoint.
+
+---
+
+## 🎯 Most Common Fixes
+
+### Fix #1: CV Data Missing (70% chance this is it)
+
+**Check:**
+```bash
+psql -U postgres -d camss_db -c "SELECT COUNT(*) FROM cvs;"
+```
+
+**If returns 0 or very few:**
+You need CV data! Check if there's a script like:
+```bash
+python populate_cvs.py
+# or
+python seed_database.py
 ```
 
 ---
 
-## 🆘 Need Help?
+### Fix #2: Use Optimized Endpoint (20% chance)
 
-### If something goes wrong:
-1. Check **[GIT_TROUBLESHOOTING.md](GIT_TROUBLESHOOTING.md)**
-2. Read the error message carefully
-3. Google the specific error
-4. Come back with the exact error message
+**Edit:** `frontend/recruiter/src/lib/api/client.ts`
 
-### Common issues:
-- "git is not recognized" → Install Git from [git-scm.com](https://git-scm.com/download/win)
-- "Permission denied" → Use HTTPS instead of SSH
-- "Remote already exists" → Run `git remote remove origin` first
-
----
-
-## ✨ After Setup
-
-Once Git is working:
-1. ✅ Run `git status` (should show clean working tree)
-2. ✅ Visit your GitHub repo (all files should be there)
-3. ✅ Tell me: **"Git setup complete! Ready for Phase 2."**
-
-Then we'll start building your FastAPI backend! 🚀
-
----
-
-## 📚 Learn More
-
-- **Quick Reference**: [GIT_QUICKSTART.md](GIT_QUICKSTART.md)
-- **Full Guide**: [GIT_SETUP.md](GIT_SETUP.md)
-- **Troubleshooting**: [GIT_TROUBLESHOOTING.md](GIT_TROUBLESHOOTING.md)
-- **Project Roadmap**: [PROJECT_STATUS.md](PROJECT_STATUS.md)
-
----
-
-## 🎯 Your Learning Journey
-
-```
-✅ Phase 1: Git Setup (You are here!)      [10 min]
-⏳ Phase 2: Project Structure               [2-3 hours]
-⏳ Phase 3: Database Models                 [3-4 hours]
-⏳ Phase 4: Authentication                  [4-6 hours]
-⏳ Phase 5: Matching Engine                 [8-10 hours]
-⏳ Phase 6: API Endpoints                   [6-8 hours]
-⏳ Phase 7: Testing                         [4-6 hours]
-⏳ Phase 8: Polish & Deploy                 [4-6 hours]
+**Line 97, change from:**
+```typescript
+/api/recruiter/job/${jobId}/candidates
 ```
 
-**Total Project Time**: ~2 weeks
-
----
-
-## 💪 Ready?
-
-**Run this command now:**
-
-```cmd
-INITIALIZE_GIT.bat
+**To:**
+```typescript
+/api/recruiter/optimized/job/${jobId}/candidates
 ```
 
-**See you on the other side! 🚀**
+**Save and refresh browser.**
 
 ---
 
-*SmartJobMatchZM • AI-Powered Job Matching Platform for Zambia*
+### Fix #3: Missing Dependencies (10% chance)
+
+```bash
+cd C:\Dev\ai-job-matchingV2\backend
+pip install sentence-transformers scikit-learn lightgbm
+```
+
+**Then restart backend:**
+```bash
+python -m uvicorn app.main:app --reload
+```
+
+---
+
+## ✅ Success Looks Like
+
+After fixing, you should see:
+
+**Terminal 1 (Diagnostic):**
+```
+✅ Login successful!
+✅ Found 8 jobs
+📋 Testing with job: Bank Teller (ID: ZANACO_001)
+✅ Success! Found 15 candidates
+   First candidate: John Banda
+   Match score: 0.85
+```
+
+**Terminal 2 (Backend):**
+```
+INFO: ... "GET /api/recruiter/job/ZANACO_001/candidates" 200 OK
+🎯 Processing ZANACO_001...
+✅ Found 15 matches
+✅ Complete in 2.34s
+```
+
+**Browser:**
+```
+Jobs fetched: 8
+Candidates response: {
+  matched_candidates: [15 candidates],
+  total_candidates: 15
+}
+```
+
+**And on screen:**
+- Grid of candidate cards appears
+- Match scores show (e.g., 85%, 78%, 72%)
+- No errors in console
+
+---
+
+## 📞 If You Get Stuck
+
+**Paste these 3 things:**
+
+1. **Diagnostic script output** (full terminal output)
+2. **Backend logs** (any errors from uvicorn terminal)
+3. **Browser console error** (the "Error details" object)
+
+**I'll diagnose immediately and give you exact fix!** 🚀
+
+---
+
+## 🎬 Ready? Let's Go!
+
+1. Open 3 windows (Terminal 1, Terminal 2, Browser)
+2. Run diagnostic script
+3. Try to load candidates in browser
+4. Copy all 3 outputs
+5. Paste here
+
+**I'm standing by to help!** 🔥
+
+---
+
+## 💡 Pro Tip
+
+If diagnostic script shows **"Found X candidates"** but browser still fails:
+
+→ The backend is working!  
+→ Issue is in frontend code (probably response format mismatch)  
+→ Check the `getCandidatesForJob` function in `client.ts`
+
+If diagnostic script shows **"Found 0 candidates"**:
+
+→ Backend works but no matches found  
+→ Check CV data in database  
+→ Or lower the matching score threshold
+
+If diagnostic script shows **errors**:
+
+→ Backend issue  
+→ Check what error it says  
+→ Usually dependencies or database problem
+
+---
+
+**GO! Run the diagnostic now!** ⚡

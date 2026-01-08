@@ -1,6 +1,29 @@
 # SmartJobMatchZM - Git Ignore File
 
 # ============================================================================
+# ENVIRONMENT & SECRETS
+# ============================================================================
+
+# Environment variables (CRITICAL - contains passwords and secrets)
+.env
+.env.local
+.env.*.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# API keys and secrets
+secrets.json
+.secrets
+api_keys.txt
+*.key
+*.pem
+
+# Database credentials
+database.ini
+db_config.py
+
+# ============================================================================
 # PYTHON / BACKEND
 # ============================================================================
 
@@ -32,6 +55,14 @@ share/python-wheels/
 *.egg
 MANIFEST
 
+# Virtual environments
+venv/
+env/
+ENV/
+.venv
+env.bak/
+venv.bak/
+
 # PyInstaller
 *.manifest
 *.spec
@@ -55,16 +86,6 @@ cover/
 instance/
 .webassets-cache
 
-# Scrapy stuff
-.scrapy
-
-# Sphinx documentation
-docs/_build/
-
-# PyBuilder
-.pybuilder/
-target/
-
 # Jupyter Notebook
 .ipynb_checkpoints
 
@@ -78,42 +99,6 @@ ipython_config.py
 # Celery stuff
 celerybeat-schedule
 celerybeat.pid
-
-# SageMath parsed files
-*.sage.py
-
-# Environments
-.env
-.venv
-env/
-venv/
-ENV/
-env.bak/
-venv.bak/
-
-# Spyder project settings
-.spyderproject
-.spyproject
-
-# Rope project settings
-.ropeproject
-
-# mkdocs documentation
-/site
-
-# mypy
-.mypy_cache/
-.dmypy.json
-dmypy.json
-
-# Pyre type checker
-.pyre/
-
-# pytype static type analyzer
-.pytype/
-
-# Cython debug symbols
-cython_debug/
 
 # ============================================================================
 # NODE.JS / FRONTEND
@@ -144,17 +129,11 @@ yarn-error.log*
 .pnpm-debug.log*
 lerna-debug.log*
 
-# Local env files
-.env*.local
-.env.development.local
-.env.test.local
-.env.production.local
+# Turbopack
+.turbopack
 
 # Vercel
 .vercel
-
-# Turbopack
-.turbopack
 
 # ============================================================================
 # DATABASE
@@ -166,9 +145,78 @@ lerna-debug.log*
 *.sqlite
 *.sqlite3
 
-# Database dumps (keep structure, ignore data)
+# Database dumps (IMPORTANT - may contain sensitive user data)
 *dump*.sql
 backup_*.sql
+*.backup
+*.bak
+
+# Migration scratch files
+alembic/versions/*_manual.py
+migrations/manual/
+
+# ============================================================================
+# ML / AI MODELS & DATA
+# ============================================================================
+
+# Model files (can be large - regenerate if needed)
+*.h5
+*.pkl
+*.pickle
+*.joblib
+*.model
+*.pt
+*.pth
+*.onnx
+*.tflite
+
+# Keep the main ranking model in version control
+!backend/models/ranking_model.pkl
+
+# Model cache directories
+.cache/
+models/cache/
+transformers_cache/
+
+# Sentence transformers cache
+.sentence_transformers/
+
+# Hugging Face cache
+.huggingface/
+
+# Embeddings (regeneratable)
+embeddings/
+*.npy
+*.npz
+
+# Training outputs
+training_outputs/
+checkpoints/
+runs/
+tensorboard/
+
+# ============================================================================
+# USER DATA & UPLOADS
+# ============================================================================
+
+# Uploaded files (may contain PII)
+uploads/
+temp_uploads/
+user_uploads/
+
+# Generated reports (may contain sensitive data)
+reports/
+exports/
+
+# CSV exports with user data
+*_export.csv
+*_users.csv
+*_cvs.csv
+*_applicants.csv
+
+# Keep example/seed data
+!backend/datasets/sample_*.csv
+!backend/datasets/seed_*.csv
 
 # ============================================================================
 # IDE / EDITORS
@@ -184,14 +232,11 @@ backup_*.sql
 .history/
 *.vsix
 
-# IntelliJ IDEA
+# IntelliJ IDEA / PyCharm
 .idea/
 *.iws
 *.iml
 *.ipr
-
-# PyCharm
-.idea/
 *.swp
 *.swo
 
@@ -252,42 +297,13 @@ Temporary Items
 .nfs*
 
 # ============================================================================
-# ML / AI MODELS
-# ============================================================================
-
-# Model files (too large for git)
-*.h5
-*.pkl
-*.pickle
-*.joblib
-*.model
-*.pt
-*.pth
-*.onnx
-*.tflite
-
-# Model cache directories
-.cache/
-models/cache/
-transformers_cache/
-
-# Sentence transformers cache
-.sentence_transformers/
-
-# Hugging Face cache
-.huggingface/
-
-# ============================================================================
 # LOGS & TEMP FILES
 # ============================================================================
 
-# Logs
+# Logs (may contain sensitive info)
 logs/
 *.log
 log/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
 
 # Temporary files
 *.tmp
@@ -297,29 +313,38 @@ yarn-error.log*
 *~
 
 # ============================================================================
-# PROJECT SPECIFIC
+# DOCUMENTATION (TEMPORARY/SESSION-SPECIFIC)
 # ============================================================================
 
-# Datasets - TRACKED (small datasets for testing)
-# If your datasets get too large (>100MB), uncomment these:
-# datasets/*.csv
-# datasets/*.json
-# datasets/*.xlsx
-# For now, datasets are tracked since they're essential for the project
+# Session-specific temporary documentation
+DEMO_MODE*.md
+FIX_SUMMARY.md
+MOBILE_LOGIN_FIX.md
+QUICK_RESTART.md
+ML_MATCH_DEMO_MODE.md
+COMPLETE_DEMO_MODE.md
+FINAL_COMPLETE.md
+ALL-FIXES-COMPLETE.md
+ANALYTICS_FIXES.md
+DASHBOARD_IMPROVEMENTS.md
+FIXES-APPLIED.md
+QUICK-START.md
+PRE-PUSH-CHECKLIST.md
 
-# Uploaded files
-uploads/
-temp_uploads/
+# Context and tree files
+Context.txt
+tree.txt
 
-# Generated embeddings
-embeddings/
-*.npy
-*.npz
+# Utility batch files
+start-backend-mobile.bat
+setup_*.bat
+install_*.bat
+push-to-github.bat
+START-APP.bat
 
-# API keys and secrets
-secrets.json
-.secrets
-api_keys.txt
+# ============================================================================
+# PROJECT SPECIFIC
+# ============================================================================
 
 # Local development
 local_settings.py
@@ -328,18 +353,56 @@ dev_config.py
 # Docker
 docker-compose.override.yml
 
+# Datasets with large size (>100MB)
+# Small test datasets are kept for development
+datasets/large/
+datasets/*.zip
+datasets/*.tar.gz
+
+# Backend md folder (contains dev scripts, not docs)
+backend/md/
+
+# Duplicate/backup CSV files
+*_duplicates.csv
+*_backup.csv
+duplicates_*.csv
+
 # ============================================================================
-# DOCUMENTATION
+# EXPO / REACT NATIVE SPECIFIC
 # ============================================================================
 
-# Ignore generated docs but keep source
-docs/build/
-docs/_build/
+# Expo
+.expo/
+.expo-shared/
 
-# Keep these
+# Metro bundler
+.metro-health-check*
+
+# Temporary files created by Metro to check the health of the file watcher
+.metro-health-check*
+
+# ============================================================================
+# KEEP THESE FILES (Important for documentation)
+# ============================================================================
+
+# Core documentation files
 !README.md
 !CONTRIBUTING.md
 !LICENSE
 !.gitignore
+!.gitattributes
+
+# Dependency files
 !requirements.txt
 !package.json
+!package-lock.json
+
+# Environment template
+!.env.example
+
+# Configuration files
+!*.config.js
+!*.config.ts
+!tsconfig.json
+!vite.config.ts
+!alembic.ini

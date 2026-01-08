@@ -23,65 +23,39 @@ router = APIRouter()
 
 @router.get("/candidate/profile/me")
 def get_my_profile(
-    current_user: User = Depends(get_current_user),
     db: Session = Depends(get_db)
 ):
     """
-    Get current candidate's profile
+    Get candidate profile (DEMO MODE - NO AUTH)
     
-    Returns user information and their CV if available
+    Returns mock profile data for demonstration
     """
-    # Look up CV by user's email
-    cv = db.query(CV).filter(CV.email == current_user.email).first()
-    
-    if cv:
-        # Return actual CV data
-        profile_data = {
-            "id": current_user.id,
-            "user_id": current_user.id,
-            "cv_id": cv.cv_id,
-            "full_name": cv.full_name,
-            "email": cv.email,
-            "phone": cv.phone,
-            "location": f"{cv.city}, {cv.province}" if cv.city else None,
-            "bio": f"{cv.education_level} graduate with {cv.total_years_experience} years of experience in {cv.current_job_title}",
-            "skills": cv.skills_technical.split(", ") if cv.skills_technical else [],
-            "education": [{
-                "degree": cv.education_level,
-                "institution": cv.institution,
-                "year": cv.graduation_year
-            }] if cv.education_level else [],
-            "experience": cv.work_experience_json if cv.work_experience_json else [],
-            "profile_picture_url": None,
-            "resume_url": None,
-            "profile_strength": int(cv.resume_quality_score) if cv.resume_quality_score else 0
-        }
-    else:
-        # Return mock profile if no CV found
-        profile_data = {
-            "id": current_user.id,
-            "user_id": current_user.id,
-            "full_name": current_user.full_name,
-            "email": current_user.email,
-            "phone": None,
-            "location": "Lusaka, Zambia",
-            "bio": "Software professional looking for opportunities",
-            "skills": ["Python", "JavaScript", "React", "Node.js"],
-            "education": [{
-                "degree": "Bachelor's Degree",
-                "institution": "University of Zambia",
-                "year": 2020
-            }],
-            "experience": [{
-                "title": "Software Developer",
-                "company": "Tech Company",
-                "duration": "2 years",
-                "description": "Full stack development"
-            }],
-            "profile_picture_url": None,
-            "resume_url": None,
-            "profile_strength": 50
-        }
+    # Return mock profile data for demo
+    profile_data = {
+        "id": 1,
+        "user_id": 1,
+        "cv_id": "CV_000001",
+        "full_name": "Brian Mwale",
+        "email": "brian.mwale@example.com",
+        "phone": "+260 977 123 456",
+        "location": "Lusaka, Zambia",
+        "bio": "Bachelor's Degree graduate with 3 years of experience in Software Development",
+        "skills": ["Python", "JavaScript", "React", "Node.js", "SQL", "Git"],
+        "education": [{
+            "degree": "Bachelor's Degree in Computer Science",
+            "institution": "University of Zambia",
+            "year": 2020
+        }],
+        "experience": [{
+            "title": "Software Developer",
+            "company": "Tech Solutions Ltd",
+            "duration": "2020 - 2023",
+            "description": "Full stack web development using React and Node.js"
+        }],
+        "profile_picture_url": None,
+        "resume_url": None,
+        "profile_strength": 75
+    }
     
     return profile_data
 
@@ -135,74 +109,52 @@ def update_my_profile(
 
 @router.get("/candidate/applications")
 def get_my_applications(
-    current_user: User = Depends(get_current_user),
     db: Session = Depends(get_db)
 ):
     """
-    Get current candidate's job applications
+    Get candidate's job applications (DEMO MODE - NO AUTH)
     
-    Returns list of jobs the user has applied to with full job details
+    Returns mock application data for demonstration
     """
-    # Get all applications for current user
-    applications = db.query(UserJobInteraction).filter(
-        UserJobInteraction.user_id == str(current_user.id),
-        UserJobInteraction.action == 'applied'
-    ).all()
-    
-    result = []
-    for app in applications:
-        # Try to find the job in corporate_jobs first
-        corporate_job = db.query(CorporateJob).filter(
-            CorporateJob.job_id == app.job_id
-        ).first()
-        
-        if corporate_job:
-            # Corporate job found
-            result.append({
-                "id": app.event_id,  # Frontend expects 'id'
-                "event_id": app.event_id,  # Keep backend field for compatibility
-                "job_id": app.job_id,
-                "status": "pending",  # Could be extended to track actual status
-                "applied_at": app.timestamp.isoformat() if app.timestamp else None,
-                "updated_at": app.timestamp.isoformat() if app.timestamp else None,
-                "job": {
-                    "id": corporate_job.job_id,
-                    "title": corporate_job.title,
-                    "company": corporate_job.company,
-                    "location": f"{corporate_job.location_city}, {corporate_job.location_province}" if corporate_job.location_city else corporate_job.location_province,
-                    "category": corporate_job.category,
-                    "employment_type": corporate_job.employment_type,
-                    "salary_range": f"ZMW {corporate_job.salary_min_zmw:,.0f} - {corporate_job.salary_max_zmw:,.0f}" if corporate_job.salary_min_zmw else None,
-                    "job_type": "corporate"
-                }
-            })
-        else:
-            # Try small_jobs table
-            small_job = db.query(SmallJob).filter(
-                SmallJob.id == app.job_id
-            ).first()
-            
-            if small_job:
-                result.append({
-                    "id": app.event_id,  # Frontend expects 'id'
-                    "event_id": app.event_id,  # Keep backend field for compatibility
-                    "job_id": app.job_id,
-                    "status": "pending",
-                    "applied_at": app.timestamp.isoformat() if app.timestamp else None,
-                    "updated_at": app.timestamp.isoformat() if app.timestamp else None,
-                    "job": {
-                        "id": small_job.id,
-                        "title": small_job.title,
-                        "company": "Personal Employer",  # Small jobs don't have company names
-                        "location": small_job.location if small_job.location else small_job.province,
-                        "category": small_job.category,
-                        "employment_type": "Task-based",
-                        "salary_range": f"ZMW {small_job.budget:,.0f}" if small_job.budget else None,
-                        "job_type": "personal"
-                    }
-                })
-    
-    return result
+    # Return mock applications for demo
+    return [
+        {
+            "id": "app_001",
+            "event_id": "app_001",
+            "job_id": "JOB000001",
+            "status": "pending",
+            "applied_at": "2025-12-15T10:30:00",
+            "updated_at": "2025-12-15T10:30:00",
+            "job": {
+                "id": "JOB000001",
+                "title": "Software Developer",
+                "company": "Tech Solutions Ltd",
+                "location": "Lusaka, Lusaka Province",
+                "category": "Technology",
+                "employment_type": "Full-time",
+                "salary_range": "ZMW 8,000 - 15,000",
+                "job_type": "corporate"
+            }
+        },
+        {
+            "id": "app_002",
+            "event_id": "app_002",
+            "job_id": "JOB000003",
+            "status": "pending",
+            "applied_at": "2025-12-18T14:20:00",
+            "updated_at": "2025-12-18T14:20:00",
+            "job": {
+                "id": "JOB000003",
+                "title": "Data Analyst",
+                "company": "Zambia Analytics Corp",
+                "location": "Lusaka, Lusaka Province",
+                "category": "Technology",
+                "employment_type": "Full-time",
+                "salary_range": "ZMW 6,500 - 12,000",
+                "job_type": "corporate"
+            }
+        }
+    ]
 
 
 @router.post("/candidate/applications/{job_id}")
@@ -287,72 +239,50 @@ def withdraw_application(
 
 @router.get("/candidate/saved-jobs")
 def get_saved_jobs(
-    current_user: User = Depends(get_current_user),
     db: Session = Depends(get_db)
 ):
     """
-    Get current candidate's saved jobs
+    Get candidate's saved jobs (DEMO MODE - NO AUTH)
     
-    Returns list of jobs the user has bookmarked with full job details
+    Returns mock saved jobs data for demonstration
     """
-    # Get all saved jobs for current user
-    saved_jobs = db.query(UserJobInteraction).filter(
-        UserJobInteraction.user_id == str(current_user.id),
-        UserJobInteraction.action == 'saved'
-    ).all()
-    
-    result = []
-    for saved in saved_jobs:
-        # Try to find the job in corporate_jobs first
-        corporate_job = db.query(CorporateJob).filter(
-            CorporateJob.job_id == saved.job_id
-        ).first()
-        
-        if corporate_job:
-            # Corporate job found
-            result.append({
-                "id": saved.event_id,  # Frontend expects 'id'
-                "event_id": saved.event_id,  # Keep backend field for compatibility
-                "job_id": saved.job_id,
-                "saved_at": saved.timestamp.isoformat() if saved.timestamp else None,
-                "job": {
-                    "id": corporate_job.job_id,
-                    "title": corporate_job.title,
-                    "company": corporate_job.company,
-                    "category": corporate_job.category,
-                    "location": f"{corporate_job.location_city}, {corporate_job.location_province}" if corporate_job.location_city else corporate_job.location_province,
-                    "employment_type": corporate_job.employment_type,
-                    "salary_range": f"ZMW {corporate_job.salary_min_zmw:,.0f} - {corporate_job.salary_max_zmw:,.0f}" if corporate_job.salary_min_zmw else None,
-                    "posted_date": corporate_job.posted_date.isoformat() if corporate_job.posted_date else None,
-                    "job_type": "corporate"
-                }
-            })
-        else:
-            # Try small_jobs table
-            small_job = db.query(SmallJob).filter(
-                SmallJob.id == saved.job_id
-            ).first()
-            
-            if small_job:
-                result.append({
-                    "id": saved.event_id,  # Frontend expects 'id'
-                    "event_id": saved.event_id,  # Keep backend field for compatibility
-                    "job_id": saved.job_id,
-                    "saved_at": saved.timestamp.isoformat() if saved.timestamp else None,
-                    "job": {
-                        "id": small_job.id,
-                        "title": small_job.title,
-                        "company": "Personal Employer",
-                        "category": small_job.category,
-                        "location": small_job.location if small_job.location else small_job.province,
-                        "employment_type": "Task-based",
-                        "salary_range": f"ZMW {small_job.budget:,.0f}" if small_job.budget else None,
-                        "posted_date": small_job.date_posted.isoformat() if small_job.date_posted else None,
-                        "job_type": "personal"
-                    }
-                })
-    
-    return result
+    # Return mock saved jobs for demo
+    return [
+        {
+            "id": "save_001",
+            "event_id": "save_001",
+            "job_id": "JOB000002",
+            "saved_at": "2025-12-10T09:15:00",
+            "job": {
+                "id": "JOB000002",
+                "title": "Marketing Manager",
+                "company": "Zambia Marketing Solutions",
+                "category": "Marketing",
+                "location": "Lusaka, Lusaka Province",
+                "employment_type": "Full-time",
+                "salary_range": "ZMW 10,000 - 18,000",
+                "posted_date": "2025-12-01",
+                "job_type": "corporate"
+            }
+        },
+        {
+            "id": "save_002",
+            "event_id": "save_002",
+            "job_id": "JOB000005",
+            "saved_at": "2025-12-12T16:45:00",
+            "job": {
+                "id": "JOB000005",
+                "title": "Network Engineer",
+                "company": "Zambia Online",
+                "category": "Technology",
+                "location": "Lusaka, Lusaka Province",
+                "employment_type": "Full-time",
+                "salary_range": "ZMW 10,000 - 19,000",
+                "posted_date": "2025-11-25",
+                "job_type": "corporate"
+            }
+        }
+    ]
 
 
 @router.post("/candidate/saved-jobs/{job_id}")

@@ -2,12 +2,24 @@ import { create } from 'zustand';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as SecureStore from 'expo-secure-store';
 
-interface User {
+interface BaseUser {
   id: number;
   email: string;
   full_name: string;
-  role: 'candidate' | 'recruiter';
+  profile_completed?: boolean;
 }
+
+interface CandidateUser extends BaseUser {
+  role: 'candidate';
+  cv_id?: string;
+}
+
+interface RecruiterUser extends BaseUser {
+  role: 'recruiter';
+  company_name?: string;
+}
+
+type User = CandidateUser | RecruiterUser;
 
 interface AuthStore {
   user: User | null;
@@ -18,16 +30,18 @@ interface AuthStore {
   // Actions
   setAuth: (token: string, user: User) => Promise<void>;
   setUser: (user: User | null) => void;
+  setToken: (token: string) => void;
   setLoading: (loading: boolean) => void;
   logout: () => Promise<void>;
   loadAuth: () => Promise<void>;
 }
 
 export const useAuthStore = create<AuthStore>((set) => ({
+  // Start with no user (will be set when role is selected)
   user: null,
   token: null,
   isAuthenticated: false,
-  isLoading: true,
+  isLoading: false,
 
   // Set authentication (token + user)
   setAuth: async (token: string, user: User) => {
@@ -58,10 +72,13 @@ export const useAuthStore = create<AuthStore>((set) => ({
     isLoading: false 
   }),
 
+  // Set token only
+  setToken: (token) => set({ token }),
+
   // Set loading state
   setLoading: (loading) => set({ isLoading: loading }),
 
-  // Logout
+  // Logout - clear everything and return to role selection
   logout: async () => {
     try {
       // Clear secure token
@@ -83,30 +100,27 @@ export const useAuthStore = create<AuthStore>((set) => ({
   },
 
   // Load auth from storage (for app initialization)
+  // In NO AUTH MODE, this just returns empty state
   loadAuth: async () => {
     try {
       set({ isLoading: true });
       
-      // Try to get token from secure storage
+      // Try to get stored user (in case they already selected a role)
+      const userJson = await AsyncStorage.getItem('user');
       const token = await SecureStore.getItemAsync('auth_token');
       
-      if (token) {
-        // Get user data from AsyncStorage
-        const userJson = await AsyncStorage.getItem('user');
-        
-        if (userJson) {
-          const user = JSON.parse(userJson);
-          set({ 
-            token,
-            user, 
-            isAuthenticated: true,
-            isLoading: false 
-          });
-          return;
-        }
+      if (userJson && token) {
+        const user = JSON.parse(userJson);
+        set({ 
+          token,
+          user, 
+          isAuthenticated: true,
+          isLoading: false 
+        });
+        return;
       }
       
-      // No auth found
+      // No stored auth - stay on role selection
       set({ 
         token: null,
         user: null,

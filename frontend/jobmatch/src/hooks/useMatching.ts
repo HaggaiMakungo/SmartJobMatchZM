@@ -6,13 +6,21 @@ import { useAuthStore } from '@/store/authStore';
 /**
  * Helper to get cv_id from user context
  * Maps user_id to cv_id format expected by ML endpoints
- * TODO: Update this mapping based on your backend's user-to-cv relationship
  */
 export const useCvId = (): string | undefined => {
   const { user } = useAuthStore();
-  // Current assumption: cv_id is the same as user_id as a string
-  // Adjust this if your backend uses a different mapping
-return user?.id ? "CV000004" : undefined;
+  
+  // If user has cv_id property, use it directly
+  if (user && 'cv_id' in user && user.cv_id) {
+    return user.cv_id;
+  }
+  
+  // Fallback: format user_id as CV ID
+  if (user?.id) {
+    return `CV${String(user.id).padStart(6, '0')}`;
+  }
+  
+  return undefined;
 };
 
 // ==================== LEGACY HOOKS ====================

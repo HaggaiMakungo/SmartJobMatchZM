@@ -4,7 +4,8 @@ from app.core.config import settings
 from app.api.v1 import (
     auth, jobs, match, cv, candidate, employer, application, 
     ml_match, corporate, recruiter_match_fast, recruiter_match_optimized, 
-    recruiter_match_cached, recruiter_match_gated, saved_candidates, recruiter_semantic
+    recruiter_match_cached, recruiter_match_gated, saved_candidates, recruiter_semantic,
+    candidate_semantic, recruiter_hybrid
 )
 
 app = FastAPI(
@@ -46,7 +47,8 @@ app.include_router(employer.router, prefix=settings.API_V1_STR, tags=["employer"
 app.include_router(application.router, prefix=settings.API_V1_STR, tags=["applications"])
 app.include_router(corporate.router, prefix=f"{settings.API_V1_STR}/corporate", tags=["corporate"])
 
-# Recruiter matching endpoints (5 versions)
+# Recruiter matching endpoints (6 versions)
+app.include_router(recruiter_hybrid.router, prefix=f"{settings.API_V1_STR}/recruiter/hybrid", tags=["recruiter-matching-hybrid"])  # 🎯 HYBRID (BM25 + SBERT - BEST ACCURACY)
 app.include_router(recruiter_semantic.router, prefix=f"{settings.API_V1_STR}/recruiter/semantic", tags=["recruiter-matching-semantic"])  # 🚀 SPRINT B (SEMANTIC - PRODUCTION)
 app.include_router(recruiter_match_gated.router, prefix=f"{settings.API_V1_STR}/recruiter/gated", tags=["recruiter-matching-gated"])  # 🔥 SPRINT A (GATED - QUALITY FOCUSED)
 app.include_router(recruiter_match_cached.router, prefix=f"{settings.API_V1_STR}", tags=["recruiter-matching-cached"])  # ⚡⚡⚡ PRE-COMPUTED (FASTEST - <100ms)
@@ -54,6 +56,9 @@ app.include_router(recruiter_match_optimized.router, prefix=f"{settings.API_V1_S
 app.include_router(recruiter_match_fast.router, prefix=f"{settings.API_V1_STR}/recruiter", tags=["recruiter-matching-fast"])  # ⚡ ORIGINAL (8-10s)
 
 app.include_router(saved_candidates.router, tags=["saved-candidates"])
+
+# Candidate semantic matching (for mobile app job seekers)
+app.include_router(candidate_semantic.router, prefix=f"{settings.API_V1_STR}/candidate", tags=["candidate-semantic-matching"])
 
 if __name__ == "__main__":
     import uvicorn

@@ -87,6 +87,7 @@ export interface MatchedCandidate {
   current_position?: string;
   current_job_title?: string;
   years_experience?: number;
+  years_of_experience?: number; // Alternative field name from backend
   total_years_experience?: number;
   education?: string;
   education_level?: string;
@@ -115,17 +116,27 @@ export interface CandidatesResponse {
 
 // Saved Candidates Types
 export interface SavedCandidate {
-  id: string;
+  saved_id: number;
   cv_id: string;
-  job_id: string;
-  recruiter_id: string;
+  full_name: string;
+  email: string;
+  phone: string;
+  current_job_title: string;
+  city: string;
+  province: string;
+  total_years_experience: number;
+  skills_technical: string[];
+  skills_soft: string[];
+  education_level: string;
   match_score: number;
-  status: CandidateStatus;
-  notes?: string;
-  saved_at: string;
-  updated_at?: string;
-  candidate?: Candidate;
-  job?: Job;
+  stage: CandidateStatus;
+  saved_date: string;
+  linked_job: string | null;
+  company_name: string;
+  tags: string[];
+  notes_count: number;
+  last_contact: string | null;
+  contact_count: number;
 }
 
 export type CandidateStatus = 
@@ -138,7 +149,8 @@ export type CandidateStatus =
   | 'rejected';
 
 export interface SavedCandidatesResponse {
-  total: number;
+  success: boolean;
+  count: number;
   candidates: SavedCandidate[];
 }
 
